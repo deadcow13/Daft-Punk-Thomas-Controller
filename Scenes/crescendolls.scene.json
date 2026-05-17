@@ -1,0 +1,676 @@
+{
+  "schema_version": 1,
+  "scene_name": "crescendolls",
+  "total_duration_ms": 211640,
+  "_analysis_notes": {
+    "source_file": "05_Daft_Punk_-_Crescendolls.wav",
+    "duration": "3m 31.6s (211.640s)",
+    "bpm": 124.114,
+    "beat_period_ms": 483.427,
+    "bar_period_ms": 1933.706,
+    "first_downbeat_ms": 1625,
+    "total_bars": 110,
+    "beat_tracker": "Audacity VAMP sub-beat labels (CrescendollsAnalysis.txt), 124.114 BPM confirmed",
+    "segment_source": "crescendolls_helmet.ino — SEG_A through SEG_G boundaries used verbatim, outro sub-sectioned from WAV energy analysis",
+    "structural_summary": [
+      "0–24.2s   Seg A: intro build — arpeggiated synth, energy 0.087 avg, ramps from near-silence",
+      "24.2–38.6s Seg B: locked groove — kick+bass enters, halo rotate feel, 0.120 avg (14.4s)",
+      "38.6–52.4s Seg C: escalation — additional layers stack, 0.157 avg, builds through 8 bars (13.8s)",
+      "52.4–60.0s Seg D: post-climax plateau — fullest texture in first half, 0.196 avg (7.6s)",
+      "60.0–67.4s Seg E: peak energy — highest RMS in song 0.215, snap-fills, wall-of-sound (7.4s)",
+      "67.4–84.8s Seg F: sustained peak — longest high-energy section, 0.217 avg (17.4s)",
+      "84.8–100.8s Seg G: cool-down — drops to 0.148, stripped back (16.0s)",
+      "100.8–131.5s Seg H: groove return — back to full energy 0.22+, longest groove section (30.7s)",
+      "131.5–144.0s breakdown — two brief energy drops/returns, stutter feel (12.5s)",
+      "144.0–193.5s final_groove — 50s of peak energy, highest sustained RMS in song",
+      "193.5–211.6s outro_fade — stepwise decay with gaps, ends in silence"
+    ]
+  },
+  "beat_grid": {
+    "first_downbeat_ms": 1625,
+    "period_ms": 483.427,
+    "beats_per_bar": 4
+  },
+  "base_palette": "PAL_DISCOVERY",
+  "base_effect": "EFFECT_OFF",
+  "mirror_lr": true,
+  "segments": {
+    "seg_a": {
+      "_comment": "Intro build. 0–24.2s, 12.5 bars. Arpeggiated synth only, no kick. Energy ramps slowly from near-silence (0.065) to 0.119 by end. PAL_INTRO_WARM for warm analog feel. Ears breathe, visor holds dim warm gradient. Matrix off — let the intro be clean.",
+      "nominal_duration_ms": 24200,
+      "base_effect": "EFFECT_OFF",
+      "base_palette": "PAL_INTRO_WARM",
+      "cues": [
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_EAR_BREATHE",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_INTRO_WARM",
+          "params": {
+            "bottom_color": 30,
+            "top_color": 200,
+            "breath_period_100ms": 55,
+            "min_brightness": 15,
+            "max_brightness": 100
+          },
+          "_comment": "5.5s breath. Deep amber low, bright amber high. Restrained — this is the tease before the kick."
+        },
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_VISOR_GRADIENT_V",
+          "zone": "BOTH_VISORS",
+          "palette": "PAL_INTRO_WARM",
+          "params": {
+            "bottom_color": 0,
+            "top_color": 6,
+            "bottom_brightness": 10,
+            "top_brightness": 50
+          },
+          "_comment": "Very dim warm gradient — just enough to show the visor is alive."
+        },
+        {
+          "at_ms": 16000,
+          "effect": "EFFECT_EAR_BEAT_GRADIENT",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_INTRO_WARM",
+          "params": {
+            "decay_steepness": 100,
+            "bottom_color": 30,
+            "bottom_brightness": 20,
+            "top_brightness": 120,
+            "downbeat_flash": 130,
+            "subbeat_sparkle": 0
+          },
+          "_comment": "~8s before kick enters (t≈16s), switch to a gentle beat gradient to foreshadow the rhythm. Soft decay, no sparkle yet."
+        }
+      ]
+    },
+    "seg_b": {
+      "_comment": "Locked groove. 24.2–38.6s, 7.5 bars. Kick + bass enters. Energy 0.120 avg — solid but not peaking. PAL_MAGENTA_CYAN matches the original .ino color scheme for this segment (halo-rotate feel). Ears run beat gradient, visor gets HALO_ROTATE slow rotation.",
+      "nominal_duration_ms": 14400,
+      "base_effect": "EFFECT_OFF",
+      "base_palette": "PAL_MAGENTA_CYAN",
+      "cues": [
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_FULL_FLASH",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_MAGENTA_CYAN",
+          "params": {
+            "color": 8,
+            "peak_bright": 200,
+            "decay_10ms": 12,
+            "include_matrix": 0
+          },
+          "duration_ms": 120,
+          "_comment": "Kick entry flash — marks the groove starting."
+        },
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_VISOR_HALO_ROTATE",
+          "zone": "BOTH_VISORS",
+          "palette": "PAL_MAGENTA_CYAN",
+          "params": {
+            "halo_color": 8,
+            "floor_color": 0,
+            "halo_brightness": 155,
+            "floor_brightness": 18,
+            "rotation_period_beats": 16,
+            "halo_width": 3
+          },
+          "_comment": "Slow halo rotation (16 beats = 4 bars per full rotation). Registry notes this was the Crescendolls Seg B pattern. Magenta halo over dark floor."
+        },
+        {
+          "at_ms": 120,
+          "effect": "EFFECT_EAR_BEAT_GRADIENT",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_MAGENTA_CYAN",
+          "params": {
+            "decay_steepness": 145,
+            "bottom_color": 0,
+            "bottom_brightness": 22,
+            "top_brightness": 165,
+            "downbeat_flash": 185,
+            "subbeat_sparkle": 30
+          },
+          "_comment": "Magenta/cyan cycling beat gradient. PAL_MAGENTA_CYAN gives alternating hard magenta and cyan per beat cycle."
+        }
+      ]
+    },
+    "seg_c": {
+      "_comment": "Escalation. 38.6–52.4s, 7.2 bars. Additional synth layers stack in. Energy climbs 0.145→0.181 through the 8 bars. PAL_DISCOVERY replaces PAL_MAGENTA_CYAN — widening the color vocabulary as the song opens up. Beat gradient more aggressive, visor switches to beat wipe for directional motion.",
+      "nominal_duration_ms": 13800,
+      "base_effect": "EFFECT_OFF",
+      "base_palette": "PAL_DISCOVERY",
+      "cues": [
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_FULL_FLASH",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "color": 4,
+            "peak_bright": 220,
+            "decay_10ms": 12,
+            "include_matrix": 0
+          },
+          "duration_ms": 120,
+          "_comment": "Palette-change punch on the seg C downbeat."
+        },
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_VISOR_BEAT_WIPE",
+          "zone": "BOTH_VISORS",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "direction": 0,
+            "beats_per_wipe": 1,
+            "wave_color": 6,
+            "wave_width": 2,
+            "wave_brightness": 160,
+            "bg_brightness": 20
+          },
+          "_comment": "Bottom-to-top wipe each beat. The directionality mirrors the 'stacking' feel of the music as layers are added."
+        },
+        {
+          "at_ms": 120,
+          "effect": "EFFECT_EAR_BEAT_GRADIENT",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "decay_steepness": 165,
+            "bottom_color": 0,
+            "bottom_brightness": 25,
+            "top_brightness": 180,
+            "downbeat_flash": 200,
+            "subbeat_sparkle": 55
+          },
+          "_comment": "Full Discovery palette cycling. Escalation is visible in the higher decay and sparkle vs seg_b."
+        }
+      ]
+    },
+    "seg_d": {
+      "_comment": "Post-climax plateau. 52.4–60.0s, 4 bars. Fullest texture in first half, 0.196 avg. The .ino's Seg D had alternating violet column fills and gold gravity pulses. PAL_DISCOVERY. Ears stay on beat gradient, visor gets a beat wipe in the opposite direction (top-to-bottom) to signal the descent/plateau feel.",
+      "nominal_duration_ms": 7600,
+      "base_effect": "EFFECT_OFF",
+      "base_palette": "PAL_DISCOVERY",
+      "cues": [
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_EAR_BEAT_GRADIENT",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "decay_steepness": 180,
+            "bottom_color": 0,
+            "bottom_brightness": 28,
+            "top_brightness": 190,
+            "downbeat_flash": 215,
+            "subbeat_sparkle": 70
+          },
+          "_comment": "Crescendolls-example params from registry: deep indigo base, strong downbeat flash, hi-hat sparkle."
+        },
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_VISOR_BEAT_WIPE",
+          "zone": "BOTH_VISORS",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "direction": 1,
+            "beats_per_wipe": 1,
+            "wave_color": 4,
+            "wave_width": 2,
+            "wave_brightness": 170,
+            "bg_brightness": 25
+          },
+          "_comment": "Top-to-bottom wipe — contrasts with seg_c's upward motion. 'Gravity after the upward fill' as the .ino described it."
+        }
+      ]
+    },
+    "seg_e": {
+      "_comment": "Peak energy. 60.0–67.4s, 3.8 bars. Highest RMS in first half (0.215). Everything is at maximum. Switch visor to HALO_ROTATE fast to convey the spinning, wall-of-sound energy. Ears at max beat gradient aggression.",
+      "nominal_duration_ms": 7400,
+      "base_effect": "EFFECT_OFF",
+      "base_palette": "PAL_DISCOVERY",
+      "cues": [
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_FULL_FLASH",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "color": 8,
+            "peak_bright": 255,
+            "decay_10ms": 14,
+            "include_matrix": 0
+          },
+          "duration_ms": 140,
+          "_comment": "Peak energy arrival flash — brightest single moment in the first half."
+        },
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_VISOR_HALO_ROTATE",
+          "zone": "BOTH_VISORS",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "halo_color": 6,
+            "floor_color": 0,
+            "halo_brightness": 185,
+            "floor_brightness": 22,
+            "rotation_period_beats": 8,
+            "halo_width": 4
+          },
+          "_comment": "Fast halo rotation (8 beats = 2 bars). Faster than seg_b's 16-beat rotation — the energy increase is felt in the speed."
+        },
+        {
+          "at_ms": 140,
+          "effect": "EFFECT_EAR_BEAT_GRADIENT",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "decay_steepness": 195,
+            "bottom_color": 0,
+            "bottom_brightness": 32,
+            "top_brightness": 200,
+            "downbeat_flash": 230,
+            "subbeat_sparkle": 85
+          }
+        }
+      ]
+    },
+    "seg_f": {
+      "_comment": "Sustained peak. 67.4–84.8s, 9 bars. Longest high-energy section, 0.217 avg. Holds everything at max. Visor switches to BEAT_WIPE inner-to-outer for a new directional feel after seg_e's rotation. Keep ears at near-max but fractionally lighter than seg_e so final_groove has room to escalate further.",
+      "nominal_duration_ms": 17400,
+      "base_effect": "EFFECT_OFF",
+      "base_palette": "PAL_DISCOVERY",
+      "cues": [
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_EAR_BEAT_GRADIENT",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "decay_steepness": 188,
+            "bottom_color": 0,
+            "bottom_brightness": 30,
+            "top_brightness": 195,
+            "downbeat_flash": 220,
+            "subbeat_sparkle": 80
+          }
+        },
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_VISOR_BEAT_WIPE",
+          "zone": "BOTH_VISORS",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "direction": 2,
+            "beats_per_wipe": 1,
+            "wave_color": 8,
+            "wave_width": 3,
+            "wave_brightness": 175,
+            "bg_brightness": 22
+          },
+          "_comment": "Inner-to-outer wipe — new direction for visual variety in the long sustained section."
+        }
+      ]
+    },
+    "seg_g": {
+      "_comment": "Cool-down. 84.8–100.8s, 8.3 bars. Drops to 0.148 avg RMS — stripped back, lighter percussion. PAL_COOL_SWEEP provides a cooler color contrast. Beat gradient softened, visor back to halo rotate (slow again) to settle the energy.",
+      "nominal_duration_ms": 16000,
+      "base_effect": "EFFECT_OFF",
+      "base_palette": "PAL_COOL_SWEEP",
+      "cues": [
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_EAR_BEAT_GRADIENT",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_COOL_SWEEP",
+          "params": {
+            "decay_steepness": 140,
+            "bottom_color": 0,
+            "bottom_brightness": 18,
+            "top_brightness": 155,
+            "downbeat_flash": 170,
+            "subbeat_sparkle": 30
+          },
+          "_comment": "Cyan-to-violet cycling. Softer than seg_f — deliberate step-down before the big groove return."
+        },
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_VISOR_HALO_ROTATE",
+          "zone": "BOTH_VISORS",
+          "palette": "PAL_COOL_SWEEP",
+          "params": {
+            "halo_color": 10,
+            "floor_color": 0,
+            "halo_brightness": 140,
+            "floor_brightness": 15,
+            "rotation_period_beats": 16,
+            "halo_width": 3
+          },
+          "_comment": "Back to slow 16-beat rotation. Cool cyan halo over dark floor — spacious, breathing."
+        },
+        {
+          "at_ms": 12000,
+          "effect": "EFFECT_EAR_EKG_PULSE",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "pulse_color": 6,
+            "beats_per_pulse": 1,
+            "pulse_width_leds": 2,
+            "tail_decay": 150,
+            "base_brightness": 15
+          },
+          "_comment": "~4s before seg_h groove return (t≈96.8s), switch to EKG pulse to build tension. Warm gold reappears after the cool-sweep section."
+        },
+        {
+          "at_ms": 12000,
+          "effect": "EFFECT_VISOR_GRADIENT_V",
+          "zone": "BOTH_VISORS",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "bottom_color": 0,
+            "top_color": 6,
+            "bottom_brightness": 18,
+            "top_brightness": 95
+          },
+          "_comment": "Transition visor to PAL_DISCOVERY warm gradient ahead of the groove return."
+        }
+      ]
+    },
+    "seg_h": {
+      "_comment": "Groove return. 100.8–131.5s, 15.9 bars. Energy jumps back to 0.22+. The biggest sustained groove section — longer than seg_f. Back to full PAL_DISCOVERY, maximum beat gradient. Visor gets outer-to-inner wipe (new direction, contrasts with seg_f's inner-to-outer) to mark the return as distinct.",
+      "nominal_duration_ms": 30700,
+      "base_effect": "EFFECT_OFF",
+      "base_palette": "PAL_DISCOVERY",
+      "cues": [
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_FULL_FLASH",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "color": 6,
+            "peak_bright": 255,
+            "decay_10ms": 16,
+            "include_matrix": 1
+          },
+          "duration_ms": 160,
+          "_comment": "Groove return flash — includes matrix. The biggest re-entry punch so far."
+        },
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_VISOR_BEAT_WIPE",
+          "zone": "BOTH_VISORS",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "direction": 3,
+            "beats_per_wipe": 1,
+            "wave_color": 7,
+            "wave_width": 3,
+            "wave_brightness": 180,
+            "bg_brightness": 22
+          },
+          "_comment": "Outer-to-inner wipe — never used yet, feels like a 'gathering' motion matching the groove re-consolidating."
+        },
+        {
+          "at_ms": 160,
+          "effect": "EFFECT_EAR_BEAT_GRADIENT",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "decay_steepness": 192,
+            "bottom_color": 0,
+            "bottom_brightness": 30,
+            "top_brightness": 195,
+            "downbeat_flash": 225,
+            "subbeat_sparkle": 85
+          }
+        }
+      ]
+    },
+    "breakdown": {
+      "_comment": "Two stutter drops. 131.5–144.0s. Energy stutters: 0.22 → 0.07 (t≈133s) → brief return (t≈138s) → drop again (t≈141s) → recovery (t≈143.5s). These feel like DJ-style filter kills. PAL_NEON for a lurid, disorienting color shift during the silence. Ears breathe during the drops.",
+      "nominal_duration_ms": 12500,
+      "base_effect": "EFFECT_OFF",
+      "base_palette": "PAL_NEON",
+      "cues": [
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_EAR_BREATHE",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_NEON",
+          "params": {
+            "bottom_color": 0,
+            "top_color": 8,
+            "breath_period_100ms": 18,
+            "min_brightness": 8,
+            "max_brightness": 90
+          },
+          "_comment": "Fast ~1.8s breath during the drop. PAL_NEON's hot pink/lime is jarring — intentionally wrong-feeling."
+        },
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_VISOR_GRADIENT_V",
+          "zone": "BOTH_VISORS",
+          "palette": "PAL_NEON",
+          "params": {
+            "bottom_color": 0,
+            "top_color": 12,
+            "bottom_brightness": 8,
+            "top_brightness": 55
+          },
+          "_comment": "Dim neon gradient — disorients vs the sustained warm Discovery energy."
+        },
+        {
+          "at_ms": 6500,
+          "effect": "EFFECT_EAR_EKG_PULSE",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "pulse_color": 4,
+            "beats_per_pulse": 1,
+            "pulse_width_leds": 2,
+            "tail_decay": 160,
+            "base_brightness": 18
+          },
+          "_comment": "~6s in: second drop recovery (t≈138s in song). Switch back to Discovery EKG to rebuild — signals the final groove is coming."
+        },
+        {
+          "at_ms": 6500,
+          "effect": "EFFECT_VISOR_GRADIENT_V",
+          "zone": "BOTH_VISORS",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "bottom_color": 0,
+            "top_color": 6,
+            "bottom_brightness": 15,
+            "top_brightness": 85
+          }
+        }
+      ]
+    },
+    "final_groove": {
+      "_comment": "Final long groove. 144.0–193.5s, 25.6 bars. Longest single sustained section in the song. Peak RMS sustained for 50 continuous seconds. Maximum everything — this is the climax. Beat gradient at absolute max params. Visor cycles through all three wipe directions across the section in 3 phases (~16 bars each).",
+      "nominal_duration_ms": 49500,
+      "base_effect": "EFFECT_OFF",
+      "base_palette": "PAL_DISCOVERY",
+      "cues": [
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_FULL_FLASH",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "color": 8,
+            "peak_bright": 255,
+            "decay_10ms": 18,
+            "include_matrix": 1
+          },
+          "duration_ms": 180,
+          "_comment": "Biggest flash in the song. Longest decay (18 × 10ms = 180ms settling), includes matrix."
+        },
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_VISOR_BEAT_WIPE",
+          "zone": "BOTH_VISORS",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "direction": 0,
+            "beats_per_wipe": 1,
+            "wave_color": 6,
+            "wave_width": 3,
+            "wave_brightness": 185,
+            "bg_brightness": 25
+          },
+          "_comment": "Phase 1 (0–16 bars ≈ 31s): bottom-to-top wipe. Revisiting the seg_c direction at maximum energy."
+        },
+        {
+          "at_ms": 180,
+          "effect": "EFFECT_EAR_BEAT_GRADIENT",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "decay_steepness": 200,
+            "bottom_color": 0,
+            "bottom_brightness": 35,
+            "top_brightness": 200,
+            "downbeat_flash": 240,
+            "subbeat_sparkle": 100
+          },
+          "_comment": "Absolute maximum. decay_steepness=200, downbeat_flash=240, sparkle=100. Registry Crescendolls example values pushed to ceiling."
+        },
+        {
+          "at_ms": 30939,
+          "effect": "EFFECT_VISOR_BEAT_WIPE",
+          "zone": "BOTH_VISORS",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "direction": 2,
+            "beats_per_wipe": 1,
+            "wave_color": 4,
+            "wave_width": 3,
+            "wave_brightness": 185,
+            "bg_brightness": 25
+          },
+          "_comment": "Phase 2 (bars 16–25 ≈ 31s–49.5s): inner-to-outer wipe. Color shifts to palette index 4 for variety."
+        }
+      ]
+    },
+    "outro_fade": {
+      "_comment": "Stepwise decay. 193.5–211.6s, ~9.4 bars. Energy falls through stutter gaps (0.22→0.07→0.09→0.16→0.08→0.09→0.07→0.01→0). The song dissolves. Three acts: (1) 0–3s rapid drop, (2) 3–14s stutter gaps with breathe, (3) 14–18.1s full silence/fade. PAL_INTRO_WARM bookends the intro's warm amber.",
+      "nominal_duration_ms": 18140,
+      "base_effect": "EFFECT_OFF",
+      "base_palette": "PAL_INTRO_WARM",
+      "is_outro": true,
+      "cues": [
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_EAR_BREATHE",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_INTRO_WARM",
+          "params": {
+            "bottom_color": 20,
+            "top_color": 180,
+            "breath_period_100ms": 22,
+            "min_brightness": 8,
+            "max_brightness": 100
+          },
+          "_comment": "Fast ~2.2s breath as the energy drops. Warm amber mirrors the intro's palette."
+        },
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_VISOR_GRADIENT_V",
+          "zone": "BOTH_VISORS",
+          "palette": "PAL_INTRO_WARM",
+          "params": {
+            "bottom_color": 0,
+            "top_color": 4,
+            "bottom_brightness": 8,
+            "top_brightness": 50
+          },
+          "_comment": "Dim warm gradient. The song dissolves back to the same visual state it started in."
+        },
+        {
+          "at_ms": 14000,
+          "effect": "EFFECT_AMBIENT_BREATHE",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_INTRO_WARM",
+          "params": {
+            "color": 4,
+            "period_100ms": 40,
+            "min_brightness": 3,
+            "max_brightness": 50
+          },
+          "_comment": "Final 4s of silence: very slow ambient breathe, nearly off. Song ends."
+        },
+        {
+          "at_ms": 14000,
+          "effect": "EFFECT_VISOR_GRADIENT_V",
+          "zone": "BOTH_VISORS",
+          "palette": "PAL_INTRO_WARM",
+          "params": {
+            "bottom_color": 0,
+            "top_color": 2,
+            "bottom_brightness": 3,
+            "top_brightness": 25
+          },
+          "_comment": "Nearly off visor — just a ghost of the warm gradient as the track goes silent."
+        }
+      ]
+    }
+  },
+  "timeline": [
+    {
+      "at_ms": 0,
+      "play": "seg_a"
+    },
+    {
+      "at_ms": 24200,
+      "play": "seg_b"
+    },
+    {
+      "at_ms": 38600,
+      "play": "seg_c"
+    },
+    {
+      "at_ms": 52400,
+      "play": "seg_d"
+    },
+    {
+      "at_ms": 60000,
+      "play": "seg_e"
+    },
+    {
+      "at_ms": 67400,
+      "play": "seg_f"
+    },
+    {
+      "at_ms": 84800,
+      "play": "seg_g"
+    },
+    {
+      "at_ms": 100800,
+      "play": "seg_h"
+    },
+    {
+      "at_ms": 131500,
+      "play": "breakdown"
+    },
+    {
+      "at_ms": 144000,
+      "play": "final_groove"
+    },
+    {
+      "at_ms": 193500,
+      "play": "outro_fade"
+    }
+  ],
+  "resources": {
+    "sprites": [],
+    "vu_sequences": [],
+    "text_strings": []
+  }
+}

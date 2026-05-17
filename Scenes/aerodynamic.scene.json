@@ -1,0 +1,554 @@
+{
+  "schema_version": 1,
+  "scene_name": "aerodynamic",
+  "total_duration_ms": 207533,
+  "_analysis_notes": {
+    "source_file": "02_Daft_Punk_-_Aerodynamic.wav",
+    "duration": "3m 27.5s (207.533s)",
+    "bpm": 123.05,
+    "beat_period_ms": 487.62,
+    "bar_period_ms": 1950.48,
+    "first_downbeat_ms": 3855,
+    "total_bars": 105,
+    "beat_tracker": "librosa + Audacity VAMP (cross-validated)",
+    "structural_summary": [
+      "0–3.9s:      pre_intro — reverse pad / silence",
+      "3.9–15.5s:   intro — arpeggiated synth bursts every 2 bars, no drums (bars 1–6)",
+      "15.5–62.0s:  groove_1 — kick + bass enters, building full groove (bars 7–30)",
+      "62.0–93.8s:  mid — energy dips to ~0.14 RMS, lighter texture (bars 30–46)",
+      "93.8–139.5s: groove_2 — full groove resumes, escalates to 0.22 RMS peak (bars 46–69)",
+      "139.5–171.7s:solo — guitar solo, near-silence then climbs (bars 69–86)",
+      "171.7–203.5s:groove_3 — groove returns strong (bars 86–102)",
+      "203.5–207.5s:outro — fade out (bars 102–105)"
+    ]
+  },
+  "beat_grid": {
+    "first_downbeat_ms": 3855,
+    "period_ms": 487.62,
+    "beats_per_bar": 4
+  },
+  "base_palette": "PAL_DISCOVERY",
+  "base_effect": "EFFECT_OFF",
+  "mirror_lr": true,
+  "segments": {
+    "pre_intro": {
+      "_comment": "Reverse pad decays to silence. 3.9s. Nothing runs — pure anticipation.",
+      "nominal_duration_ms": 3900,
+      "base_effect": "EFFECT_OFF",
+      "base_palette": "PAL_DISCOVERY",
+      "cues": []
+    },
+    "intro": {
+      "_comment": "Arpeggiated synth motif, no drums. Bursts every 2 bars (~3.9s). Bars 1-6, 11.6s. The helmet should echo the burst pattern — bright flash on the burst attack, breathe down in the decay. PAL_INTRO_WARM matches the warm analog synth tone.",
+      "nominal_duration_ms": 11700,
+      "base_effect": "EFFECT_OFF",
+      "base_palette": "PAL_INTRO_WARM",
+      "cues": [
+        {
+          "at_ms": 0,
+          "_comment": "Bar 1: arpeggio burst. Flash on attack.",
+          "effect": "EFFECT_FULL_FLASH",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_INTRO_WARM",
+          "params": {
+            "color": 8,
+            "peak_bright": 160,
+            "decay_10ms": 35,
+            "include_matrix": 0
+          },
+          "duration_ms": 350
+        },
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_VISOR_GRADIENT_V",
+          "zone": "BOTH_VISORS",
+          "palette": "PAL_INTRO_WARM",
+          "params": {
+            "bottom_color": 0,
+            "top_color": 6,
+            "bottom_brightness": 10,
+            "top_brightness": 55
+          }
+        },
+        {
+          "at_ms": 350,
+          "_comment": "Breathe down through bar 1-2 decay.",
+          "effect": "EFFECT_EAR_BREATHE",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_INTRO_WARM",
+          "params": {
+            "bottom_color": 20,
+            "top_color": 180,
+            "breath_period_100ms": 70,
+            "min_brightness": 10,
+            "max_brightness": 90
+          }
+        },
+        {
+          "at_ms": 3912,
+          "_comment": "Bar 3 burst (second arpeggio hit at ~3.9s into segment). Same flash-then-breathe pattern.",
+          "effect": "EFFECT_FULL_FLASH",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_INTRO_WARM",
+          "params": {
+            "color": 8,
+            "peak_bright": 160,
+            "decay_10ms": 35,
+            "include_matrix": 0
+          },
+          "duration_ms": 350
+        },
+        {
+          "at_ms": 4262,
+          "effect": "EFFECT_EAR_BREATHE",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_INTRO_WARM",
+          "params": {
+            "bottom_color": 20,
+            "top_color": 180,
+            "breath_period_100ms": 70,
+            "min_brightness": 10,
+            "max_brightness": 90
+          }
+        },
+        {
+          "at_ms": 7824,
+          "_comment": "Bar 5 burst (third arpeggio, t≈7.8s into segment).",
+          "effect": "EFFECT_FULL_FLASH",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_INTRO_WARM",
+          "params": {
+            "color": 8,
+            "peak_bright": 160,
+            "decay_10ms": 35,
+            "include_matrix": 0
+          },
+          "duration_ms": 350
+        },
+        {
+          "at_ms": 8174,
+          "effect": "EFFECT_EAR_BREATHE",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_INTRO_WARM",
+          "params": {
+            "bottom_color": 20,
+            "top_color": 180,
+            "breath_period_100ms": 70,
+            "min_brightness": 10,
+            "max_brightness": 90
+          }
+        }
+      ]
+    },
+    "groove_1": {
+      "_comment": "Kick + bass enters at bar 7 (t=15.5s). Energy builds from ~0.13 to ~0.19 RMS over 46.5s. EKG pulse on ears for early bars, transitions to full beat gradient as energy builds. PAL_DISCOVERY is the right workhorse here.",
+      "nominal_duration_ms": 46600,
+      "base_effect": "EFFECT_OFF",
+      "base_palette": "PAL_DISCOVERY",
+      "cues": [
+        {
+          "at_ms": 0,
+          "_comment": "Kick enters. Flash on the hit.",
+          "effect": "EFFECT_FULL_FLASH",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "color": 4,
+            "peak_bright": 200,
+            "decay_10ms": 12,
+            "include_matrix": 0
+          },
+          "duration_ms": 120
+        },
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_VISOR_GRADIENT_V",
+          "zone": "BOTH_VISORS",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "bottom_color": 0,
+            "top_color": 6,
+            "bottom_brightness": 25,
+            "top_brightness": 110
+          }
+        },
+        {
+          "at_ms": 120,
+          "_comment": "Early groove: EKG pulse, not full beat gradient yet. Lets the energy build naturally.",
+          "effect": "EFFECT_EAR_EKG_PULSE",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "pulse_color": 4,
+            "beats_per_pulse": 1,
+            "pulse_width_leds": 2,
+            "tail_decay": 150,
+            "base_brightness": 18
+          }
+        },
+        {
+          "at_ms": 15610,
+          "_comment": "~bar 15: groove has fully opened (~t=31s in song). Upgrade ears to full beat gradient.",
+          "effect": "EFFECT_EAR_BEAT_GRADIENT",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "decay_steepness": 155,
+            "bottom_color": 0,
+            "bottom_brightness": 22,
+            "top_brightness": 175,
+            "downbeat_flash": 190,
+            "subbeat_sparkle": 50
+          }
+        },
+        {
+          "at_ms": 15610,
+          "effect": "EFFECT_VISOR_BEAT_WIPE",
+          "zone": "BOTH_VISORS",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "color": 6,
+            "brightness": 145,
+            "sweep_direction": "bottom_to_top",
+            "decay_steepness": 170
+          }
+        }
+      ]
+    },
+    "mid": {
+      "_comment": "Energy dips to ~0.14 RMS (bars 30-46, 31.8s). The groove continues but texture is lighter — fewer layers, feels like a verse vs chorus. PAL_COOL_SWEEP gives the section a distinct cooler color identity vs groove_1's warm gold. Ears breathe rather than pound.",
+      "nominal_duration_ms": 31900,
+      "base_effect": "EFFECT_OFF",
+      "base_palette": "PAL_COOL_SWEEP",
+      "cues": [
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_EAR_BEAT_GRADIENT",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_COOL_SWEEP",
+          "params": {
+            "decay_steepness": 130,
+            "bottom_color": 0,
+            "bottom_brightness": 15,
+            "top_brightness": 140,
+            "downbeat_flash": 150,
+            "subbeat_sparkle": 25
+          },
+          "_comment": "Softer beat gradient — less decay steepness, lighter sparkle. The 'verse' feel."
+        },
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_VISOR_GRADIENT_V",
+          "zone": "BOTH_VISORS",
+          "palette": "PAL_COOL_SWEEP",
+          "params": {
+            "bottom_color": 0,
+            "top_color": 10,
+            "bottom_brightness": 18,
+            "top_brightness": 85
+          },
+          "_comment": "Cool cyan-violet gradient. Distinct palette from groove_1."
+        }
+      ]
+    },
+    "groove_2": {
+      "_comment": "Full groove returns and escalates to 0.22 RMS peak. Bars 46-69, 45.7s. Back to PAL_DISCOVERY, more aggressive than groove_1. The energy peaks around bar 55 (t≈109s in song) — give that a stronger flash.",
+      "nominal_duration_ms": 45800,
+      "base_effect": "EFFECT_OFF",
+      "base_palette": "PAL_DISCOVERY",
+      "cues": [
+        {
+          "at_ms": 0,
+          "_comment": "Re-entry flash: marks the return to full groove.",
+          "effect": "EFFECT_FULL_FLASH",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "color": 6,
+            "peak_bright": 230,
+            "decay_10ms": 14,
+            "include_matrix": 0
+          },
+          "duration_ms": 140
+        },
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_VISOR_BEAT_WIPE",
+          "zone": "BOTH_VISORS",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "color": 7,
+            "brightness": 160,
+            "sweep_direction": "bottom_to_top",
+            "decay_steepness": 185
+          }
+        },
+        {
+          "at_ms": 140,
+          "effect": "EFFECT_EAR_BEAT_GRADIENT",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "decay_steepness": 175,
+            "bottom_color": 0,
+            "bottom_brightness": 28,
+            "top_brightness": 185,
+            "downbeat_flash": 215,
+            "subbeat_sparkle": 75
+          }
+        },
+        {
+          "at_ms": 15510,
+          "_comment": "Peak energy hit (bar 55, t≈109s in song). Extra flash punch.",
+          "effect": "EFFECT_FULL_FLASH",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "color": 8,
+            "peak_bright": 255,
+            "decay_10ms": 10,
+            "include_matrix": 0
+          },
+          "duration_ms": 100
+        },
+        {
+          "at_ms": 15610,
+          "effect": "EFFECT_EAR_BEAT_GRADIENT",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "decay_steepness": 195,
+            "bottom_color": 0,
+            "bottom_brightness": 30,
+            "top_brightness": 185,
+            "downbeat_flash": 240,
+            "subbeat_sparkle": 100
+          },
+          "_comment": "After the peak hit: maximum beat gradient aggression for the climax of groove_2."
+        }
+      ]
+    },
+    "solo": {
+      "_comment": "Guitar solo section. Bars 69-86, 32.2s. Starts with near-silence (~0.04 RMS at t≈141s in song) then the solo builds. Three acts: (1) silence/breath 0-2s, (2) solo builds 2-20s with RED_BREAKDOWN palette, (3) climax 20-32s before groove_3 return.",
+      "nominal_duration_ms": 32300,
+      "base_effect": "EFFECT_OFF",
+      "base_palette": "PAL_RED_BREAKDOWN",
+      "cues": [
+        {
+          "at_ms": 0,
+          "_comment": "Instant drop to breath. The silence is dramatic.",
+          "effect": "EFFECT_EAR_BREATHE",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_RED_BREAKDOWN",
+          "params": {
+            "bottom_color": 0,
+            "top_color": 5,
+            "breath_period_100ms": 25,
+            "min_brightness": 5,
+            "max_brightness": 50
+          }
+        },
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_VISOR_GRADIENT_V",
+          "zone": "BOTH_VISORS",
+          "palette": "PAL_RED_BREAKDOWN",
+          "params": {
+            "bottom_color": 0,
+            "top_color": 4,
+            "bottom_brightness": 5,
+            "top_brightness": 35
+          },
+          "_comment": "Very dim deep red. Ominous, low."
+        },
+        {
+          "at_ms": 8000,
+          "_comment": "Solo starting to build (~t=147.5s in song). EKG pulse emerges — like the guitar attack rhythm.",
+          "effect": "EFFECT_EAR_EKG_PULSE",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_RED_BREAKDOWN",
+          "params": {
+            "pulse_color": 6,
+            "beats_per_pulse": 1,
+            "pulse_width_leds": 3,
+            "tail_decay": 180,
+            "base_brightness": 20
+          }
+        },
+        {
+          "at_ms": 8000,
+          "effect": "EFFECT_VISOR_GRADIENT_V",
+          "zone": "BOTH_VISORS",
+          "palette": "PAL_RED_BREAKDOWN",
+          "params": {
+            "bottom_color": 0,
+            "top_color": 7,
+            "bottom_brightness": 15,
+            "top_brightness": 70
+          }
+        },
+        {
+          "at_ms": 20000,
+          "_comment": "Solo climax (~t=159.5s in song, bar 78). Energy peaked. Beat gradient in red palette for maximum drama.",
+          "effect": "EFFECT_EAR_BEAT_GRADIENT",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_RED_BREAKDOWN",
+          "params": {
+            "decay_steepness": 185,
+            "bottom_color": 0,
+            "bottom_brightness": 20,
+            "top_brightness": 185,
+            "downbeat_flash": 230,
+            "subbeat_sparkle": 90
+          }
+        },
+        {
+          "at_ms": 20000,
+          "effect": "EFFECT_VISOR_BEAT_WIPE",
+          "zone": "BOTH_VISORS",
+          "palette": "PAL_RED_BREAKDOWN",
+          "params": {
+            "color": 8,
+            "brightness": 150,
+            "sweep_direction": "bottom_to_top",
+            "decay_steepness": 190
+          }
+        }
+      ]
+    },
+    "groove_3": {
+      "_comment": "Groove returns strong at bar 87 (t=171.7s). 31.8s. Back to PAL_DISCOVERY. The return should feel celebratory after the red solo — full flash re-entry.",
+      "nominal_duration_ms": 31900,
+      "base_effect": "EFFECT_OFF",
+      "base_palette": "PAL_DISCOVERY",
+      "cues": [
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_FULL_FLASH",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "color": 6,
+            "peak_bright": 255,
+            "decay_10ms": 16,
+            "include_matrix": 1
+          },
+          "duration_ms": 160,
+          "_comment": "Return flash includes matrix — biggest entrance in the song after the solo tension."
+        },
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_VISOR_BEAT_WIPE",
+          "zone": "BOTH_VISORS",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "color": 6,
+            "brightness": 165,
+            "sweep_direction": "bottom_to_top",
+            "decay_steepness": 180
+          }
+        },
+        {
+          "at_ms": 160,
+          "effect": "EFFECT_EAR_BEAT_GRADIENT",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "decay_steepness": 180,
+            "bottom_color": 0,
+            "bottom_brightness": 28,
+            "top_brightness": 185,
+            "downbeat_flash": 220,
+            "subbeat_sparkle": 85
+          }
+        },
+        {
+          "at_ms": 27000,
+          "_comment": "~4.5s before outro (t≈199s in song). Begin transitioning to breathe — foreshadow the fade.",
+          "effect": "EFFECT_EAR_BREATHE",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "bottom_color": 0,
+            "top_color": 6,
+            "breath_period_100ms": 30,
+            "min_brightness": 15,
+            "max_brightness": 100
+          }
+        }
+      ]
+    },
+    "outro": {
+      "_comment": "Fade out. 4s. PAL_INTRO_WARM bookends the warm intro ambiance.",
+      "nominal_duration_ms": 4100,
+      "base_effect": "EFFECT_OFF",
+      "base_palette": "PAL_INTRO_WARM",
+      "is_outro": true,
+      "cues": [
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_AMBIENT_BREATHE",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_INTRO_WARM",
+          "params": {
+            "color": 4,
+            "period_100ms": 40,
+            "min_brightness": 5,
+            "max_brightness": 60
+          }
+        },
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_VISOR_GRADIENT_V",
+          "zone": "BOTH_VISORS",
+          "palette": "PAL_INTRO_WARM",
+          "params": {
+            "bottom_color": 0,
+            "top_color": 4,
+            "bottom_brightness": 5,
+            "top_brightness": 30
+          }
+        }
+      ]
+    }
+  },
+  "timeline": [
+    {
+      "at_ms": 0,
+      "play": "pre_intro"
+    },
+    {
+      "at_ms": 3855,
+      "play": "intro"
+    },
+    {
+      "at_ms": 15558,
+      "play": "groove_1"
+    },
+    {
+      "at_ms": 62158,
+      "play": "mid"
+    },
+    {
+      "at_ms": 94058,
+      "play": "groove_2"
+    },
+    {
+      "at_ms": 139858,
+      "play": "solo"
+    },
+    {
+      "at_ms": 172158,
+      "play": "groove_3"
+    },
+    {
+      "at_ms": 204058,
+      "play": "outro"
+    }
+  ],
+  "resources": {
+    "sprites": [],
+    "vu_sequences": [],
+    "text_strings": []
+  }
+}
