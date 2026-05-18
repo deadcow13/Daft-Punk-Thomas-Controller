@@ -310,7 +310,17 @@
       "description": "Turn all LEDs in the target zone to black. No parameters.",
       "when_to_use": "Use as a segment's base_effect when nothing should render outside of explicit cues. Use as the base_effect for an intro segment that begins in darkness. Use in a cue to explicitly silence a zone in the middle of a busy scene.",
       "when_not_to_use": "Avoid as the global base_effect for a whole scene — usually you want something subtle like a dim breathing palette instead.",
-      "examples": []
+      "examples": [
+        {
+          "context": "Explicitly black out the matrix mid-segment before a new text cue enters",
+          "cue": {
+            "at_ms": 12000,
+            "effect": "EFFECT_OFF",
+            "zone": "MATRIX"
+          },
+          "notes": "No palette or params needed. Useful when a previous cue ends early (duration_ms expired) and you want explicit black rather than the segment base_effect filling the gap."
+        }
+      ]
     },
 
     "EFFECT_EAR_SOLID": {
@@ -435,7 +445,20 @@
       ],
       "description": "A bright pulse travels through the diamond: BOT_PEAK → LOWER → FLAT → UPPER → TOP_PEAK and back. Anchored to the beat grid.",
       "when_to_use": "When the ear should feel 'alive' with rhythmic motion. Distinct from EFFECT_EAR_BEAT_GRADIENT — that fills the whole ear with each beat color, this is a discrete pulse traveling through.",
-      "when_not_to_use": "When the visor is already doing a lot of motion — the ear pulse might compete. Quiet sections."
+      "when_not_to_use": "When the visor is already doing a lot of motion — the ear pulse might compete. Quiet sections.",
+      "examples": [
+        {
+          "context": "Aerodynamic breakdown — ear pulses with the beat, blood-red wave traveling BOT_PEAK to TOP_PEAK",
+          "cue": {
+            "at_ms": 0,
+            "effect": "EFFECT_EAR_EKG_PULSE",
+            "zone": "BOTH_EARS",
+            "palette": "PAL_RED_BREAKDOWN",
+            "params": { "pulse_color": 192, "beats_per_pulse": 1, "pulse_width_leds": 2, "tail_decay": 180, "base_brightness": 20 }
+          },
+          "notes": "pulse_color 192 = bright_red in PAL_RED_BREAKDOWN. beats_per_pulse 1 = one traversal per beat. pulse_width_leds 2 keeps the pulse tight and crisp. tail_decay 180 fades fast — each pulse is gone before the next fires. base_brightness 20 holds a dim floor between pulses."
+        }
+      ]
     },
 
     "EFFECT_VISOR_SOLID": {
@@ -446,7 +469,20 @@
         { "name": "brightness",  "type": "uint8", "range": [0, 255] }
       ],
       "description": "Fill the 5×8 grid with one solid color from the palette. Connector LEDs run their defaults (or are addressed separately).",
-      "when_to_use": "As a base layer during sustained moments. As a contrast to a more dynamic ear effect."
+      "when_to_use": "As a base layer during sustained moments. As a contrast to a more dynamic ear effect.",
+      "examples": [
+        {
+          "context": "Crescendolls chorus — held cyan visor while the ears do the rhythmic beat work",
+          "cue": {
+            "at_ms": 0,
+            "effect": "EFFECT_VISOR_SOLID",
+            "zone": "BOTH_VISORS",
+            "palette": "PAL_DISCOVERY",
+            "params": { "color_index": 64, "brightness": 100 }
+          },
+          "notes": "color_index 64 = octave_cyan in PAL_DISCOVERY. Intentionally modest brightness (100 of 185 ceiling) — the visor is a static color field the ear effects play against."
+        }
+      ]
     },
 
     "EFFECT_VISOR_GRADIENT_V": {
@@ -459,7 +495,20 @@
         { "name": "top_brightness",    "type": "uint8", "range": [0, 255] }
       ],
       "description": "Vertical gradient on the 5×8 grid. Row 0 (bottom) = bottom_color, Row 7 (top) = top_color.",
-      "when_to_use": "Setting up the visor as a held background. Pairs well with a beat-driven ear effect — keep visor static, ear dynamic."
+      "when_to_use": "Setting up the visor as a held background. Pairs well with a beat-driven ear effect — keep visor static, ear dynamic.",
+      "examples": [
+        {
+          "context": "One More Time verse — dark indigo at the bottom, helmet gold warming toward the top, held static",
+          "cue": {
+            "at_ms": 0,
+            "effect": "EFFECT_VISOR_GRADIENT_V",
+            "zone": "BOTH_VISORS",
+            "palette": "PAL_DISCOVERY",
+            "params": { "bottom_color": 0, "top_color": 128, "bottom_brightness": 20, "top_brightness": 140 }
+          },
+          "notes": "bottom_color 0 = deep_indigo, top_color 128 = helmet_gold in PAL_DISCOVERY. Low bottom brightness (20) grounds the visor; top brightness (140) drives the warmth. Row 0 is physical bottom of the visor grid, row 7 is top."
+        }
+      ]
     },
 
     "EFFECT_VISOR_GRADIENT_H": {
@@ -472,7 +521,20 @@
         { "name": "outer_brightness", "type": "uint8", "range": [0, 255] }
       ],
       "description": "Horizontal gradient. When mirrored to right visor, col mapping is reversed so 'inner edge = inner edge' semantic is preserved on both sides.",
-      "when_to_use": "Cool moments where the helmet should have a directional color — e.g. cooler tones toward the center, warmer toward the edges."
+      "when_to_use": "Cool moments where the helmet should have a directional color — e.g. cooler tones toward the center, warmer toward the edges.",
+      "examples": [
+        {
+          "context": "Aerodynamic groove — cool deep blue near the face, warming to gold toward the outer visor edge",
+          "cue": {
+            "at_ms": 0,
+            "effect": "EFFECT_VISOR_GRADIENT_H",
+            "zone": "BOTH_VISORS",
+            "palette": "PAL_COOL_SWEEP",
+            "params": { "inner_color": 0, "outer_color": 220, "inner_brightness": 60, "outer_brightness": 150 }
+          },
+          "notes": "inner_color 0 = deep_blue in PAL_COOL_SWEEP at col 1 (nearest face). outer_color 220 = warm_gold at col 5 (outer edge). The engine automatically reverses col mapping on RIGHT_VISOR so the inner=cool, outer=warm semantic is preserved on both sides."
+        }
+      ]
     },
 
     "EFFECT_VISOR_VU_PRERENDERED": {
@@ -488,7 +550,27 @@
       ],
       "description": "Render a pre-rendered 5-band VU meter on the visor grid. Each band corresponds to a column. Heights animate per the sequence's frame data.",
       "when_to_use": "When the visor should respond to the music's frequency content directly. Choruses, build-ups, sections where the energy spread across frequencies tells the story.",
-      "when_not_to_use": "When VU data is not authored for this segment. When you want the visor to do something more spatial than just frequency bars."
+      "when_not_to_use": "When VU data is not authored for this segment. When you want the visor to do something more spatial than just frequency bars.",
+      "examples": [
+        {
+          "context": "Crescendolls chorus — 5 frequency bands pumping across visor columns, colors drawn from the active palette",
+          "cue": {
+            "at_ms": 0,
+            "effect": "EFFECT_VISOR_VU_PRERENDERED",
+            "zone": "BOTH_VISORS",
+            "palette": "PAL_DISCOVERY",
+            "params": {
+              "vu_name": "chorus_visor_vu",
+              "bar_color_mode": "per_band_palette",
+              "single_color": 0,
+              "bar_brightness": 160,
+              "bg_fill_mode": "black",
+              "bg_color": 0
+            }
+          },
+          "notes": "bar_color_mode per_band_palette maps each of the 5 columns to a different position in PAL_DISCOVERY — bass column hits helmet_gold, treble hits cyan, etc. single_color is ignored in this mode. bg_fill_mode black keeps unlit LEDs off for maximum bar contrast. vu_name must match a band_count:5 entry in resources.vu_sequences."
+        }
+      ]
     },
 
     "EFFECT_VISOR_BEAT_WIPE": {
@@ -504,7 +586,27 @@
       ],
       "description": "A color wave travels across the grid in sync with the beat. Picture: every beat (or every N beats), a column/row lights up bright then the wave moves on.",
       "when_to_use": "Beat-driven sections where you want directional motion across the visor. Pairs well with a static ear effect.",
-      "when_not_to_use": "Mid-energy sections where motion would be too much. Outro/intro (use breathing instead)."
+      "when_not_to_use": "Mid-energy sections where motion would be too much. Outro/intro (use breathing instead).",
+      "examples": [
+        {
+          "context": "Aerodynamic groove section — a cyan wave wipes bottom-to-top across the visor on every beat",
+          "cue": {
+            "at_ms": 0,
+            "effect": "EFFECT_VISOR_BEAT_WIPE",
+            "zone": "BOTH_VISORS",
+            "palette": "PAL_COOL_SWEEP",
+            "params": {
+              "direction": "bottom_to_top",
+              "beats_per_wipe": 1,
+              "wave_color": 160,
+              "wave_width": 2,
+              "wave_brightness": 200,
+              "bg_brightness": 30
+            }
+          },
+          "notes": "direction bottom_to_top sweeps upward through rows 0→7. beats_per_wipe 1 = one wipe per beat, tight and energetic. wave_color 160 = cyan in PAL_COOL_SWEEP. wave_width 2 is a narrow front — increase to 3 or 4 for a softer trailing edge. bg_brightness 30 leaves the non-wave area faintly lit. For a slower, more majestic feel use beats_per_wipe 4."
+        }
+      ]
     },
 
     "EFFECT_VISOR_HALO_ROTATE": {
@@ -520,7 +622,27 @@
       ],
       "description": "A bright spot rotates around the perimeter of the 5×8 grid over a configurable period. Maintains a sense of motion at a slower-than-beat pace.",
       "when_to_use": "Sustained groove sections where you want continuous slow motion without hard rhythmic emphasis. Crescendolls' Segment B (locked-in groove) used this pattern.",
-      "when_not_to_use": "Short segments — the rotation won't complete. Highly rhythmic moments (use BEAT_WIPE instead)."
+      "when_not_to_use": "Short segments — the rotation won't complete. Highly rhythmic moments (use BEAT_WIPE instead).",
+      "examples": [
+        {
+          "context": "Crescendolls locked-groove segment — a magenta spot drifts slowly around the visor perimeter over 4 bars",
+          "cue": {
+            "at_ms": 0,
+            "effect": "EFFECT_VISOR_HALO_ROTATE",
+            "zone": "BOTH_VISORS",
+            "palette": "PAL_DISCOVERY",
+            "params": {
+              "halo_color": 192,
+              "floor_color": 0,
+              "halo_brightness": 165,
+              "floor_brightness": 25,
+              "rotation_period_beats": 16,
+              "halo_width": 4
+            }
+          },
+          "notes": "halo_color 192 = stella_pink in PAL_DISCOVERY. rotation_period_beats 16 = one full perimeter rotation per 4 bars at 120 BPM — slow enough to read as drift rather than spinning. halo_width 4 gives a soft smear; reduce to 3 for a tighter spot. floor_brightness 25 keeps the rest of the grid faintly lit."
+        }
+      ]
     },
 
     "EFFECT_VISOR_SPARKLE": {
@@ -536,7 +658,27 @@
       ],
       "description": "Random LEDs in the visor grid briefly light up and decay. Hash-based deterministic randomness — same scene time produces same sparkle pattern, reproducibly.",
       "when_to_use": "High-frequency hi-hat/cymbal moments. Building energy. Sections that need 'shimmer' on top of a held base.",
-      "when_not_to_use": "When clarity matters — sparkle is distracting under text or sprites."
+      "when_not_to_use": "When clarity matters — sparkle is distracting under text or sprites.",
+      "examples": [
+        {
+          "context": "HBFS verse — sparse white sparkles over a near-dark visor, suggesting hi-hat texture",
+          "cue": {
+            "at_ms": 0,
+            "effect": "EFFECT_VISOR_SPARKLE",
+            "zone": "BOTH_VISORS",
+            "palette": "PAL_MONO_WHITE",
+            "params": {
+              "sparkle_color": 255,
+              "density": 80,
+              "decay_rate": 200,
+              "bg_color": 0,
+              "bg_brightness": 15,
+              "sparkle_peak_bright": 180
+            }
+          },
+          "notes": "sparkle_color 255 = white (top of PAL_MONO_WHITE). density 80 = roughly 80 LEDs/sec across the 40-LED grid, about 2 sparks per frame at 60 fps — present but not overwhelming. decay_rate 200 fades quickly so each spark reads as crisp. bg_brightness 15 is near-black floor."
+        }
+      ]
     },
 
     "EFFECT_MATRIX_SOLID": {
@@ -547,7 +689,21 @@
         { "name": "brightness",  "type": "uint8", "range": [0, 45], "description": "Hard-clamped to 45/255 in firmware regardless of authored value." }
       ],
       "description": "Fill the entire matrix with one solid color.",
-      "when_to_use": "Almost never as the primary matrix content. Useful as a brief flash, a state indicator, or a fallback during sections you haven't designed yet."
+      "when_to_use": "Almost never as the primary matrix content. Useful as a brief flash, a state indicator, or a fallback during sections you haven't designed yet.",
+      "examples": [
+        {
+          "context": "HBFS drop — matrix flashes gold for one beat before handing off to VU bars",
+          "cue": {
+            "at_ms": 0,
+            "effect": "EFFECT_MATRIX_SOLID",
+            "zone": "MATRIX",
+            "palette": "PAL_DISCOVERY",
+            "params": { "color_index": 128, "brightness": 45 },
+            "duration_ms": 500
+          },
+          "notes": "color_index 128 = helmet_gold in PAL_DISCOVERY. brightness 45 is the MATRIX_BRIGHTNESS_MAX ceiling — authoring anything higher is silently clamped by firmware. duration_ms 500 = one beat at 120 BPM before the next matrix cue takes over."
+        }
+      ]
     },
 
     "EFFECT_MATRIX_VU_PRERENDERED": {
@@ -563,7 +719,27 @@
       ],
       "description": "32-band pre-rendered VU meter on the matrix. Each matrix column is one frequency band.",
       "when_to_use": "Choruses, drops, sections where the music's frequency spread is the main visual story. The matrix's VU is the most impressive thing it can do.",
-      "when_not_to_use": "Quiet sections (VU bars on near-silence look limp). Sections where you want the matrix doing text or sprites. Long full-song VU sequences are size-prohibitive (a 32-band 20 fps full song = 150 KB+); use VU only during segments where it really sings."
+      "when_not_to_use": "Quiet sections (VU bars on near-silence look limp). Sections where you want the matrix doing text or sprites. Long full-song VU sequences are size-prohibitive (a 32-band 20 fps full song = 150 KB+); use VU only during segments where it really sings.",
+      "examples": [
+        {
+          "context": "Crescendolls main chorus — 32-band rainbow VU filling the full matrix width",
+          "cue": {
+            "at_ms": 0,
+            "effect": "EFFECT_MATRIX_VU_PRERENDERED",
+            "zone": "MATRIX",
+            "palette": "PAL_DISCOVERY",
+            "params": {
+              "vu_name": "chorus_matrix_vu",
+              "bar_color_mode": "rainbow_per_col",
+              "single_color": 0,
+              "bar_brightness": 40,
+              "bg_fill_mode": "black",
+              "bg_color": 0
+            }
+          },
+          "notes": "bar_color_mode rainbow_per_col sweeps the 32 columns through the full hue wheel — bass left through treble right. single_color is ignored. bar_brightness 40 is just under the 45 ceiling. vu_name must match a band_count:32 entry in resources.vu_sequences. Limit 32-band VU to specific segments, not full-song, to stay under the 64 KB scene RAM ceiling."
+        }
+      ]
     },
 
     "EFFECT_MATRIX_SPRITE": {
@@ -579,7 +755,27 @@
       ],
       "description": "Play a sprite (small region animation) on the matrix at a fixed position. Sprites are stored in the scene's sprite library.",
       "when_to_use": "Signature visual moments — a spinning globe for 'Around the World,' a rotating record, a small animated icon during a recognizable hook. One-of-a-kind matrix content that VU and text can't capture.",
-      "when_not_to_use": "Frequently — sprites are size-expensive (24 KB ceiling for all sprites in a scene combined). Use sparingly for impact."
+      "when_not_to_use": "Frequently — sprites are size-expensive (24 KB ceiling for all sprites in a scene combined). Use sparingly for impact.",
+      "examples": [
+        {
+          "context": "Crescendolls hook — a small spinning record loops on the right half of the matrix while text scrolls left",
+          "cue": {
+            "at_ms": 0,
+            "effect": "EFFECT_MATRIX_SPRITE",
+            "zone": "MATRIX",
+            "palette": "PAL_DISCOVERY",
+            "params": {
+              "sprite_name": "spinning_record",
+              "x_offset": 20,
+              "y_offset": 0,
+              "loop_mode": "loop",
+              "brightness": 35,
+              "fps_override": 0
+            }
+          },
+          "notes": "x_offset 20 places an 8-wide sprite at columns 20–27, leaving columns 0–19 free for a simultaneous scrolling text cue. y_offset 0 pins it to the top row. loop_mode loop keeps it spinning for the full cue duration. fps_override 0 uses the sprite's authored fps. brightness 35 is safely under the matrix ceiling of 45."
+        }
+      ]
     },
 
     "EFFECT_MATRIX_TEXT": {
@@ -625,7 +821,27 @@
       ],
       "description": "Scrolling background pattern. Useful as a base under text or sprites.",
       "when_to_use": "When the matrix needs visual texture under foreground elements. Long-form sustained sections where 'something is happening' without big rhythmic moments.",
-      "when_not_to_use": "Alone — the patterns are too geometric to be the main visual. Always layer foreground elements (text, sprites) on top via additive flag."
+      "when_not_to_use": "Alone — the patterns are too geometric to be the main visual. Always layer foreground elements (text, sprites) on top via additive flag.",
+      "examples": [
+        {
+          "context": "HBFS verse — diagonal gold/indigo stripe pattern scrolls slowly beneath HARDER BETTER text",
+          "cue": {
+            "at_ms": 0,
+            "effect": "EFFECT_MATRIX_SCROLL_BG",
+            "zone": "MATRIX",
+            "palette": "PAL_DISCOVERY",
+            "params": {
+              "pattern": "diagonal",
+              "color_a": 128,
+              "color_b": 0,
+              "scroll_speed": 12,
+              "brightness": 20,
+              "pattern_period": 4
+            }
+          },
+          "notes": "pattern diagonal at 45°. color_a 128 = helmet_gold in PAL_DISCOVERY, color_b 0 = deep_indigo. scroll_speed 12 pixels/sec is slow enough to read as texture rather than motion. brightness 20 keeps the background clearly subordinate to text layered on top via additive flag. pattern_period 4 = stripes 4 LEDs wide. Never use this effect alone — always layer foreground content on top."
+        }
+      ]
     },
 
     "EFFECT_FULL_FLASH": {
@@ -639,7 +855,20 @@
       ],
       "description": "Bright flash across multiple zones at once. Punctuation effect for downbeat emphasis.",
       "when_to_use": "Sparingly. Big downbeat moments, drops, climactic punctuation. The opening hit of a chorus.",
-      "when_not_to_use": "Repeatedly — flashes lose impact when overused. As a base effect. Sustained sections."
+      "when_not_to_use": "Repeatedly — flashes lose impact when overused. As a base effect. Sustained sections.",
+      "examples": [
+        {
+          "context": "One More Time chorus drop — full-helmet cyan flash on the first downbeat",
+          "cue": {
+            "at_ms": 0,
+            "effect": "EFFECT_FULL_FLASH",
+            "zone": "BOTH_EARS",
+            "palette": "PAL_DISCOVERY",
+            "params": { "color": 64, "peak_bright": 255, "decay_10ms": 25, "include_matrix": 1 }
+          },
+          "notes": "color 64 = octave_cyan in PAL_DISCOVERY. peak_bright 255 hits maximum before per-zone firmware caps apply (ears 185, matrix 45). decay_10ms 25 = 250ms decay — half a beat at 120 BPM. include_matrix 1 fires all zones. Use at most once per section — repeated flashes lose impact fast."
+        }
+      ]
     },
 
     "EFFECT_AMBIENT_BREATHE": {
@@ -652,7 +881,20 @@
         { "name": "max_brightness", "type": "uint8", "range": [0, 255] }
       ],
       "description": "Slow synchronized breathing across all ear and visor zones (and matrix if zone-targeted). Cross-zone variant of EFFECT_EAR_BREATHE.",
-      "when_to_use": "Outros, sustained calm moments where the whole helmet should pulse together. Pairs with PAL_OCEAN or PAL_INTRO_WARM."
+      "when_to_use": "Outros, sustained calm moments where the whole helmet should pulse together. Pairs with PAL_OCEAN or PAL_INTRO_WARM.",
+      "examples": [
+        {
+          "context": "One More Time outro — visors breathing slowly in cool blue as the song winds down",
+          "cue": {
+            "at_ms": 0,
+            "effect": "EFFECT_AMBIENT_BREATHE",
+            "zone": "BOTH_VISORS",
+            "palette": "PAL_OCEAN",
+            "params": { "color": 160, "period_100ms": 50, "min_brightness": 15, "max_brightness": 110 }
+          },
+          "notes": "color 160 = light_blue in PAL_OCEAN. period_100ms 50 = 5-second breath — slow and restful. max_brightness 110 avoids harshness; the 185 ceiling is not the right target for a calm passage. Pair with a simultaneous EFFECT_EAR_BREATHE cue on BOTH_EARS using the same period so ears and visors breathe in sync."
+        }
+      ]
     },
 
     "EFFECT_CONN_SOLID": {
@@ -664,7 +906,20 @@
       ],
       "description": "Override all 13 connector LEDs on one side with a single color, disabling the default beat-flash + rainbow behavior.",
       "when_to_use": "When the scene wants the connectors silent or unified with the rest of the visor (e.g., 'everything goes red during the breakdown').",
-      "when_not_to_use": "When the defaults are doing what you want — defaults are usually fine."
+      "when_not_to_use": "When the defaults are doing what you want — defaults are usually fine.",
+      "examples": [
+        {
+          "context": "Aerodynamic breakdown — override connector defaults to uniform red so the whole visor edge reads as one color",
+          "cue": {
+            "at_ms": 0,
+            "effect": "EFFECT_CONN_SOLID",
+            "zone": "LEFT_CONNECTORS",
+            "palette": "PAL_RED_BREAKDOWN",
+            "params": { "color": 192, "brightness": 160 }
+          },
+          "notes": "color 192 = bright_red in PAL_RED_BREAKDOWN. Targeting LEFT_CONNECTORS with mirror_lr: true auto-mirrors to RIGHT_CONNECTORS. Replaces both the default gold beat-flash trio and the rainbow ring with uniform red. Set duration_ms to end before the next segment if you want the defaults to resume automatically."
+        }
+      ]
     },
 
     "EFFECT_CONN_BEAT_FLASH_OVERRIDE": {
@@ -678,7 +933,20 @@
         { "name": "apply_to",          "type": "enum", "values": { "trio_only": 0, "full_set": 1 } }
       ],
       "description": "Override the default gold beat flash on the connector trio with custom color/timing.",
-      "when_to_use": "When the song calls for a different beat-flash color than gold (e.g., a red-themed segment where gold would clash)."
+      "when_to_use": "When the song calls for a different beat-flash color than gold (e.g., a red-themed segment where gold would clash).",
+      "examples": [
+        {
+          "context": "Crescendolls bridge — replace the default gold beat flash with cyan to match the PAL_MAGENTA_CYAN segment",
+          "cue": {
+            "at_ms": 0,
+            "effect": "EFFECT_CONN_BEAT_FLASH_OVERRIDE",
+            "zone": "LEFT_CONNECTORS",
+            "palette": "PAL_MAGENTA_CYAN",
+            "params": { "flash_color": 176, "flash_brightness": 200, "beats_between": 1, "decay_rate": 180, "apply_to": "trio_only" }
+          },
+          "notes": "flash_color 176 = octave_cyan_a in PAL_MAGENTA_CYAN. beats_between 1 = same cadence as the default gold flash, just color-swapped. apply_to trio_only leaves the 10-LED rainbow ring running its default cycle. To flash the entire 13-LED connector set instead, use apply_to full_set."
+        }
+      ]
     },
 
     "EFFECT_CONN_RAINBOW_OVERRIDE": {
@@ -691,7 +959,20 @@
         { "name": "saturation",    "type": "uint8", "range": [0, 255] }
       ],
       "description": "Adjust the default rainbow ring's speed/saturation/brightness without disabling it.",
-      "when_to_use": "Quick tweaks to make the rainbow feel right for a specific scene's energy (faster for chorus, slower for breakdown, etc.)."
+      "when_to_use": "Quick tweaks to make the rainbow feel right for a specific scene's energy (faster for chorus, slower for breakdown, etc.).",
+      "examples": [
+        {
+          "context": "One More Time intro — slow the default rainbow ring to a languid drift matching the song's pace",
+          "cue": {
+            "at_ms": 0,
+            "effect": "EFFECT_CONN_RAINBOW_OVERRIDE",
+            "zone": "LEFT_CONNECTORS",
+            "palette": "PAL_DISCOVERY",
+            "params": { "cycle_speed": 2, "brightness": 120, "hue_step": 25, "saturation": 240 }
+          },
+          "notes": "cycle_speed 2 = 0.2 Hz = one full rotation every 5 seconds, much slower than the default. hue_step 25 is the default LED-to-LED hue increment, giving a smooth multi-color ring. saturation 240 keeps colors vivid. This effect adjusts the existing rainbow; it does not disable the beat-flash trio."
+        }
+      ]
     }
   },
 
