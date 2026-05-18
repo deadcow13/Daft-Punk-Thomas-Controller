@@ -136,10 +136,12 @@
           "zone": "BOTH_VISORS",
           "palette": "PAL_DISCOVERY",
           "params": {
-            "color": 6,
-            "brightness": 150,
-            "sweep_direction": "bottom_to_top",
-            "decay_steepness": 180
+            "direction": "bottom_to_top",
+            "beats_per_wipe": 1,
+            "wave_color": 6,
+            "wave_width": 2,
+            "wave_brightness": 150,
+            "bg_brightness": 30
           },
           "_comment": "Beat-synced sweep upward on the visor — synchronized with kick."
         },
@@ -220,10 +222,12 @@
           "zone": "BOTH_VISORS",
           "palette": "PAL_DISCOVERY",
           "params": {
-            "color": 8,
-            "brightness": 170,
-            "sweep_direction": "bottom_to_top",
-            "decay_steepness": 200
+            "direction": "bottom_to_top",
+            "beats_per_wipe": 1,
+            "wave_color": 8,
+            "wave_width": 2,
+            "wave_brightness": 170,
+            "bg_brightness": 35
           }
         },
         {
@@ -289,10 +293,12 @@
           "zone": "BOTH_VISORS",
           "palette": "PAL_MAGENTA_CYAN",
           "params": {
-            "color": 6,
-            "brightness": 140,
-            "sweep_direction": "bottom_to_top",
-            "decay_steepness": 170
+            "direction": "bottom_to_top",
+            "beats_per_wipe": 1,
+            "wave_color": 6,
+            "wave_width": 2,
+            "wave_brightness": 140,
+            "bg_brightness": 25
           },
           "_comment": "PAL_MAGENTA_CYAN on visor for visual variety — differentiates this section from chorus_2."
         },
@@ -402,10 +408,12 @@
           "zone": "BOTH_VISORS",
           "palette": "PAL_DISCOVERY",
           "params": {
-            "color": 8,
-            "brightness": 185,
-            "sweep_direction": "bottom_to_top",
-            "decay_steepness": 210
+            "direction": "bottom_to_top",
+            "beats_per_wipe": 1,
+            "wave_color": 8,
+            "wave_width": 3,
+            "wave_brightness": 185,
+            "bg_brightness": 40
           },
           "_comment": "Max brightness sweep. Final section deserves maximum visual presence."
         },
