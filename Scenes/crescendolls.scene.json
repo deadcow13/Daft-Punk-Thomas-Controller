@@ -353,17 +353,18 @@
         },
         {
           "at_ms": 12000,
-          "effect": "EFFECT_EAR_EKG_PULSE",
+          "effect": "EFFECT_EAR_BEAT_GRADIENT",
           "zone": "BOTH_EARS",
           "palette": "PAL_DISCOVERY",
           "params": {
-            "pulse_color": 6,
-            "beats_per_pulse": 1,
-            "pulse_width_leds": 2,
-            "tail_decay": 150,
-            "base_brightness": 15
+            "decay_steepness": 130,
+            "bottom_color": 0,
+            "bottom_brightness": 12,
+            "top_brightness": 115,
+            "downbeat_flash": 148,
+            "subbeat_sparkle": 0
           },
-          "_comment": "~4s before seg_h groove return (t≈96.8s), switch to EKG pulse to build tension. Warm gold reappears after the cool-sweep section."
+          "_comment": "~4s before seg_h groove return (t≈96.8s), beat gradient builds tension. Warm gold reappears after the cool-sweep section. (Thomas: EKG replaced — diffuser makes individual LED pulses invisible.)"
         },
         {
           "at_ms": 12000,
@@ -466,17 +467,18 @@
         },
         {
           "at_ms": 6500,
-          "effect": "EFFECT_EAR_EKG_PULSE",
+          "effect": "EFFECT_EAR_BEAT_GRADIENT",
           "zone": "BOTH_EARS",
           "palette": "PAL_DISCOVERY",
           "params": {
-            "pulse_color": 4,
-            "beats_per_pulse": 1,
-            "pulse_width_leds": 2,
-            "tail_decay": 160,
-            "base_brightness": 18
+            "decay_steepness": 130,
+            "bottom_color": 0,
+            "bottom_brightness": 15,
+            "top_brightness": 120,
+            "downbeat_flash": 150,
+            "subbeat_sparkle": 0
           },
-          "_comment": "~6s in: second drop recovery (t≈138s in song). Switch back to Discovery EKG to rebuild — signals the final groove is coming."
+          "_comment": "~6s in: second drop recovery (t≈138s in song). Beat gradient rebuilds — signals the final groove is coming. (Thomas: EKG replaced — diffuser makes individual LED pulses invisible.)"
         },
         {
           "at_ms": 6500,
