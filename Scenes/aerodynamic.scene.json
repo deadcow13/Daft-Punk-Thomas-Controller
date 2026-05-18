@@ -174,16 +174,17 @@
         },
         {
           "at_ms": 120,
-          "_comment": "Early groove: EKG pulse, not full beat gradient yet. Lets the energy build naturally.",
-          "effect": "EFFECT_EAR_EKG_PULSE",
+          "_comment": "Early groove: soft beat gradient, not full intensity yet. Lets the energy build naturally. (Thomas: EKG replaced — diffuser makes individual LED pulses invisible.)",
+          "effect": "EFFECT_EAR_BEAT_GRADIENT",
           "zone": "BOTH_EARS",
           "palette": "PAL_DISCOVERY",
           "params": {
-            "pulse_color": 4,
-            "beats_per_pulse": 1,
-            "pulse_width_leds": 2,
-            "tail_decay": 150,
-            "base_brightness": 18
+            "decay_steepness": 120,
+            "bottom_color": 0,
+            "bottom_brightness": 12,
+            "top_brightness": 110,
+            "downbeat_flash": 145,
+            "subbeat_sparkle": 0
           }
         },
         {
@@ -367,16 +368,17 @@
         },
         {
           "at_ms": 8000,
-          "_comment": "Solo starting to build (~t=147.5s in song). EKG pulse emerges — like the guitar attack rhythm.",
-          "effect": "EFFECT_EAR_EKG_PULSE",
+          "_comment": "Solo starting to build (~t=147.5s in song). Beat gradient emerges — mirrors the guitar attack rhythm. (Thomas: EKG replaced — diffuser makes individual LED pulses invisible.)",
+          "effect": "EFFECT_EAR_BEAT_GRADIENT",
           "zone": "BOTH_EARS",
           "palette": "PAL_RED_BREAKDOWN",
           "params": {
-            "pulse_color": 6,
-            "beats_per_pulse": 1,
-            "pulse_width_leds": 3,
-            "tail_decay": 180,
-            "base_brightness": 20
+            "decay_steepness": 140,
+            "bottom_color": 0,
+            "bottom_brightness": 15,
+            "top_brightness": 130,
+            "downbeat_flash": 160,
+            "subbeat_sparkle": 0
           }
         },
         {

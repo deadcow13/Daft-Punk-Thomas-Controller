@@ -83,17 +83,18 @@
       "cues": [
         {
           "at_ms": 0,
-          "effect": "EFFECT_EAR_EKG_PULSE",
+          "effect": "EFFECT_EAR_BEAT_GRADIENT",
           "zone": "BOTH_EARS",
           "palette": "PAL_DISCOVERY",
           "params": {
-            "pulse_color": 4,
-            "beats_per_pulse": 1,
-            "pulse_width_leds": 2,
-            "tail_decay": 160,
-            "base_brightness": 20
+            "decay_steepness": 130,
+            "bottom_color": 0,
+            "bottom_brightness": 15,
+            "top_brightness": 120,
+            "downbeat_flash": 155,
+            "subbeat_sparkle": 0
           },
-          "_comment": "Per-beat pulse from bottom to top, gold-ish color (index 4 in PAL_DISCOVERY). Matches kick energy."
+          "_comment": "Beat gradient building tension before the drop. (Thomas: EKG replaced — diffuser makes individual LED pulses invisible.)"
         },
         {
           "at_ms": 0,
@@ -354,16 +355,17 @@
         },
         {
           "at_ms": 96000,
-          "_comment": "~20s before final drop (t≈238s in song), start building back. Switch ears to EKG pulse to signal re-entry.",
-          "effect": "EFFECT_EAR_EKG_PULSE",
+          "_comment": "~20s before final drop (t≈238s in song), start building back. Beat gradient signals re-entry. (Thomas: EKG replaced — diffuser makes individual LED pulses invisible.)",
+          "effect": "EFFECT_EAR_BEAT_GRADIENT",
           "zone": "BOTH_EARS",
           "palette": "PAL_DISCOVERY",
           "params": {
-            "pulse_color": 6,
-            "beats_per_pulse": 1,
-            "pulse_width_leds": 2,
-            "tail_decay": 140,
-            "base_brightness": 15
+            "decay_steepness": 125,
+            "bottom_color": 0,
+            "bottom_brightness": 12,
+            "top_brightness": 110,
+            "downbeat_flash": 145,
+            "subbeat_sparkle": 0
           }
         },
         {
