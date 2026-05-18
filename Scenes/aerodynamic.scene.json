@@ -207,10 +207,12 @@
           "zone": "BOTH_VISORS",
           "palette": "PAL_DISCOVERY",
           "params": {
-            "color": 6,
-            "brightness": 145,
-            "sweep_direction": "bottom_to_top",
-            "decay_steepness": 170
+            "direction": "bottom_to_top",
+            "beats_per_wipe": 1,
+            "wave_color": 6,
+            "wave_width": 2,
+            "wave_brightness": 145,
+            "bg_brightness": 30
           }
         }
       ]
@@ -277,10 +279,12 @@
           "zone": "BOTH_VISORS",
           "palette": "PAL_DISCOVERY",
           "params": {
-            "color": 7,
-            "brightness": 160,
-            "sweep_direction": "bottom_to_top",
-            "decay_steepness": 185
+            "direction": "bottom_to_top",
+            "beats_per_wipe": 1,
+            "wave_color": 7,
+            "wave_width": 2,
+            "wave_brightness": 160,
+            "bg_brightness": 35
           }
         },
         {
@@ -408,10 +412,12 @@
           "zone": "BOTH_VISORS",
           "palette": "PAL_RED_BREAKDOWN",
           "params": {
-            "color": 8,
-            "brightness": 150,
-            "sweep_direction": "bottom_to_top",
-            "decay_steepness": 190
+            "direction": "bottom_to_top",
+            "beats_per_wipe": 1,
+            "wave_color": 8,
+            "wave_width": 2,
+            "wave_brightness": 150,
+            "bg_brightness": 25
           }
         }
       ]
@@ -442,10 +448,12 @@
           "zone": "BOTH_VISORS",
           "palette": "PAL_DISCOVERY",
           "params": {
-            "color": 6,
-            "brightness": 165,
-            "sweep_direction": "bottom_to_top",
-            "decay_steepness": 180
+            "direction": "bottom_to_top",
+            "beats_per_wipe": 1,
+            "wave_color": 6,
+            "wave_width": 2,
+            "wave_brightness": 165,
+            "bg_brightness": 30
           }
         },
         {
