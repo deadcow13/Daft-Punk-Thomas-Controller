@@ -1,0 +1,16 @@
+Compiled harder_better_faster_stronger.scene.report successfully.
+
+  Scene:            harder_better_faster
+  Duration:         224.3 sec
+  Segments:         8  (pre_intro, intro, verse_1, verse_2, verse_3, breakdown, outro_lyr, outro_end)
+  Timeline entries: 8
+  Total cues:       259  (after mirror expansion)
+  Palettes used:    1
+  Text strings:     18  (234 bytes)
+  Binary size:      4699 bytes  (4.6 KB)
+  RAM estimate:     ≤ 4.6 KB  /  64 KB ceiling
+
+  Warnings: 3
+    [WARN] Segment 'pre_intro': very short (1200 ms)
+    [WARN] Segment 'pre_intro': no cues (only base effect runs for full duration)
+    [WARN] Segment 'outro_end': very short (1700 ms)

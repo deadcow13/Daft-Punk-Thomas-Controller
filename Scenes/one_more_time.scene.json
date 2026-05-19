@@ -41,7 +41,7 @@
       "cues": []
     },
     "intro": {
-      "_comment": "Filter sweep open. No kick. Warm slow breath on ears, dim gradient on visors. ~29s (bars 1-15).",
+      "_comment": "Filter sweep open. No kick. ~29s (bars 1-15). Matrix announces the song then DAFT PUNK while ears breathe warmly.",
       "nominal_duration_ms": 29000,
       "base_effect": "EFFECT_OFF",
       "base_palette": "PAL_INTRO_WARM",
@@ -55,10 +55,10 @@
             "bottom_color": 30,
             "top_color": 200,
             "breath_period_100ms": 50,
-            "min_brightness": 20,
-            "max_brightness": 110
+            "min_brightness": 0,
+            "max_brightness": 145
           },
-          "_comment": "5-second breath. Deep amber at base, bright amber at top. Restrained — this is a tease."
+          "_comment": "5-second breath. Ears pulse to darkness between peaks — diffuser makes floor glow invisible so we go to 0."
         },
         {
           "at_ms": 0,
@@ -72,11 +72,41 @@
             "top_brightness": 60
           },
           "_comment": "Very dim warm gradient. Just enough to show the visor is alive."
+        },
+        {
+          "at_ms": 0,
+          "_comment": "Matrix: song title scrolls across as the intro filter opens.",
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "palette": "PAL_INTRO_WARM",
+          "params": {
+            "text": "ONE MORE TIME",
+            "x_position": 32,
+            "y_position": 1,
+            "color": 200,
+            "brightness": 38,
+            "animation": "scroll_left_slow"
+          }
+        },
+        {
+          "at_ms": 14000,
+          "_comment": "Second half of intro: artist name scroll.",
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "palette": "PAL_INTRO_WARM",
+          "params": {
+            "text": "DAFT PUNK",
+            "x_position": 32,
+            "y_position": 1,
+            "color": 200,
+            "brightness": 38,
+            "animation": "scroll_left_slow"
+          }
         }
       ]
     },
     "pre_drop": {
-      "_comment": "Kick drum enters at bar 16. Energy building over 8 bars to the full drop. EKG pulse on ears escalates the tension.",
+      "_comment": "Kick drum enters at bar 16. Energy building over 8 bars to the full drop. Matrix switches to horizontal stripes — warm gold, building motion.",
       "nominal_duration_ms": 16000,
       "base_effect": "EFFECT_OFF",
       "base_palette": "PAL_DISCOVERY",
@@ -89,12 +119,12 @@
           "params": {
             "decay_steepness": 130,
             "bottom_color": 0,
-            "bottom_brightness": 15,
-            "top_brightness": 120,
-            "downbeat_flash": 155,
+            "bottom_brightness": 0,
+            "top_brightness": 140,
+            "downbeat_flash": 165,
             "subbeat_sparkle": 0
           },
-          "_comment": "Beat gradient building tension before the drop. (Thomas: EKG replaced — diffuser makes individual LED pulses invisible.)"
+          "_comment": "Beat gradient building tension. bottom 0 — punchy flashes only."
         },
         {
           "at_ms": 0,
@@ -108,11 +138,26 @@
             "top_brightness": 100
           },
           "_comment": "Richer gradient than intro — deeper color, more visible. Building anticipation."
+        },
+        {
+          "at_ms": 0,
+          "_comment": "Matrix: warm horizontal stripes scroll upward, pace building to the drop.",
+          "effect": "EFFECT_MATRIX_SCROLL_BG",
+          "zone": "MATRIX",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "pattern": "h_stripes",
+            "color_a": 128,
+            "color_b": 0,
+            "scroll_speed": 16,
+            "brightness": 32,
+            "pattern_period": 5
+          }
         }
       ]
     },
     "chorus_1": {
-      "_comment": "First full drop. Bass + kick. Big beat gradient on ears, visor comes alive. Flash on downbeat of the drop. ~12s (bars 24-30).",
+      "_comment": "First full drop. ~12.5s (bars 24-30). Matrix explodes into checkerboard on the hit.",
       "nominal_duration_ms": 12500,
       "base_effect": "EFFECT_OFF",
       "base_palette": "PAL_DISCOVERY",
@@ -129,7 +174,7 @@
             "include_matrix": 0
           },
           "duration_ms": 150,
-          "_comment": "Single downbeat punch flash on the drop hit. 150ms then EFFECT_EAR_BEAT_GRADIENT takes over."
+          "_comment": "Single downbeat punch flash on the drop hit."
         },
         {
           "at_ms": 0,
@@ -147,6 +192,21 @@
           "_comment": "Beat-synced sweep upward on the visor — synchronized with kick."
         },
         {
+          "at_ms": 0,
+          "_comment": "Matrix: checkerboard on the drop — dense, energetic geometry.",
+          "effect": "EFFECT_MATRIX_SCROLL_BG",
+          "zone": "MATRIX",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "pattern": "checkerboard",
+            "color_a": 128,
+            "color_b": 0,
+            "scroll_speed": 20,
+            "brightness": 38,
+            "pattern_period": 4
+          }
+        },
+        {
           "at_ms": 150,
           "effect": "EFFECT_EAR_BEAT_GRADIENT",
           "zone": "BOTH_EARS",
@@ -154,7 +214,7 @@
           "params": {
             "decay_steepness": 160,
             "bottom_color": 0,
-            "bottom_brightness": 25,
+            "bottom_brightness": 0,
             "top_brightness": 185,
             "downbeat_flash": 200,
             "subbeat_sparkle": 60
@@ -164,7 +224,7 @@
       ]
     },
     "gap_1": {
-      "_comment": "~2-bar break between chorus 1 and 2. Brief breath / filter pullback. Keep visuals alive but drop intensity.",
+      "_comment": "~2-bar break between chorus 1 and 2. Keep visuals alive but drop intensity.",
       "nominal_duration_ms": 4500,
       "base_effect": "EFFECT_OFF",
       "base_palette": "PAL_DISCOVERY",
@@ -178,10 +238,10 @@
             "bottom_color": 0,
             "top_color": 6,
             "breath_period_100ms": 20,
-            "min_brightness": 10,
-            "max_brightness": 80
+            "min_brightness": 0,
+            "max_brightness": 130
           },
-          "_comment": "Fast ~2s breath. Helmet stays warm during the audio gap."
+          "_comment": "Fast ~2s breath. Ears pulse to dark — punch comes back harder on chorus_2."
         },
         {
           "at_ms": 0,
@@ -198,7 +258,7 @@
       ]
     },
     "chorus_2": {
-      "_comment": "Second full drop. Highest measured energy in song (~0.226 RMS). Bigger downbeat flash, more sparkle. ~28s (bars 33-47).",
+      "_comment": "Second full drop. Highest measured energy in song (~0.226 RMS). ~28.5s (bars 33-47). 'ONE MORE TIME' text scroll over checkerboard matrix.",
       "nominal_duration_ms": 28500,
       "base_effect": "EFFECT_OFF",
       "base_palette": "PAL_DISCOVERY",
@@ -239,12 +299,27 @@
           "params": {
             "decay_steepness": 190,
             "bottom_color": 0,
-            "bottom_brightness": 30,
+            "bottom_brightness": 0,
             "top_brightness": 185,
             "downbeat_flash": 240,
             "subbeat_sparkle": 100
           },
           "_comment": "More aggressive decay + stronger sparkle than chorus_1. Highest energy section."
+        },
+        {
+          "at_ms": 150,
+          "_comment": "Matrix: song title scrolls over active checkerboard after the drop flash.",
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "text": "ONE MORE TIME",
+            "x_position": 32,
+            "y_position": 1,
+            "color": 128,
+            "brightness": 42,
+            "animation": "scroll_left_fast"
+          }
         }
       ]
     },
@@ -263,14 +338,14 @@
             "bottom_color": 0,
             "top_color": 4,
             "breath_period_100ms": 20,
-            "min_brightness": 5,
-            "max_brightness": 60
+            "min_brightness": 0,
+            "max_brightness": 130
           }
         }
       ]
     },
     "chorus_3": {
-      "_comment": "Third drop. Long groove section, ~48s (bars 49-73). Sustain the energy — slight palette variation to differentiate from chorus_2. Magenta-cyan visor to show passage of time.",
+      "_comment": "Third drop. Long groove section, ~48.5s (bars 49-73). Vertical stripes in neon palette for a different visual identity than chorus_2.",
       "nominal_duration_ms": 48500,
       "base_effect": "EFFECT_OFF",
       "base_palette": "PAL_DISCOVERY",
@@ -301,7 +376,22 @@
             "wave_brightness": 140,
             "bg_brightness": 25
           },
-          "_comment": "PAL_MAGENTA_CYAN on visor for visual variety — differentiates this section from chorus_2."
+          "_comment": "PAL_MAGENTA_CYAN on visor for visual variety — differentiates from chorus_2."
+        },
+        {
+          "at_ms": 0,
+          "_comment": "Matrix: vertical stripes in neon palette — gives this chorus a unique identity.",
+          "effect": "EFFECT_MATRIX_SCROLL_BG",
+          "zone": "MATRIX",
+          "palette": "PAL_NEON",
+          "params": {
+            "pattern": "v_stripes",
+            "color_a": 0,
+            "color_b": 128,
+            "scroll_speed": 22,
+            "brightness": 40,
+            "pattern_period": 4
+          }
         },
         {
           "at_ms": 120,
@@ -311,7 +401,7 @@
           "params": {
             "decay_steepness": 170,
             "bottom_color": 0,
-            "bottom_brightness": 25,
+            "bottom_brightness": 0,
             "top_brightness": 185,
             "downbeat_flash": 210,
             "subbeat_sparkle": 80
@@ -321,7 +411,7 @@
       ]
     },
     "breakdown": {
-      "_comment": "Stripped-back section. ~116s (bars 74-133). Vocal chops, lighter percussion. Breathing on ears, slow gradient on visor. Energy should feel intentionally reduced vs choruses.",
+      "_comment": "Stripped-back section. ~116s (bars 74-133). Vocal chops, lighter percussion. Matrix runs slow cool stripes for 96s then 'ONE MORE TIME' text signals the build-back.",
       "nominal_duration_ms": 116000,
       "base_effect": "EFFECT_OFF",
       "base_palette": "PAL_COOL_SWEEP",
@@ -335,10 +425,10 @@
             "bottom_color": 10,
             "top_color": 200,
             "breath_period_100ms": 35,
-            "min_brightness": 25,
-            "max_brightness": 130
+            "min_brightness": 0,
+            "max_brightness": 145
           },
-          "_comment": "3.5-second breath in cool blue-violet. A deliberate contrast to the warm Discovery palette of the choruses."
+          "_comment": "3.5-second breath in cool blue-violet. min 0 — punchy peaks against darkness."
         },
         {
           "at_ms": 0,
@@ -354,17 +444,47 @@
           "_comment": "Cool color visor — cyan-to-violet gradient. Calm and spacious."
         },
         {
+          "at_ms": 0,
+          "_comment": "Matrix: slow horizontal cool stripes for the whole breakdown — calm, dreamy.",
+          "effect": "EFFECT_MATRIX_SCROLL_BG",
+          "zone": "MATRIX",
+          "palette": "PAL_COOL_SWEEP",
+          "params": {
+            "pattern": "h_stripes",
+            "color_a": 0,
+            "color_b": 128,
+            "scroll_speed": 6,
+            "brightness": 25,
+            "pattern_period": 6
+          }
+        },
+        {
+          "at_ms": 88000,
+          "_comment": "'ONE MORE TIME' scrolls across the matrix as the build-back begins — signals the drop is coming.",
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "text": "ONE MORE TIME",
+            "x_position": 32,
+            "y_position": 1,
+            "color": 128,
+            "brightness": 38,
+            "animation": "scroll_left_slow"
+          }
+        },
+        {
           "at_ms": 96000,
-          "_comment": "~20s before final drop (t≈238s in song), start building back. Beat gradient signals re-entry. (Thomas: EKG replaced — diffuser makes individual LED pulses invisible.)",
+          "_comment": "~20s before final drop. Beat gradient signals re-entry.",
           "effect": "EFFECT_EAR_BEAT_GRADIENT",
           "zone": "BOTH_EARS",
           "palette": "PAL_DISCOVERY",
           "params": {
             "decay_steepness": 125,
             "bottom_color": 0,
-            "bottom_brightness": 12,
-            "top_brightness": 110,
-            "downbeat_flash": 145,
+            "bottom_brightness": 0,
+            "top_brightness": 140,
+            "downbeat_flash": 155,
             "subbeat_sparkle": 0
           }
         },
@@ -379,12 +499,27 @@
             "bottom_brightness": 25,
             "top_brightness": 100
           },
-          "_comment": "Transition visor back to PAL_DISCOVERY warm gold ahead of the final drop."
+          "_comment": "Transition visor back to warm gold ahead of the final drop."
+        },
+        {
+          "at_ms": 96000,
+          "_comment": "Matrix switches to fast diagonal on the build-back — urgency.",
+          "effect": "EFFECT_MATRIX_SCROLL_BG",
+          "zone": "MATRIX",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "pattern": "diagonal",
+            "color_a": 128,
+            "color_b": 0,
+            "scroll_speed": 20,
+            "brightness": 36,
+            "pattern_period": 4
+          }
         }
       ]
     },
     "final_drop": {
-      "_comment": "Final section. t=257.8s, ~63s to end (bars 134-167). Maximum energy — all parameters pushed. Outro ends with ambient breathe fade.",
+      "_comment": "Final section. t=257.8s, ~63s to end (bars 134-167). Maximum energy. 'ONE MORE TIME' leads, checkerboard follows.",
       "nominal_duration_ms": 63100,
       "base_effect": "EFFECT_OFF",
       "base_palette": "PAL_DISCOVERY",
@@ -402,7 +537,7 @@
             "include_matrix": 1
           },
           "duration_ms": 200,
-          "_comment": "Biggest drop flash in the song. Longer decay (200ms), includes matrix."
+          "_comment": "Biggest drop flash in the song. Longer decay, includes matrix."
         },
         {
           "at_ms": 0,
@@ -427,12 +562,42 @@
           "params": {
             "decay_steepness": 200,
             "bottom_color": 0,
-            "bottom_brightness": 35,
+            "bottom_brightness": 0,
             "top_brightness": 185,
             "downbeat_flash": 255,
             "subbeat_sparkle": 120
           },
-          "_comment": "Maximum parameters. Sharpest decay, maximum sparkle, max downbeat flash. This is the climax."
+          "_comment": "Maximum parameters. This is the climax."
+        },
+        {
+          "at_ms": 200,
+          "_comment": "Matrix: title text at the final drop, then checkerboard takes over on next scroll.",
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "text": "ONE MORE TIME",
+            "x_position": 32,
+            "y_position": 1,
+            "color": 128,
+            "brightness": 44,
+            "animation": "scroll_left_fast"
+          }
+        },
+        {
+          "at_ms": 8000,
+          "_comment": "After title scroll clears: max-energy checkerboard for the rest of the drop.",
+          "effect": "EFFECT_MATRIX_SCROLL_BG",
+          "zone": "MATRIX",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "pattern": "checkerboard",
+            "color_a": 128,
+            "color_b": 0,
+            "scroll_speed": 28,
+            "brightness": 44,
+            "pattern_period": 4
+          }
         },
         {
           "at_ms": 55000,
@@ -442,10 +607,10 @@
           "params": {
             "color": 4,
             "period_100ms": 40,
-            "min_brightness": 10,
-            "max_brightness": 80
+            "min_brightness": 0,
+            "max_brightness": 130
           },
-          "_comment": "~8s from end (t≈313s), song begins to fade out. Switch to ambient breathe to mirror the intro bookend. Warm amber fade to silence."
+          "_comment": "~8s from end. Switch to ambient breathe — warm amber bookend mirrors the intro."
         },
         {
           "at_ms": 55000,
@@ -458,7 +623,7 @@
             "bottom_brightness": 10,
             "top_brightness": 40
           },
-          "_comment": "Visor also mirrors intro — dim warm gradient as song fades. Bookend aesthetic."
+          "_comment": "Visor mirrors intro — dim warm gradient as song fades."
         }
       ]
     }
@@ -508,6 +673,9 @@
   "resources": {
     "sprites": [],
     "vu_sequences": [],
-    "text_strings": []
+    "text_strings": [
+      "ONE MORE TIME",
+      "DAFT PUNK"
+    ]
   }
 }

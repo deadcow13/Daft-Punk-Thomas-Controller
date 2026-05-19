@@ -1,0 +1,14 @@
+Compiled crescendolls.scene.report successfully.
+
+  Scene:            crescendolls
+  Duration:         211.6 sec
+  Segments:         11  (seg_a, seg_b, seg_c, seg_d, seg_e, seg_f, seg_g, seg_h, breakdown, final_groove, outro_fade)
+  Timeline entries: 11
+  Total cues:       51  (after mirror expansion)
+  Palettes used:    5
+  Text strings:     2  (90 bytes)
+  Binary size:      1295 bytes  (1.3 KB)
+  RAM estimate:     ≤ 1.3 KB  /  64 KB ceiling
+
+  Warnings: 0
+    (none)

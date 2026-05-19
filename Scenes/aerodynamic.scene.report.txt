@@ -1,0 +1,16 @@
+Compiled aerodynamic.scene.report successfully.
+
+  Scene:            aerodynamic
+  Duration:         207.5 sec
+  Segments:         8  (pre_intro, intro, groove_1, mid, groove_2, solo, groove_3, outro)
+  Timeline entries: 8
+  Total cues:       42  (after mirror expansion)
+  Palettes used:    4
+  Text strings:     1  (58 bytes)
+  Binary size:      1033 bytes  (1.0 KB)
+  RAM estimate:     ≤ 1.0 KB  /  64 KB ceiling
+
+  Warnings: 3
+    [WARN] Segment 'pre_intro': very short (3900 ms)
+    [WARN] Segment 'pre_intro': no cues (only base effect runs for full duration)
+    [WARN] Segment 'outro': very short (4100 ms)
