@@ -727,7 +727,7 @@ def compile_binary(scene, reg, scene_dir):
         # Segment header (12 bytes):
         #   name_offset(u16), name_len(u8), base_eff(u8),
         #   base_pal(u8), cue_count(u8), nominal_dur(u32), reserved(u16)
-        seg_lib += struct.pack('<HBBBBIh',
+        seg_lib += struct.pack('<HBBBBIH',
             name_off, len(seg_name), base_eff, base_pal,
             len(cues), seg['nominal_duration_ms'], 0)
 
