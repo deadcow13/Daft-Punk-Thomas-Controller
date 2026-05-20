@@ -2451,6 +2451,106 @@
         }
       ]
     },
+    "EFFECT_MATRIX_EYES": {
+      "id": 49,
+      "zones": ["MATRIX"],
+      "params": [
+        {
+          "name": "color",
+          "type": "palette_index",
+          "description": "Palette index for the iris fill. Bright saturated colors read best — cyan, gold, red, or magenta. The pupil center (if pupil_mode>0) is rendered darker automatically."
+        },
+        {
+          "name": "brightness",
+          "type": "uint8",
+          "range": [0, 45],
+          "description": "Peak iris brightness. Subject to MATRIX_BRIGHTNESS_MAX=45. 38–45 recommended — eyes need to be vivid to read as eyes rather than blobs."
+        },
+        {
+          "name": "blink_rate",
+          "type": "uint8",
+          "range": [1, 32],
+          "description": "Beats between blinks. 4=blinks every 4 beats (once per bar at 4/4), 8=every 2 bars, 16=very occasional. The blink closes and reopens within one beat regardless of this value."
+        },
+        {
+          "name": "blink_speed",
+          "type": "uint8",
+          "range": [1, 10],
+          "description": "How quickly the eyelid closes and reopens. 1=very slow dramatic blink (takes most of the beat), 5=natural blink, 10=snap blink (single frame). Slow blinks feel sleepy or ominous; snap blinks feel robotic."
+        },
+        {
+          "name": "look_mode",
+          "type": "uint8",
+          "range": [0, 2],
+          "description": "0=forward stare (pupils fixed center — unsettling). 1=wander (pupils drift slowly left/right at random intervals, pausing at each position). 2=beat-snap (pupils shift to a new random position on each downbeat, locked to the music rhythm)."
+        },
+        {
+          "name": "expression",
+          "type": "uint8",
+          "range": [0, 2],
+          "description": "0=neutral oval (symmetrical open eye shape). 1=angry (top edge of each eye angles inward toward the nose — brow-furrowed look). 2=sleepy (top eyelid droops halfway, eyes are half-closed — heavy-lidded look). Expression changes the pixel mask used for the eye outline."
+        },
+        {
+          "name": "pupil_mode",
+          "type": "uint8",
+          "range": [0, 2],
+          "description": "0=solid iris (entire eye filled with color — simple and bold). 1=dark pupil (center 2×2 area rendered at ~20% brightness creating iris+pupil separation). 2=beat-dilate (pupil contracts to 1 pixel on downbeat then dilates back to 2×2 — eerie pulsing effect synchronized to music)."
+        }
+      ],
+      "description": "Two procedurally animated eyes on the 32×8 matrix. Each eye is a ~10×6 pixel oval shape with an eyelid that blinks independently from a shared blink timer. The eyes are centered vertically (1-row margin top/bottom) and positioned symmetrically on the left and right halves of the matrix — left eye at approximately columns 4–13, right eye at approximately columns 18–27, with a 4-column gap between them. The pupils can drift or snap to look left/right within their socket. Blink animation collapses the eye vertically row-by-row from outside in, holds closed for one frame, then reopens. Combine with a slow EFFECT_EAR_BREATHE for an eerie staring presence effect.",
+      "when_to_use": "Intros, breakdowns, dramatic pauses, any moment calling for a spooky or robotic stare. Works extremely well for slower Daft Punk tracks and atmospheric transitions. The helmet literally has a face — lean into it. beat_snap look_mode (2) makes the eyes feel alive and reactive during active sections. expression=1 (angry) during intense builds, expression=2 (sleepy) during slow breakdowns.",
+      "when_not_to_use": "Very high-energy sections where faster effects (CYLON, RAIN, RADIATE) better match the energy. Don't layer with EFFECT_MATRIX_TEXT — the eyes and text compete for the same pixel real estate. Not suitable when a sprite is playing in the same column range.",
+      "notes": [
+        "The left eye occupies columns 4–13, right eye columns 18–27. Columns 0–3, 14–17, and 28–31 are dark — giving a natural frame around the eyes.",
+        "blink_rate 4 (every bar) is the most natural feel. blink_rate 8 feels occasional and eerie. blink_rate 1 (every beat) looks like rapid mechanical blinking — very robotic.",
+        "look_mode 0 (unblinking forward stare) with expression 0 is deeply unsettling. Use intentionally.",
+        "pupil_mode 2 (beat-dilate) is subtle but effective — the pupil contraction lands on the kick drum, which reads as the eyes 'reacting' to the music.",
+        "blink_speed 10 (snap) + blink_rate 4 + look_mode 2 (beat-snap) creates a robotic, precise feel good for Harder Better Faster Stronger.",
+        "blink_speed 2 + look_mode 1 (wander) + expression 2 (sleepy) is perfect for slow breakdown sections."
+      ],
+      "examples": [
+        {
+          "context": "Crescendolls breakdown — eerie forward stare, cyan eyes, slow blink",
+          "cue": {
+            "at_ms": 0,
+            "duration_ms": 8000,
+            "effect": "EFFECT_MATRIX_EYES",
+            "zone": "MATRIX",
+            "palette": "PAL_DISCOVERY",
+            "params": {
+              "color": 64,
+              "brightness": 42,
+              "blink_rate": 8,
+              "blink_speed": 3,
+              "look_mode": 0,
+              "expression": 0,
+              "pupil_mode": 1
+            }
+          },
+          "notes": "color 64 = octave_cyan in PAL_DISCOVERY. blink_rate 8 = very infrequent blinking for an unsettling stare. blink_speed 3 = slow deliberate blink. look_mode 0 = fixed forward — no gaze drift. expression 0 = neutral oval. pupil_mode 1 = dark center adds iris/pupil detail. Pair with EFFECT_EAR_BREATHE using the same cyan for a calm, eerie atmosphere."
+        },
+        {
+          "context": "Harder Better Faster Stronger chorus — robotic snap-blinking gold eyes locked to the beat",
+          "cue": {
+            "at_ms": 0,
+            "duration_ms": 16000,
+            "effect": "EFFECT_MATRIX_EYES",
+            "zone": "MATRIX",
+            "palette": "PAL_DISCOVERY",
+            "params": {
+              "color": 128,
+              "brightness": 44,
+              "blink_rate": 4,
+              "blink_speed": 10,
+              "look_mode": 2,
+              "expression": 1,
+              "pupil_mode": 2
+            }
+          },
+          "notes": "color 128 = helmet_gold. blink_rate 4 = one blink per bar. blink_speed 10 = snap blink (one frame) — robotic. look_mode 2 = pupils snap to new position on each downbeat. expression 1 = angry brow furrow matches the intensity of the track. pupil_mode 2 = beat-dilate pulses the pupil on every kick. Pair with EFFECT_EAR_BEAT_SOLID in matching gold."
+        }
+      ]
+    },
     "EFFECT_FULL_FLASH": {
       "id": 60,
       "zones": [
