@@ -18,7 +18,7 @@
         "Using EFFECT_FULL_FLASH too often. It's a punctuation effect, not a base layer."
       ],
       "thomas_hardware_notes": {
-        "ear_diffuser": "Thomas helmet ear hardware note: the ear LEDs sit behind a diffuser panel used for edge lighting. Max 2 distinct colors visible at once. Effects that address individual LEDs (EKG pulse, sparkle) are not effective \u2014 use whole-zone effects (SOLID, GRADIENT, BEAT_GRADIENT, BREATHE) instead. Guy's helmet has full LED visibility and supports all ear effects.",
+        "ear_diffuser": "Thomas helmet ear hardware note: the ear LEDs sit behind a diffuser panel used for edge lighting. All 16 LEDs blend into a single perceived color \u2014 gradient detail is invisible. Use EFFECT_EAR_BEAT_SOLID for beat-driven sections (uniform color, whole-ear flash on beat). EFFECT_EAR_BREATHE for atmospheric sections. EFFECT_EAR_SOLID for static holds. Do NOT use EFFECT_EAR_BEAT_GRADIENT, EFFECT_EAR_EKG_PULSE, or EFFECT_EAR_GRADIENT on Thomas \u2014 those are for Guy's helmet where the diamond zones are individually visible.",
         "ear_effects_to_avoid": [
           "EFFECT_EAR_EKG_PULSE",
           "EFFECT_VISOR_SPARKLE"
@@ -1181,7 +1181,7 @@
       ],
       "description": "A bright pulse travels through the diamond: BOT_PEAK \u2192 LOWER \u2192 FLAT \u2192 UPPER \u2192 TOP_PEAK and back. Anchored to the beat grid.",
       "when_to_use": "When the ear should feel 'alive' with rhythmic motion. Distinct from EFFECT_EAR_BEAT_GRADIENT \u2014 that fills the whole ear with each beat color, this is a discrete pulse traveling through.",
-      "when_not_to_use": "When the visor is already doing a lot of motion \u2014 the ear pulse might compete. Quiet sections. NOT SUITABLE FOR THOMAS HELMET: the ears sit behind a diffuser for edge lighting \u2014 individual LED pulse patterns are invisible through diffuser material. Use EFFECT_EAR_BEAT_GRADIENT instead, which produces a whole-zone brightness pulse that reads clearly diffused. This effect is fully appropriate for Guy's helmet where ears have full LED visibility.",
+      "when_not_to_use": "When the visor is already doing a lot of motion \u2014 the ear pulse might compete. Quiet sections. NOT SUITABLE FOR THOMAS HELMET: the ears sit behind a diffuser for edge lighting \u2014 individual LED pulse patterns are invisible through diffuser material. Use EFFECT_EAR_BEAT_SOLID instead for Thomas helmet — it produces a uniform whole-zone brightness pulse with no gradient, which is exactly what reads through a diffuser. EFFECT_EAR_BEAT_GRADIENT is appropriate for Guy's helmet where the diamond zones are individually visible.",
       "examples": [
         {
           "context": "Aerodynamic breakdown \u2014 ear pulses with the beat, blood-red wave traveling BOT_PEAK to TOP_PEAK",
@@ -1199,6 +1199,77 @@
             }
           },
           "notes": "pulse_color 192 = bright_red in PAL_RED_BREAKDOWN. beats_per_pulse 1 = one traversal per beat. pulse_width_leds 2 keeps the pulse tight and crisp. tail_decay 180 fades fast \u2014 each pulse is gone before the next fires. base_brightness 20 holds a dim floor between pulses."
+        }
+      ]
+    },
+    "EFFECT_EAR_BEAT_SOLID": {
+      "id": 6,
+      "zones": [
+        "LEFT_EAR",
+        "RIGHT_EAR",
+        "BOTH_EARS"
+      ],
+      "params": [
+        {
+          "name": "color",
+          "type": "palette_index",
+          "description": "Single color applied uniformly to all 16 ear LEDs. All LEDs are identical — no gradient."
+        },
+        {
+          "name": "peak_brightness",
+          "type": "uint8",
+          "range": [0, 255],
+          "description": "Brightness at the beat peak. Subject to EAR_VISOR_BRIGHTNESS_MAX (185) in firmware. Recommended range 125–185 when ears are behind a diffuser."
+        },
+        {
+          "name": "decay_steepness",
+          "type": "uint8",
+          "range": [0, 255],
+          "description": "How fast brightness falls after each beat peak. 0 = no decay (held flat), 180 = tight beat-locked decay, 255 = instant cut to zero. Match to music feel."
+        },
+        {
+          "name": "downbeat_flash",
+          "type": "uint8",
+          "range": [0, 255],
+          "description": "0 = disabled. Otherwise, a uniform white-flash overlay applied to all LEDs on beat 1 of each bar. Adds a stronger visual punch on the downbeat vs the regular beat flashes."
+        }
+      ],
+      "description": "Uniform single-color beat flash. All 16 ear LEDs are the same color and brightness at all times — no gradient, no zone differentiation. The whole ear pulses as one unit in sync with the beat grid, with a brightness envelope that peaks on each beat and decays between beats. Designed for ears behind a diffuser where gradient detail is invisible.",
+      "when_to_use": "Thomas helmet in all beat-driven sections. Primary ear effect for the Thomas helmet since the diffuser makes gradient detail invisible. Looks like a single large LED pulsing with the music — clean, punchy, and readable at distance.",
+      "when_not_to_use": "Guy helmet (use EFFECT_EAR_BEAT_GRADIENT there — LEDs are fully visible). Atmospheric sections without a clear beat (use EFFECT_EAR_BREATHE instead). Any context where color variation per LED zone is desired.",
+      "notes": "The companion to EFFECT_EAR_BEAT_GRADIENT — same beat-sync behavior, no gradient. EFFECT_EAR_BEAT_GRADIENT remains the correct choice for Guy's helmet where the diamond zones are individually visible.",
+      "examples": [
+        {
+          "context": "One More Time chorus — whole ear flashes gold on every beat, strong downbeat emphasis",
+          "cue": {
+            "at_ms": 0,
+            "effect": "EFFECT_EAR_BEAT_SOLID",
+            "zone": "BOTH_EARS",
+            "palette": "PAL_DISCOVERY",
+            "params": {
+              "color": 128,
+              "peak_brightness": 185,
+              "decay_steepness": 180,
+              "downbeat_flash": 220
+            }
+          },
+          "notes": "color 128 = helmet_gold in PAL_DISCOVERY. peak_brightness 185 is the EAR_VISOR_BRIGHTNESS_MAX ceiling — all 16 LEDs hit max on every beat. decay_steepness 180 gives a tight decay that clears before the next beat, keeping each hit punchy. downbeat_flash 220 adds a white boost on beat 1 of each bar for emphasis."
+        },
+        {
+          "context": "Aerodynamic solo section — dim red uniform pulse, building intensity",
+          "cue": {
+            "at_ms": 0,
+            "effect": "EFFECT_EAR_BEAT_SOLID",
+            "zone": "BOTH_EARS",
+            "palette": "PAL_RED_BREAKDOWN",
+            "params": {
+              "color": 128,
+              "peak_brightness": 140,
+              "decay_steepness": 140,
+              "downbeat_flash": 0
+            }
+          },
+          "notes": "No downbeat_flash during the building tension phase — the regular beat pulse is enough. Raise peak_brightness and add downbeat_flash at the climax moment."
         }
       ]
     },
