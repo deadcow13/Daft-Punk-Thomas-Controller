@@ -11,19 +11,19 @@
     "first_downbeat_ms": 1625,
     "total_bars": 110,
     "beat_tracker": "Audacity VAMP sub-beat labels (CrescendollsAnalysis.txt), 124.114 BPM confirmed",
-    "segment_source": "crescendolls_helmet.ino — SEG_A through SEG_G boundaries used verbatim, outro sub-sectioned from WAV energy analysis",
+    "segment_source": "crescendolls_helmet.ino \u2014 SEG_A through SEG_G boundaries used verbatim, outro sub-sectioned from WAV energy analysis",
     "structural_summary": [
-      "0–24.2s   Seg A: intro build — arpeggiated synth, energy 0.087 avg, ramps from near-silence",
-      "24.2–38.6s Seg B: locked groove — kick+bass enters, halo rotate feel, 0.120 avg (14.4s)",
-      "38.6–52.4s Seg C: escalation — additional layers stack, 0.157 avg, builds through 8 bars (13.8s)",
-      "52.4–60.0s Seg D: post-climax plateau — fullest texture in first half, 0.196 avg (7.6s)",
-      "60.0–67.4s Seg E: peak energy — highest RMS in song 0.215, snap-fills, wall-of-sound (7.4s)",
-      "67.4–84.8s Seg F: sustained peak — longest high-energy section, 0.217 avg (17.4s)",
-      "84.8–100.8s Seg G: cool-down — drops to 0.148, stripped back (16.0s)",
-      "100.8–131.5s Seg H: groove return — back to full energy 0.22+, longest groove section (30.7s)",
-      "131.5–144.0s breakdown — two brief energy drops/returns, stutter feel (12.5s)",
-      "144.0–193.5s final_groove — 50s of peak energy, highest sustained RMS in song",
-      "193.5–211.6s outro_fade — stepwise decay with gaps, ends in silence"
+      "0\u201324.2s   Seg A: intro build \u2014 arpeggiated synth, energy 0.087 avg, ramps from near-silence",
+      "24.2\u201338.6s Seg B: locked groove \u2014 kick+bass enters, halo rotate feel, 0.120 avg (14.4s)",
+      "38.6\u201352.4s Seg C: escalation \u2014 additional layers stack, 0.157 avg, builds through 8 bars (13.8s)",
+      "52.4\u201360.0s Seg D: post-climax plateau \u2014 fullest texture in first half, 0.196 avg (7.6s)",
+      "60.0\u201367.4s Seg E: peak energy \u2014 highest RMS in song 0.215, snap-fills, wall-of-sound (7.4s)",
+      "67.4\u201384.8s Seg F: sustained peak \u2014 longest high-energy section, 0.217 avg (17.4s)",
+      "84.8\u2013100.8s Seg G: cool-down \u2014 drops to 0.148, stripped back (16.0s)",
+      "100.8\u2013131.5s Seg H: groove return \u2014 back to full energy 0.22+, longest groove section (30.7s)",
+      "131.5\u2013144.0s breakdown \u2014 two brief energy drops/returns, stutter feel (12.5s)",
+      "144.0\u2013193.5s final_groove \u2014 50s of peak energy, highest sustained RMS in song",
+      "193.5\u2013211.6s outro_fade \u2014 stepwise decay with gaps, ends in silence"
     ]
   },
   "beat_grid": {
@@ -36,7 +36,7 @@
   "mirror_lr": true,
   "segments": {
     "seg_a": {
-      "_comment": "Intro build. 0–24.2s, 12.5 bars. Arpeggiated synth only, no kick. Matrix: 'CRESCENDOLLS' text scrolls as the synth opens. Ears breathe — min 0 so they pulse to darkness between peaks.",
+      "_comment": "Intro build. 0\u201324.2s, 12.5 bars. Arpeggiated synth only, no kick. Matrix: 'CRESCENDOLLS' text scrolls as the synth opens. Ears breathe \u2014 min 0 so they pulse to darkness between peaks.",
       "nominal_duration_ms": 24200,
       "base_effect": "EFFECT_OFF",
       "base_palette": "PAL_INTRO_WARM",
@@ -53,7 +53,7 @@
             "min_brightness": 0,
             "max_brightness": 145
           },
-          "_comment": "5.5s breath. Ears pulse to dark — diffuser floor glow invisible below threshold."
+          "_comment": "5.5s breath. Ears pulse to dark \u2014 diffuser floor glow invisible below threshold."
         },
         {
           "at_ms": 0,
@@ -66,7 +66,7 @@
             "bottom_brightness": 10,
             "top_brightness": 50
           },
-          "_comment": "Very dim warm gradient — just enough to show the visor is alive."
+          "_comment": "Very dim warm gradient \u2014 just enough to show the visor is alive."
         },
         {
           "at_ms": 0,
@@ -85,23 +85,21 @@
         },
         {
           "at_ms": 16000,
-          "effect": "EFFECT_EAR_BEAT_GRADIENT",
+          "effect": "EFFECT_EAR_BEAT_SOLID",
           "zone": "BOTH_EARS",
           "palette": "PAL_INTRO_WARM",
           "params": {
+            "color": 190,
+            "peak_brightness": 160,
             "decay_steepness": 100,
-            "bottom_color": 30,
-            "bottom_brightness": 0,
-            "top_brightness": 145,
-            "downbeat_flash": 160,
-            "subbeat_sparkle": 0
+            "downbeat_flash": 160
           },
-          "_comment": "~8s before kick enters: gentle beat gradient foreshadows the rhythm."
+          "_comment": "~8s before kick enters: gentle beat solid foreshadows the rhythm."
         }
       ]
     },
     "seg_b": {
-      "_comment": "Locked groove. 24.2–38.6s, 7.5 bars. Kick + bass enters. PAL_MAGENTA_CYAN. Matrix: vertical stripes in magenta/cyan — matches ear and visor palette for a cohesive hot-pink/teal identity.",
+      "_comment": "Locked groove. 24.2\u201338.6s, 7.5 bars. Kick + bass enters. PAL_MAGENTA_CYAN. Matrix: vertical stripes in magenta/cyan \u2014 matches ear and visor palette for a cohesive hot-pink/teal identity.",
       "nominal_duration_ms": 14400,
       "base_effect": "EFFECT_OFF",
       "base_palette": "PAL_MAGENTA_CYAN",
@@ -118,7 +116,7 @@
             "include_matrix": 0
           },
           "duration_ms": 120,
-          "_comment": "Kick entry flash — marks the groove starting."
+          "_comment": "Kick entry flash \u2014 marks the groove starting."
         },
         {
           "at_ms": 0,
@@ -137,38 +135,37 @@
         },
         {
           "at_ms": 0,
-          "_comment": "Matrix: v_stripes in magenta/cyan — tight vertical columns matching the halo rotate energy.",
-          "effect": "EFFECT_MATRIX_SCROLL_BG",
+          "_comment": "Matrix: cylon sweep \u2014 bar bounces across the display, beat-locked.",
+          "effect": "EFFECT_MATRIX_CYLON",
           "zone": "MATRIX",
           "palette": "PAL_MAGENTA_CYAN",
           "params": {
-            "pattern": "v_stripes",
-            "color_a": 0,
-            "color_b": 128,
-            "scroll_speed": 16,
-            "brightness": 32,
-            "pattern_period": 4
+            "color": 128,
+            "bar_width": 2,
+            "trail_length": 7,
+            "speed": 30,
+            "brightness": 42,
+            "direction": 0,
+            "beat_sync": 1
           }
         },
         {
           "at_ms": 120,
-          "effect": "EFFECT_EAR_BEAT_GRADIENT",
+          "effect": "EFFECT_EAR_BEAT_SOLID",
           "zone": "BOTH_EARS",
           "palette": "PAL_MAGENTA_CYAN",
           "params": {
+            "color": 190,
+            "peak_brightness": 160,
             "decay_steepness": 145,
-            "bottom_color": 0,
-            "bottom_brightness": 0,
-            "top_brightness": 165,
-            "downbeat_flash": 185,
-            "subbeat_sparkle": 30
+            "downbeat_flash": 185
           },
-          "_comment": "Magenta/cyan cycling. bottom 0 — punchy flashes against darkness."
+          "_comment": "Magenta/cyan cycling. bottom 0 \u2014 punchy flashes against darkness."
         }
       ]
     },
     "seg_c": {
-      "_comment": "Escalation. 38.6–52.4s, 7.2 bars. Synth layers stack. PAL_DISCOVERY replaces PAL_MAGENTA_CYAN. Matrix: diagonal stripes accelerating — the diagonal motion conveys building energy.",
+      "_comment": "Escalation. 38.6\u201352.4s, 7.2 bars. Synth layers stack. PAL_DISCOVERY replaces PAL_MAGENTA_CYAN. Matrix: diagonal stripes accelerating \u2014 the diagonal motion conveys building energy.",
       "nominal_duration_ms": 13800,
       "base_effect": "EFFECT_OFF",
       "base_palette": "PAL_DISCOVERY",
@@ -204,56 +201,53 @@
         },
         {
           "at_ms": 0,
-          "_comment": "Matrix: diagonal stripes — techy escalation pattern in gold/indigo.",
-          "effect": "EFFECT_MATRIX_SCROLL_BG",
+          "_comment": "Matrix: rain \u2014 falling columns with glow trails, building intensity.",
+          "effect": "EFFECT_MATRIX_RAIN",
           "zone": "MATRIX",
           "palette": "PAL_DISCOVERY",
           "params": {
-            "pattern": "diagonal",
-            "color_a": 128,
-            "color_b": 0,
-            "scroll_speed": 18,
-            "brightness": 34,
-            "pattern_period": 4
+            "color": 128,
+            "density": 14,
+            "speed": 20,
+            "trail_length": 4,
+            "brightness": 40,
+            "color_mode": 0,
+            "spawn_mode": 0
           }
         },
         {
           "at_ms": 120,
-          "effect": "EFFECT_EAR_BEAT_GRADIENT",
+          "effect": "EFFECT_EAR_BEAT_SOLID",
           "zone": "BOTH_EARS",
           "palette": "PAL_DISCOVERY",
           "params": {
+            "color": 190,
+            "peak_brightness": 160,
             "decay_steepness": 165,
-            "bottom_color": 0,
-            "bottom_brightness": 0,
-            "top_brightness": 180,
-            "downbeat_flash": 200,
-            "subbeat_sparkle": 55
+            "downbeat_flash": 200
           },
           "_comment": "Full Discovery palette cycling. Escalation visible in higher decay and sparkle vs seg_b."
         }
       ]
     },
     "seg_d": {
-      "_comment": "Post-climax plateau. 52.4–60.0s, 4 bars. Fullest texture in first half, 0.196 avg. Matrix: diagonal stays, brightness steps up to match the peak texture.",
+      "_comment": "Post-climax plateau. 52.4\u201360.0s, 4 bars. Fullest texture in first half, 0.196 avg. Matrix: diagonal stays, brightness steps up to match the peak texture.",
       "nominal_duration_ms": 7600,
       "base_effect": "EFFECT_OFF",
       "base_palette": "PAL_DISCOVERY",
       "cues": [
         {
           "at_ms": 0,
-          "effect": "EFFECT_EAR_BEAT_GRADIENT",
+          "effect": "EFFECT_EAR_BEAT_SOLID",
           "zone": "BOTH_EARS",
           "palette": "PAL_DISCOVERY",
           "params": {
+            "color": 190,
+            "peak_brightness": 160,
             "decay_steepness": 180,
-            "bottom_color": 0,
-            "bottom_brightness": 0,
-            "top_brightness": 185,
-            "downbeat_flash": 215,
-            "subbeat_sparkle": 70
+            "downbeat_flash": 215
           },
-          "_comment": "Registry Crescendolls example params. bottom 0 — pure beat punches."
+          "_comment": "Registry Crescendolls example params. bottom 0 \u2014 pure beat punches."
         },
         {
           "at_ms": 0,
@@ -268,27 +262,28 @@
             "wave_brightness": 170,
             "bg_brightness": 25
           },
-          "_comment": "Top-to-bottom wipe — gravity after the upward fill of seg_c."
+          "_comment": "Top-to-bottom wipe \u2014 gravity after the upward fill of seg_c."
         },
         {
           "at_ms": 0,
-          "_comment": "Matrix: diagonal brighter — plateau energy at its fullest.",
-          "effect": "EFFECT_MATRIX_SCROLL_BG",
+          "_comment": "Matrix: rain \u2014 falling columns with glow trails, building intensity.",
+          "effect": "EFFECT_MATRIX_RAIN",
           "zone": "MATRIX",
           "palette": "PAL_DISCOVERY",
           "params": {
-            "pattern": "diagonal",
-            "color_a": 128,
-            "color_b": 0,
-            "scroll_speed": 22,
+            "color": 128,
+            "density": 14,
+            "speed": 20,
+            "trail_length": 4,
             "brightness": 40,
-            "pattern_period": 4
+            "color_mode": 0,
+            "spawn_mode": 0
           }
         }
       ]
     },
     "seg_e": {
-      "_comment": "Peak energy. 60.0–67.4s, 3.8 bars. Highest RMS in song (0.215). Matrix: checkerboard — densest possible pattern for the densest moment in the first half.",
+      "_comment": "Peak energy. 60.0\u201367.4s, 3.8 bars. Highest RMS in song (0.215). Matrix: checkerboard \u2014 densest possible pattern for the densest moment in the first half.",
       "nominal_duration_ms": 7400,
       "base_effect": "EFFECT_OFF",
       "base_palette": "PAL_DISCOVERY",
@@ -305,7 +300,7 @@
             "include_matrix": 0
           },
           "duration_ms": 140,
-          "_comment": "Peak energy arrival flash — brightest single moment in the first half."
+          "_comment": "Peak energy arrival flash \u2014 brightest single moment in the first half."
         },
         {
           "at_ms": 0,
@@ -324,53 +319,51 @@
         },
         {
           "at_ms": 0,
-          "_comment": "Matrix: checkerboard at peak — max pattern density for max energy.",
-          "effect": "EFFECT_MATRIX_SCROLL_BG",
+          "_comment": "Matrix: rings radiate from center on each beat \u2014 kinetic drop energy.",
+          "effect": "EFFECT_MATRIX_RADIATE",
           "zone": "MATRIX",
           "palette": "PAL_DISCOVERY",
           "params": {
-            "pattern": "checkerboard",
-            "color_a": 128,
-            "color_b": 0,
-            "scroll_speed": 25,
+            "color": 190,
             "brightness": 42,
-            "pattern_period": 4
+            "speed": 20,
+            "ring_thickness": 2,
+            "ring_count": 2,
+            "ring_spacing": 6,
+            "fade_out": 1,
+            "beat_trigger": 1
           }
         },
         {
           "at_ms": 140,
-          "effect": "EFFECT_EAR_BEAT_GRADIENT",
+          "effect": "EFFECT_EAR_BEAT_SOLID",
           "zone": "BOTH_EARS",
           "palette": "PAL_DISCOVERY",
           "params": {
+            "color": 190,
+            "peak_brightness": 160,
             "decay_steepness": 195,
-            "bottom_color": 0,
-            "bottom_brightness": 0,
-            "top_brightness": 185,
-            "downbeat_flash": 230,
-            "subbeat_sparkle": 85
+            "downbeat_flash": 230
           }
         }
       ]
     },
     "seg_f": {
-      "_comment": "Sustained peak. 67.4–84.8s, 9 bars. Longest high-energy section, 0.217 avg. Matrix: checkerboard holds at ceiling brightness for the full 17 bars.",
+      "_comment": "Sustained peak. 67.4\u201384.8s, 9 bars. Longest high-energy section, 0.217 avg. Matrix: checkerboard holds at ceiling brightness for the full 17 bars.",
       "nominal_duration_ms": 17400,
       "base_effect": "EFFECT_OFF",
       "base_palette": "PAL_DISCOVERY",
       "cues": [
         {
           "at_ms": 0,
-          "effect": "EFFECT_EAR_BEAT_GRADIENT",
+          "effect": "EFFECT_EAR_BEAT_SOLID",
           "zone": "BOTH_EARS",
           "palette": "PAL_DISCOVERY",
           "params": {
+            "color": 190,
+            "peak_brightness": 160,
             "decay_steepness": 188,
-            "bottom_color": 0,
-            "bottom_brightness": 0,
-            "top_brightness": 185,
-            "downbeat_flash": 220,
-            "subbeat_sparkle": 80
+            "downbeat_flash": 220
           }
         },
         {
@@ -386,45 +379,44 @@
             "wave_brightness": 175,
             "bg_brightness": 22
           },
-          "_comment": "Inner-to-outer wipe — new direction for visual variety in the long sustained section."
+          "_comment": "Inner-to-outer wipe \u2014 new direction for visual variety in the long sustained section."
         },
         {
           "at_ms": 0,
-          "_comment": "Matrix: checkerboard at ceiling for the full sustained peak.",
-          "effect": "EFFECT_MATRIX_SCROLL_BG",
+          "_comment": "Matrix: cylon sweep \u2014 bar bounces across the display, beat-locked.",
+          "effect": "EFFECT_MATRIX_CYLON",
           "zone": "MATRIX",
           "palette": "PAL_DISCOVERY",
           "params": {
-            "pattern": "checkerboard",
-            "color_a": 128,
-            "color_b": 0,
-            "scroll_speed": 28,
-            "brightness": 44,
-            "pattern_period": 4
+            "color": 190,
+            "bar_width": 2,
+            "trail_length": 7,
+            "speed": 30,
+            "brightness": 42,
+            "direction": 0,
+            "beat_sync": 1
           }
         }
       ]
     },
     "seg_g": {
-      "_comment": "Cool-down. 84.8–100.8s, 8.3 bars. Drops to 0.148 avg. PAL_COOL_SWEEP. Matrix: slow horizontal stripes in cool palette — spacious, settling after the peak.",
+      "_comment": "Cool-down. 84.8\u2013100.8s, 8.3 bars. Drops to 0.148 avg. PAL_COOL_SWEEP. Matrix: slow horizontal stripes in cool palette \u2014 spacious, settling after the peak.",
       "nominal_duration_ms": 16000,
       "base_effect": "EFFECT_OFF",
       "base_palette": "PAL_COOL_SWEEP",
       "cues": [
         {
           "at_ms": 0,
-          "effect": "EFFECT_EAR_BEAT_GRADIENT",
+          "effect": "EFFECT_EAR_BEAT_SOLID",
           "zone": "BOTH_EARS",
           "palette": "PAL_COOL_SWEEP",
           "params": {
+            "color": 190,
+            "peak_brightness": 160,
             "decay_steepness": 140,
-            "bottom_color": 0,
-            "bottom_brightness": 0,
-            "top_brightness": 155,
-            "downbeat_flash": 170,
-            "subbeat_sparkle": 30
+            "downbeat_flash": 170
           },
-          "_comment": "Cyan-to-violet cycling. Softer than seg_f — deliberate step-down."
+          "_comment": "Cyan-to-violet cycling. Softer than seg_f \u2014 deliberate step-down."
         },
         {
           "at_ms": 0,
@@ -443,7 +435,7 @@
         },
         {
           "at_ms": 0,
-          "_comment": "Matrix: slow horizontal cool stripes — calm, breathing contrast to the peak sections.",
+          "_comment": "Matrix: slow horizontal cool stripes \u2014 calm, breathing contrast to the peak sections.",
           "effect": "EFFECT_MATRIX_SCROLL_BG",
           "zone": "MATRIX",
           "palette": "PAL_COOL_SWEEP",
@@ -458,18 +450,16 @@
         },
         {
           "at_ms": 12000,
-          "effect": "EFFECT_EAR_BEAT_GRADIENT",
+          "effect": "EFFECT_EAR_BEAT_SOLID",
           "zone": "BOTH_EARS",
           "palette": "PAL_DISCOVERY",
           "params": {
+            "color": 190,
+            "peak_brightness": 160,
             "decay_steepness": 130,
-            "bottom_color": 0,
-            "bottom_brightness": 0,
-            "top_brightness": 140,
-            "downbeat_flash": 155,
-            "subbeat_sparkle": 0
+            "downbeat_flash": 155
           },
-          "_comment": "~4s before seg_h groove return: beat gradient builds tension, warm gold reappears."
+          "_comment": "~4s before seg_h groove return: beat solid builds tension, warm gold reappears."
         },
         {
           "at_ms": 12000,
@@ -502,7 +492,7 @@
       ]
     },
     "seg_h": {
-      "_comment": "Groove return. 100.8–131.5s, 15.9 bars. Energy jumps back to 0.22+. Biggest sustained groove section. Matrix: checkerboard returns after the entry flash. 'CRESCENDOLLS' text scrolls midway through.",
+      "_comment": "Groove return. 100.8\u2013131.5s, 15.9 bars. Energy jumps back to 0.22+. Biggest sustained groove section. Matrix: checkerboard returns after the entry flash. 'CRESCENDOLLS' text scrolls midway through.",
       "nominal_duration_ms": 30700,
       "base_effect": "EFFECT_OFF",
       "base_palette": "PAL_DISCOVERY",
@@ -519,7 +509,7 @@
             "include_matrix": 1
           },
           "duration_ms": 160,
-          "_comment": "Groove return flash — includes matrix. Biggest re-entry punch so far."
+          "_comment": "Groove return flash \u2014 includes matrix. Biggest re-entry punch so far."
         },
         {
           "at_ms": 0,
@@ -534,20 +524,18 @@
             "wave_brightness": 180,
             "bg_brightness": 22
           },
-          "_comment": "Outer-to-inner wipe — 'gathering' motion matching the groove re-consolidating."
+          "_comment": "Outer-to-inner wipe \u2014 'gathering' motion matching the groove re-consolidating."
         },
         {
           "at_ms": 160,
-          "effect": "EFFECT_EAR_BEAT_GRADIENT",
+          "effect": "EFFECT_EAR_BEAT_SOLID",
           "zone": "BOTH_EARS",
           "palette": "PAL_DISCOVERY",
           "params": {
+            "color": 190,
+            "peak_brightness": 160,
             "decay_steepness": 192,
-            "bottom_color": 0,
-            "bottom_brightness": 0,
-            "top_brightness": 185,
-            "downbeat_flash": 225,
-            "subbeat_sparkle": 85
+            "downbeat_flash": 225
           }
         },
         {
@@ -583,7 +571,7 @@
       ]
     },
     "breakdown": {
-      "_comment": "Two stutter drops. 131.5–144.0s. Energy stutters: 0.22→0.07→return→drop→recovery. PAL_NEON for disorientation. Matrix: 'DAFT PUNK' text during the stutter — weird, jarring, intentional.",
+      "_comment": "Two stutter drops. 131.5\u2013144.0s. Energy stutters: 0.22\u21920.07\u2192return\u2192drop\u2192recovery. PAL_NEON for disorientation. Matrix: 'DAFT PUNK' text during the stutter \u2014 weird, jarring, intentional.",
       "nominal_duration_ms": 12500,
       "base_effect": "EFFECT_OFF",
       "base_palette": "PAL_NEON",
@@ -600,7 +588,7 @@
             "min_brightness": 0,
             "max_brightness": 140
           },
-          "_comment": "Fast ~1.8s breath during the drop. PAL_NEON is jarring — intentionally wrong-feeling."
+          "_comment": "Fast ~1.8s breath during the drop. PAL_NEON is jarring \u2014 intentionally wrong-feeling."
         },
         {
           "at_ms": 0,
@@ -613,11 +601,11 @@
             "bottom_brightness": 8,
             "top_brightness": 55
           },
-          "_comment": "Dim neon gradient — disorients vs the sustained warm Discovery energy."
+          "_comment": "Dim neon gradient \u2014 disorients vs the sustained warm Discovery energy."
         },
         {
           "at_ms": 0,
-          "_comment": "Matrix: artist name scrolls during the stutter — unexpected, adds to the disorientation.",
+          "_comment": "Matrix: artist name scrolls during the stutter \u2014 unexpected, adds to the disorientation.",
           "effect": "EFFECT_MATRIX_TEXT",
           "zone": "MATRIX",
           "palette": "PAL_NEON",
@@ -632,18 +620,16 @@
         },
         {
           "at_ms": 6500,
-          "effect": "EFFECT_EAR_BEAT_GRADIENT",
+          "effect": "EFFECT_EAR_BEAT_SOLID",
           "zone": "BOTH_EARS",
           "palette": "PAL_DISCOVERY",
           "params": {
+            "color": 190,
+            "peak_brightness": 160,
             "decay_steepness": 130,
-            "bottom_color": 0,
-            "bottom_brightness": 0,
-            "top_brightness": 140,
-            "downbeat_flash": 155,
-            "subbeat_sparkle": 0
+            "downbeat_flash": 155
           },
-          "_comment": "~6s in: second drop recovery. Beat gradient rebuilds — final groove incoming."
+          "_comment": "~6s in: second drop recovery. Beat solid rebuilds \u2014 final groove incoming."
         },
         {
           "at_ms": 6500,
@@ -659,23 +645,22 @@
         },
         {
           "at_ms": 6500,
-          "_comment": "Matrix: diagonal stripes snap back as the groove rebuilds.",
-          "effect": "EFFECT_MATRIX_SCROLL_BG",
+          "_comment": "Matrix: twinkling starfield backdrop \u2014 atmospheric cosmic fill.",
+          "effect": "EFFECT_MATRIX_STARFIELD",
           "zone": "MATRIX",
           "palette": "PAL_DISCOVERY",
           "params": {
-            "pattern": "diagonal",
-            "color_a": 128,
-            "color_b": 0,
-            "scroll_speed": 20,
-            "brightness": 36,
-            "pattern_period": 4
+            "density": 12,
+            "twinkle_speed": 30,
+            "max_brightness": 40,
+            "color_mode": 0,
+            "drift_speed": 3
           }
         }
       ]
     },
     "final_groove": {
-      "_comment": "Final long groove. 144.0–193.5s, 25.6 bars. Peak RMS sustained for 50 continuous seconds. Matrix: checkerboard at max. 'CRESCENDOLLS' text scrolls at ~20s to drive home the climax.",
+      "_comment": "Final long groove. 144.0\u2013193.5s, 25.6 bars. Peak RMS sustained for 50 continuous seconds. Matrix: checkerboard at max. 'CRESCENDOLLS' text scrolls at ~20s to drive home the climax.",
       "nominal_duration_ms": 49500,
       "base_effect": "EFFECT_OFF",
       "base_palette": "PAL_DISCOVERY",
@@ -707,36 +692,36 @@
             "wave_brightness": 185,
             "bg_brightness": 25
           },
-          "_comment": "Phase 1 (0–16 bars ≈ 31s): bottom-to-top wipe at maximum energy."
+          "_comment": "Phase 1 (0\u201316 bars \u2248 31s): bottom-to-top wipe at maximum energy."
         },
         {
           "at_ms": 180,
-          "effect": "EFFECT_EAR_BEAT_GRADIENT",
+          "effect": "EFFECT_EAR_BEAT_SOLID",
           "zone": "BOTH_EARS",
           "palette": "PAL_DISCOVERY",
           "params": {
+            "color": 190,
+            "peak_brightness": 160,
             "decay_steepness": 200,
-            "bottom_color": 0,
-            "bottom_brightness": 0,
-            "top_brightness": 185,
-            "downbeat_flash": 240,
-            "subbeat_sparkle": 100
+            "downbeat_flash": 240
           },
           "_comment": "Absolute maximum. Registry Crescendolls example values at ceiling."
         },
         {
           "at_ms": 180,
-          "_comment": "Matrix: checkerboard at ceiling brightness for the full final groove.",
-          "effect": "EFFECT_MATRIX_SCROLL_BG",
+          "_comment": "Matrix: rings radiate from center on each beat \u2014 kinetic drop energy.",
+          "effect": "EFFECT_MATRIX_RADIATE",
           "zone": "MATRIX",
           "palette": "PAL_DISCOVERY",
           "params": {
-            "pattern": "checkerboard",
-            "color_a": 128,
-            "color_b": 0,
-            "scroll_speed": 30,
-            "brightness": 44,
-            "pattern_period": 4
+            "color": 190,
+            "brightness": 42,
+            "speed": 20,
+            "ring_thickness": 2,
+            "ring_count": 2,
+            "ring_spacing": 6,
+            "fade_out": 1,
+            "beat_trigger": 1
           }
         },
         {
@@ -767,7 +752,7 @@
             "wave_brightness": 185,
             "bg_brightness": 25
           },
-          "_comment": "Phase 2 (bars 16–25 ≈ 31s–49.5s): inner-to-outer wipe for variety."
+          "_comment": "Phase 2 (bars 16\u201325 \u2248 31s\u201349.5s): inner-to-outer wipe for variety."
         },
         {
           "at_ms": 33000,
@@ -787,7 +772,7 @@
       ]
     },
     "outro_fade": {
-      "_comment": "Stepwise decay. 193.5–211.6s, ~9.4 bars. Matrix slows to h_stripes as energy drains — bookends the calm intro aesthetic.",
+      "_comment": "Stepwise decay. 193.5\u2013211.6s, ~9.4 bars. Matrix slows to h_stripes as energy drains \u2014 bookends the calm intro aesthetic.",
       "nominal_duration_ms": 18140,
       "base_effect": "EFFECT_OFF",
       "base_palette": "PAL_INTRO_WARM",
@@ -805,7 +790,7 @@
             "min_brightness": 0,
             "max_brightness": 145
           },
-          "_comment": "Fast ~2.2s breath as the energy drops. min 0 — fades to silence cleanly."
+          "_comment": "Fast ~2.2s breath as the energy drops. min 0 \u2014 fades to silence cleanly."
         },
         {
           "at_ms": 0,
@@ -859,7 +844,7 @@
             "bottom_brightness": 3,
             "top_brightness": 25
           },
-          "_comment": "Nearly off visor — ghost of the warm gradient as the track goes silent."
+          "_comment": "Nearly off visor \u2014 ghost of the warm gradient as the track goes silent."
         }
       ]
     }
