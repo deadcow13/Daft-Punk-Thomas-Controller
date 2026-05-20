@@ -1733,6 +1733,116 @@
         }
       ]
     },
+    "EFFECT_VISOR_VU_LIVE": {
+      "id": 27,
+      "zones": ["LEFT_VISOR", "RIGHT_VISOR", "BOTH_VISORS"],
+      "params": [
+        {
+          "name": "color_mode",
+          "type": "uint8",
+          "range": [0, 2],
+          "description": "0=single color from palette (use color param). 1=classic traffic-light: green bottom rows, yellow mid, red top rows — ignores color param. 2=rainbow columns: each of the 5 columns gets a distinct hue from the active palette spread evenly across its stops."
+        },
+        {
+          "name": "color",
+          "type": "palette_index",
+          "description": "Palette index for the bar fill when color_mode=0. Ignored for color_mode 1 and 2. Use a vivid saturated color — mid-range palette indices read best."
+        },
+        {
+          "name": "sensitivity",
+          "type": "uint8",
+          "range": [1, 255],
+          "description": "How high the bars jump on each beat. Maps to peak bar height: 64=roughly 3 rows (40%), 128=5 rows (60%), 200=7 rows (85%), 255=full 8 rows. Tune to taste — higher sensitivity is more dramatic but can look like a solid wall at very high values."
+        },
+        {
+          "name": "decay_rate",
+          "type": "uint8",
+          "range": [1, 255],
+          "description": "How fast the bars fall between beats. 40=slow gravity (bars linger for most of the beat), 100=natural fall, 180=fast snap-back, 255=instant reset. Slower decay (40-80) reads more like a smooth level meter; faster (150+) reads more like a strobe."
+        },
+        {
+          "name": "peak_hold",
+          "type": "uint8",
+          "range": [0, 1],
+          "description": "0=no peak hold indicator. 1=a single bright LED marks the highest point each bar has reached in the last ~1 bar of beats, then slowly falls independently. Classic VU meter look. Adds visual interest when decay_rate is fast."
+        },
+        {
+          "name": "bass_emphasis",
+          "type": "uint8",
+          "range": [0, 1],
+          "description": "0=all 5 columns respond identically to each beat. 1=frequency simulation: col 1 (inner/bass) and col 2 jump highest on downbeats; col 3 (mid) is moderate; col 4-5 (treble/outer) jump on offbeats and hi-hat subdivisions. Creates a realistic frequency-band feel without audio analysis."
+        }
+      ],
+      "description": "Real-time beat-driven VU meter across the 5-column visor grid. Bars rise on each beat (driven by the scene's beat_grid) and decay smoothly between beats. No pre-rendered data required — the effect is fully procedural. Each column can optionally simulate a different frequency band (bass inner → treble outer) for a realistic multi-band look. The right visor automatically mirrors with inner edge = inner edge (col mapping is reversed by the engine) so bass content reads correctly on both sides. Pairs naturally with EFFECT_EAR_BEAT_SOLID and matrix effects for a cohesive whole-helmet response to the beat.",
+      "when_to_use": "Any beat-driven section where you want the visors to feel musically alive without the authoring overhead of EFFECT_VISOR_VU_PRERENDERED. Especially good for long groove sections (chorus loops, verses with a steady kick) where pre-rendered VU would require hundreds of authored frames. bass_emphasis=1 + color_mode=1 (traffic light) is the classic live VU look.",
+      "when_not_to_use": "Quiet atmospheric sections without a clear beat (use EFFECT_VISOR_GRADIENT_V or EFFECT_VISOR_SOLID instead — VU bars look wrong when there is no beat to react to). Don't use simultaneously with EFFECT_VISOR_VU_PRERENDERED in the same zone.",
+      "notes": [
+        "The visor grid is 5 columns × 8 rows. Col 1 = inner edge (near face, bass), col 5 = outer edge (treble). With mirror_lr=true the right visor's col 1 is also its inner edge.",
+        "sensitivity 128, decay_rate 100, bass_emphasis=1, color_mode=1, peak_hold=1 is a solid starting point for any upbeat chorus.",
+        "For a monochrome gold look: color_mode=0, color=128 (helmet_gold in PAL_DISCOVERY), sensitivity=160, decay_rate=120, bass_emphasis=1, peak_hold=0.",
+        "color_mode=2 (rainbow columns) pairs well with PAL_NEON for a festive Crescendolls feel.",
+        "Compared to EFFECT_VISOR_VU_PRERENDERED: this effect is faster to author (no frame data) but less precise — bar heights are driven by beat timing, not actual audio energy per band. Use PRERENDERED when you need exact VU choreography synced to specific moments in the song."
+      ],
+      "examples": [
+        {
+          "context": "One More Time chorus — classic traffic-light VU with bass emphasis, peak hold",
+          "cue": {
+            "at_ms": 0,
+            "duration_ms": 16000,
+            "effect": "EFFECT_VISOR_VU_LIVE",
+            "zone": "BOTH_VISORS",
+            "palette": "PAL_DISCOVERY",
+            "params": {
+              "color_mode": 1,
+              "color": 64,
+              "sensitivity": 180,
+              "decay_rate": 110,
+              "peak_hold": 1,
+              "bass_emphasis": 1
+            }
+          },
+          "notes": "color_mode 1 = green/yellow/red bars — no palette needed but PAL_DISCOVERY set for engine consistency. sensitivity 180 = bars reach ~7 rows on the downbeat, punchy but not clamped. decay_rate 110 = natural fall, bars are clearly going down by the next beat. peak_hold 1 adds the classic dancing dot at each column's peak. bass_emphasis 1 gives inner columns the kick-drum response and outer columns the hi-hat texture."
+        },
+        {
+          "context": "Crescendolls groove — rainbow columns VU with slow decay",
+          "cue": {
+            "at_ms": 0,
+            "duration_ms": 8000,
+            "effect": "EFFECT_VISOR_VU_LIVE",
+            "zone": "BOTH_VISORS",
+            "palette": "PAL_NEON",
+            "params": {
+              "color_mode": 2,
+              "color": 0,
+              "sensitivity": 150,
+              "decay_rate": 70,
+              "peak_hold": 0,
+              "bass_emphasis": 1
+            }
+          },
+          "notes": "color_mode 2 + PAL_NEON spreads vivid rainbow hues across the 5 columns. color=0 is ignored for color_mode 2. sensitivity 150 = moderate peak (~6 rows). decay_rate 70 = slow fall — bars linger and overlap beats for a smoother, more liquid look. peak_hold 0 = cleaner without the dot on a rainbow display."
+        },
+        {
+          "context": "Aerodynamic groove — gold monochrome VU, fast decay, no peak hold",
+          "cue": {
+            "at_ms": 0,
+            "duration_ms": 16000,
+            "effect": "EFFECT_VISOR_VU_LIVE",
+            "zone": "BOTH_VISORS",
+            "palette": "PAL_DISCOVERY",
+            "params": {
+              "color_mode": 0,
+              "color": 128,
+              "sensitivity": 160,
+              "decay_rate": 140,
+              "peak_hold": 0,
+              "bass_emphasis": 1
+            }
+          },
+          "notes": "color_mode 0 + color 128 = helmet_gold uniform bars. decay_rate 140 = bars snap back relatively fast, giving a punchy percussive feel that suits Aerodynamic's funky guitar tone. No peak hold — clean and precise."
+        }
+      ]
+    },
     "EFFECT_MATRIX_SOLID": {
       "id": 40,
       "zones": [
