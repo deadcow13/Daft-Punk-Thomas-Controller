@@ -12,16 +12,16 @@
     "total_bars": 167,
     "beat_tracker": "librosa + Audacity VAMP Queen Mary Beat Tracker, cross-validated",
     "structural_summary": [
-      "0–1.5s:    pre-intro — silence before filter sweep",
-      "1.5–30.3s: intro — filter sweep, melody only, no kick (bars 1–15)",
-      "30.3–46.4s: pre_drop — kick enters, building (bars 16–23)",
-      "46.4–59.2s: chorus_1 — first full drop (bars 24–30)",
-      "59.2–63.0s: gap_1 — ~2-bar break, filter sweep back out then in",
-      "63.0–91.3s: chorus_2 — second full drop, highest intensity (bars 33–47)",
-      "91.3–93.8s: gap_2 — ~1-bar silence/breath",
-      "93.8–141.8s: chorus_3 — third drop, long groove section (bars 49–73)",
-      "141.8–257.8s: breakdown — stripped-back vocal chop section (bars 74–133)",
-      "257.8–320.8s: final_drop — final full-energy drop to end (bars 134–167)"
+      "0\u20131.5s:    pre-intro \u2014 silence before filter sweep",
+      "1.5\u201330.3s: intro \u2014 filter sweep, melody only, no kick (bars 1\u201315)",
+      "30.3\u201346.4s: pre_drop \u2014 kick enters, building (bars 16\u201323)",
+      "46.4\u201359.2s: chorus_1 \u2014 first full drop (bars 24\u201330)",
+      "59.2\u201363.0s: gap_1 \u2014 ~2-bar break, filter sweep back out then in",
+      "63.0\u201391.3s: chorus_2 \u2014 second full drop, highest intensity (bars 33\u201347)",
+      "91.3\u201393.8s: gap_2 \u2014 ~1-bar silence/breath",
+      "93.8\u2013141.8s: chorus_3 \u2014 third drop, long groove section (bars 49\u201373)",
+      "141.8\u2013257.8s: breakdown \u2014 stripped-back vocal chop section (bars 74\u2013133)",
+      "257.8\u2013320.8s: final_drop \u2014 final full-energy drop to end (bars 134\u2013167)"
     ]
   },
   "beat_grid": {
@@ -58,7 +58,7 @@
             "min_brightness": 0,
             "max_brightness": 145
           },
-          "_comment": "5-second breath. Ears pulse to darkness between peaks — diffuser makes floor glow invisible so we go to 0."
+          "_comment": "5-second breath. Ears pulse to darkness between peaks \u2014 diffuser makes floor glow invisible so we go to 0."
         },
         {
           "at_ms": 0,
@@ -106,25 +106,23 @@
       ]
     },
     "pre_drop": {
-      "_comment": "Kick drum enters at bar 16. Energy building over 8 bars to the full drop. Matrix switches to horizontal stripes — warm gold, building motion.",
+      "_comment": "Kick drum enters at bar 16. Energy building over 8 bars to the full drop. Matrix switches to horizontal stripes \u2014 warm gold, building motion.",
       "nominal_duration_ms": 16000,
       "base_effect": "EFFECT_OFF",
       "base_palette": "PAL_DISCOVERY",
       "cues": [
         {
           "at_ms": 0,
-          "effect": "EFFECT_EAR_BEAT_GRADIENT",
+          "effect": "EFFECT_EAR_BEAT_SOLID",
           "zone": "BOTH_EARS",
           "palette": "PAL_DISCOVERY",
           "params": {
+            "color": 64,
+            "peak_brightness": 165,
             "decay_steepness": 130,
-            "bottom_color": 0,
-            "bottom_brightness": 0,
-            "top_brightness": 140,
-            "downbeat_flash": 165,
-            "subbeat_sparkle": 0
+            "downbeat_flash": 165
           },
-          "_comment": "Beat gradient building tension. bottom 0 — punchy flashes only."
+          "_comment": "Beat solid building tension. bottom 0 \u2014 punchy flashes only."
         },
         {
           "at_ms": 0,
@@ -137,22 +135,22 @@
             "bottom_brightness": 30,
             "top_brightness": 100
           },
-          "_comment": "Richer gradient than intro — deeper color, more visible. Building anticipation."
+          "_comment": "Richer gradient than intro \u2014 deeper color, more visible. Building anticipation."
         },
         {
           "at_ms": 0,
-          "_comment": "Matrix: warm horizontal stripes scroll upward, pace building to the drop.",
-          "effect": "EFFECT_MATRIX_SCROLL_BG",
+          "effect": "EFFECT_MATRIX_VU_LIVE",
           "zone": "MATRIX",
           "palette": "PAL_DISCOVERY",
           "params": {
-            "pattern": "h_stripes",
-            "color_a": 128,
-            "color_b": 0,
-            "scroll_speed": 16,
-            "brightness": 32,
-            "pattern_period": 5
-          }
+            "sensitivity": 140,
+            "noise_floor": 25,
+            "decay_rate": 80,
+            "peak_hold": 1,
+            "color_mode": 0,
+            "color": 0
+          },
+          "_comment": "Matrix: VU live builds tension before the drop."
         }
       ]
     },
@@ -178,48 +176,46 @@
         },
         {
           "at_ms": 0,
-          "effect": "EFFECT_VISOR_BEAT_WIPE",
+          "effect": "EFFECT_VISOR_VU_LIVE",
           "zone": "BOTH_VISORS",
           "palette": "PAL_DISCOVERY",
           "params": {
-            "direction": "bottom_to_top",
-            "beats_per_wipe": 1,
-            "wave_color": 6,
-            "wave_width": 2,
-            "wave_brightness": 150,
-            "bg_brightness": 30
+            "color_mode": 0,
+            "color": 64,
+            "sensitivity": 165,
+            "decay_rate": 100,
+            "peak_hold": 1,
+            "bass_emphasis": 1
           },
-          "_comment": "Beat-synced sweep upward on the visor — synchronized with kick."
+          "_comment": "Visors: cyan VU live \u2014 the first chorus drop."
         },
         {
           "at_ms": 0,
-          "_comment": "Matrix: checkerboard on the drop — dense, energetic geometry.",
-          "effect": "EFFECT_MATRIX_SCROLL_BG",
+          "_comment": "Matrix: rings radiate from center on each beat \u2014 kinetic drop energy.",
+          "effect": "EFFECT_MATRIX_RADIATE",
           "zone": "MATRIX",
           "palette": "PAL_DISCOVERY",
           "params": {
-            "pattern": "checkerboard",
-            "color_a": 128,
-            "color_b": 0,
-            "scroll_speed": 20,
-            "brightness": 38,
-            "pattern_period": 4
+            "color": 64,
+            "brightness": 42,
+            "speed": 20,
+            "ring_spacing": 6,
+            "fade_out": 1,
+            "beat_trigger": 1
           }
         },
         {
           "at_ms": 150,
-          "effect": "EFFECT_EAR_BEAT_GRADIENT",
+          "effect": "EFFECT_EAR_BEAT_SOLID",
           "zone": "BOTH_EARS",
           "palette": "PAL_DISCOVERY",
           "params": {
+            "color": 64,
+            "peak_brightness": 165,
             "decay_steepness": 160,
-            "bottom_color": 0,
-            "bottom_brightness": 0,
-            "top_brightness": 185,
-            "downbeat_flash": 200,
-            "subbeat_sparkle": 60
+            "downbeat_flash": 200
           },
-          "_comment": "Classic beat gradient. Cycles through Discovery palette. Strong downbeat emphasis."
+          "_comment": "Classic beat solid. Cycles through Discovery palette. Strong downbeat emphasis."
         }
       ]
     },
@@ -229,6 +225,20 @@
       "base_effect": "EFFECT_OFF",
       "base_palette": "PAL_DISCOVERY",
       "cues": [
+        {
+          "at_ms": 0,
+          "_comment": "Matrix: twinkling starfield backdrop \u2014 atmospheric cosmic fill.",
+          "effect": "EFFECT_MATRIX_STARFIELD",
+          "zone": "MATRIX",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "density": 12,
+            "twinkle_speed": 30,
+            "max_brightness": 40,
+            "color_mode": 0,
+            "drift_speed": 3
+          }
+        },
         {
           "at_ms": 0,
           "effect": "EFFECT_EAR_BREATHE",
@@ -241,7 +251,7 @@
             "min_brightness": 0,
             "max_brightness": 130
           },
-          "_comment": "Fast ~2s breath. Ears pulse to dark — punch comes back harder on chorus_2."
+          "_comment": "Fast ~2s breath. Ears pulse to dark \u2014 punch comes back harder on chorus_2."
         },
         {
           "at_ms": 0,
@@ -275,34 +285,33 @@
             "include_matrix": 1
           },
           "duration_ms": 150,
-          "_comment": "This drop flash includes the matrix — bigger entrance than chorus_1."
+          "_comment": "This drop flash includes the matrix \u2014 bigger entrance than chorus_1."
         },
         {
           "at_ms": 0,
-          "effect": "EFFECT_VISOR_BEAT_WIPE",
+          "effect": "EFFECT_VISOR_VU_LIVE",
           "zone": "BOTH_VISORS",
           "palette": "PAL_DISCOVERY",
           "params": {
-            "direction": "bottom_to_top",
-            "beats_per_wipe": 1,
-            "wave_color": 8,
-            "wave_width": 2,
-            "wave_brightness": 170,
-            "bg_brightness": 35
-          }
+            "color_mode": 0,
+            "color": 64,
+            "sensitivity": 165,
+            "decay_rate": 100,
+            "peak_hold": 1,
+            "bass_emphasis": 1
+          },
+          "_comment": "Visors: cyan VU live \u2014 second chorus."
         },
         {
           "at_ms": 150,
-          "effect": "EFFECT_EAR_BEAT_GRADIENT",
+          "effect": "EFFECT_EAR_BEAT_SOLID",
           "zone": "BOTH_EARS",
           "palette": "PAL_DISCOVERY",
           "params": {
+            "color": 64,
+            "peak_brightness": 165,
             "decay_steepness": 190,
-            "bottom_color": 0,
-            "bottom_brightness": 0,
-            "top_brightness": 185,
-            "downbeat_flash": 240,
-            "subbeat_sparkle": 100
+            "downbeat_flash": 240
           },
           "_comment": "More aggressive decay + stronger sparkle than chorus_1. Highest energy section."
         },
@@ -329,6 +338,20 @@
       "base_effect": "EFFECT_OFF",
       "base_palette": "PAL_DISCOVERY",
       "cues": [
+        {
+          "at_ms": 0,
+          "_comment": "Matrix: twinkling starfield backdrop \u2014 atmospheric cosmic fill.",
+          "effect": "EFFECT_MATRIX_STARFIELD",
+          "zone": "MATRIX",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "density": 12,
+            "twinkle_speed": 30,
+            "max_brightness": 40,
+            "color_mode": 0,
+            "drift_speed": 3
+          }
+        },
         {
           "at_ms": 0,
           "effect": "EFFECT_EAR_BREATHE",
@@ -365,46 +388,44 @@
         },
         {
           "at_ms": 0,
-          "effect": "EFFECT_VISOR_BEAT_WIPE",
+          "effect": "EFFECT_VISOR_VU_LIVE",
           "zone": "BOTH_VISORS",
-          "palette": "PAL_MAGENTA_CYAN",
+          "palette": "PAL_DISCOVERY",
           "params": {
-            "direction": "bottom_to_top",
-            "beats_per_wipe": 1,
-            "wave_color": 6,
-            "wave_width": 2,
-            "wave_brightness": 140,
-            "bg_brightness": 25
+            "color_mode": 0,
+            "color": 64,
+            "sensitivity": 165,
+            "decay_rate": 100,
+            "peak_hold": 1,
+            "bass_emphasis": 1
           },
-          "_comment": "PAL_MAGENTA_CYAN on visor for visual variety — differentiates from chorus_2."
+          "_comment": "Visors: cyan VU live \u2014 third chorus."
         },
         {
           "at_ms": 0,
-          "_comment": "Matrix: vertical stripes in neon palette — gives this chorus a unique identity.",
-          "effect": "EFFECT_MATRIX_SCROLL_BG",
+          "_comment": "Matrix: cylon sweep \u2014 bar bounces across the display, beat-locked.",
+          "effect": "EFFECT_MATRIX_CYLON",
           "zone": "MATRIX",
           "palette": "PAL_NEON",
           "params": {
-            "pattern": "v_stripes",
-            "color_a": 0,
-            "color_b": 128,
-            "scroll_speed": 22,
-            "brightness": 40,
-            "pattern_period": 4
+            "color": 64,
+            "bar_width": 2,
+            "trail_length": 7,
+            "speed": 30,
+            "brightness": 42,
+            "beat_sync": 1
           }
         },
         {
           "at_ms": 120,
-          "effect": "EFFECT_EAR_BEAT_GRADIENT",
+          "effect": "EFFECT_EAR_BEAT_SOLID",
           "zone": "BOTH_EARS",
           "palette": "PAL_DISCOVERY",
           "params": {
+            "color": 64,
+            "peak_brightness": 165,
             "decay_steepness": 170,
-            "bottom_color": 0,
-            "bottom_brightness": 0,
-            "top_brightness": 185,
-            "downbeat_flash": 210,
-            "subbeat_sparkle": 80
+            "downbeat_flash": 210
           },
           "_comment": "Slightly softer than chorus_2 to give the final_drop room to escalate."
         }
@@ -428,7 +449,7 @@
             "min_brightness": 0,
             "max_brightness": 145
           },
-          "_comment": "3.5-second breath in cool blue-violet. min 0 — punchy peaks against darkness."
+          "_comment": "3.5-second breath in cool blue-violet. min 0 \u2014 punchy peaks against darkness."
         },
         {
           "at_ms": 0,
@@ -441,26 +462,25 @@
             "bottom_brightness": 20,
             "top_brightness": 90
           },
-          "_comment": "Cool color visor — cyan-to-violet gradient. Calm and spacious."
+          "_comment": "Cool color visor \u2014 cyan-to-violet gradient. Calm and spacious."
         },
         {
           "at_ms": 0,
-          "_comment": "Matrix: slow horizontal cool stripes for the whole breakdown — calm, dreamy.",
-          "effect": "EFFECT_MATRIX_SCROLL_BG",
+          "_comment": "Matrix: twinkling starfield backdrop \u2014 atmospheric cosmic fill.",
+          "effect": "EFFECT_MATRIX_STARFIELD",
           "zone": "MATRIX",
           "palette": "PAL_COOL_SWEEP",
           "params": {
-            "pattern": "h_stripes",
-            "color_a": 0,
-            "color_b": 128,
-            "scroll_speed": 6,
-            "brightness": 25,
-            "pattern_period": 6
+            "density": 12,
+            "twinkle_speed": 30,
+            "max_brightness": 40,
+            "color_mode": 0,
+            "drift_speed": 3
           }
         },
         {
           "at_ms": 88000,
-          "_comment": "'ONE MORE TIME' scrolls across the matrix as the build-back begins — signals the drop is coming.",
+          "_comment": "'ONE MORE TIME' scrolls across the matrix as the build-back begins \u2014 signals the drop is coming.",
           "effect": "EFFECT_MATRIX_TEXT",
           "zone": "MATRIX",
           "palette": "PAL_DISCOVERY",
@@ -475,18 +495,16 @@
         },
         {
           "at_ms": 96000,
-          "_comment": "~20s before final drop. Beat gradient signals re-entry.",
-          "effect": "EFFECT_EAR_BEAT_GRADIENT",
+          "effect": "EFFECT_EAR_BEAT_SOLID",
           "zone": "BOTH_EARS",
           "palette": "PAL_DISCOVERY",
           "params": {
+            "color": 64,
+            "peak_brightness": 165,
             "decay_steepness": 125,
-            "bottom_color": 0,
-            "bottom_brightness": 0,
-            "top_brightness": 140,
-            "downbeat_flash": 155,
-            "subbeat_sparkle": 0
-          }
+            "downbeat_flash": 155
+          },
+          "_comment": "~20s before final drop. Beat solid signals re-entry."
         },
         {
           "at_ms": 96000,
@@ -503,7 +521,7 @@
         },
         {
           "at_ms": 96000,
-          "_comment": "Matrix switches to fast diagonal on the build-back — urgency.",
+          "_comment": "Matrix switches to fast diagonal on the build-back \u2014 urgency.",
           "effect": "EFFECT_MATRIX_SCROLL_BG",
           "zone": "MATRIX",
           "palette": "PAL_DISCOVERY",
@@ -541,31 +559,29 @@
         },
         {
           "at_ms": 0,
-          "effect": "EFFECT_VISOR_BEAT_WIPE",
+          "effect": "EFFECT_VISOR_VU_LIVE",
           "zone": "BOTH_VISORS",
           "palette": "PAL_DISCOVERY",
           "params": {
-            "direction": "bottom_to_top",
-            "beats_per_wipe": 1,
-            "wave_color": 8,
-            "wave_width": 3,
-            "wave_brightness": 185,
-            "bg_brightness": 40
+            "color_mode": 0,
+            "color": 64,
+            "sensitivity": 165,
+            "decay_rate": 100,
+            "peak_hold": 1,
+            "bass_emphasis": 1
           },
-          "_comment": "Max brightness sweep. Final section deserves maximum visual presence."
+          "_comment": "Visors: cyan VU live \u2014 final drop."
         },
         {
           "at_ms": 200,
-          "effect": "EFFECT_EAR_BEAT_GRADIENT",
+          "effect": "EFFECT_EAR_BEAT_SOLID",
           "zone": "BOTH_EARS",
           "palette": "PAL_DISCOVERY",
           "params": {
+            "color": 64,
+            "peak_brightness": 165,
             "decay_steepness": 200,
-            "bottom_color": 0,
-            "bottom_brightness": 0,
-            "top_brightness": 185,
-            "downbeat_flash": 255,
-            "subbeat_sparkle": 120
+            "downbeat_flash": 255
           },
           "_comment": "Maximum parameters. This is the climax."
         },
@@ -586,18 +602,18 @@
         },
         {
           "at_ms": 8000,
-          "_comment": "After title scroll clears: max-energy checkerboard for the rest of the drop.",
-          "effect": "EFFECT_MATRIX_SCROLL_BG",
+          "effect": "EFFECT_MATRIX_VU_LIVE",
           "zone": "MATRIX",
           "palette": "PAL_DISCOVERY",
           "params": {
-            "pattern": "checkerboard",
-            "color_a": 128,
-            "color_b": 0,
-            "scroll_speed": 28,
-            "brightness": 44,
-            "pattern_period": 4
-          }
+            "sensitivity": 140,
+            "noise_floor": 25,
+            "decay_rate": 80,
+            "peak_hold": 1,
+            "color_mode": 0,
+            "color": 0
+          },
+          "_comment": "Matrix: VU live sustains through the final drop body."
         },
         {
           "at_ms": 55000,
@@ -610,7 +626,7 @@
             "min_brightness": 0,
             "max_brightness": 130
           },
-          "_comment": "~8s from end. Switch to ambient breathe — warm amber bookend mirrors the intro."
+          "_comment": "~8s from end. Switch to ambient breathe \u2014 warm amber bookend mirrors the intro."
         },
         {
           "at_ms": 55000,
@@ -623,7 +639,7 @@
             "bottom_brightness": 10,
             "top_brightness": 40
           },
-          "_comment": "Visor mirrors intro — dim warm gradient as song fades."
+          "_comment": "Visor mirrors intro \u2014 dim warm gradient as song fades."
         }
       ]
     }

@@ -1,1 +1,2794 @@
-{"schema_version":1,"scene_name":"harder_better_faster","total_duration_ms":224293,"beat_grid":{"first_downbeat_ms":1196,"period_ms":484.72,"beats_per_bar":4},"base_palette":"PAL_DISCOVERY","base_effect":"EFFECT_OFF","mirror_lr":true,"segments":{"pre_intro":{"nominal_duration_ms":1200,"base_effect":"EFFECT_OFF","base_palette":"PAL_DISCOVERY","cues":[]},"intro":{"nominal_duration_ms":50400,"base_effect":"EFFECT_OFF","base_palette":"PAL_DISCOVERY","cues":[{"at_ms":0,"effect":"EFFECT_EAR_BEAT_GRADIENT","zone":"BOTH_EARS","params":{"decay_steepness":140,"bottom_color":0,"bottom_brightness":0,"top_brightness":160,"downbeat_flash":190,"subbeat_sparkle":50}},{"at_ms":0,"effect":"EFFECT_VISOR_GRADIENT_V","zone":"BOTH_VISORS","params":{"bottom_color":0,"top_color":6,"bottom_brightness":20,"top_brightness":110}},{"at_ms":0,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"DAFT PUNK","x_position":-8,"y_position":1,"color":2,"brightness":40,"animation":"scroll_left_slow"},"duration_ms":4000},{"at_ms":4000,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"DISCOVERY","x_position":-8,"y_position":1,"color":6,"brightness":38,"animation":"scroll_left_slow"},"duration_ms":4000},{"at_ms":8000,"effect":"EFFECT_MATRIX_SCROLL_BG","zone":"MATRIX","params":{"brightness":22,"pattern_period":8,"pattern":"h_stripes","scroll_speed":12}}]},"verse_1":{"nominal_duration_ms":46300,"base_effect":"EFFECT_OFF","base_palette":"PAL_DISCOVERY","cues":[{"at_ms":0,"effect":"EFFECT_EAR_BEAT_GRADIENT","zone":"BOTH_EARS","params":{"decay_steepness":150,"bottom_color":0,"bottom_brightness":0,"top_brightness":150,"downbeat_flash":180,"subbeat_sparkle":40}},{"at_ms":0,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"WORK IT","color":6},"duration_ms":958},{"at_ms":0,"effect":"EFFECT_VISOR_GRADIENT_V","zone":"BOTH_VISORS","params":{"bottom_color":0,"top_color":6,"bottom_brightness":20,"top_brightness":100}},{"at_ms":958,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"MAKE IT","color":6},"duration_ms":1006},{"at_ms":1964,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"DO IT","color":6},"duration_ms":934},{"at_ms":2898,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"MAKE US","color":6},"duration_ms":1000},{"at_ms":8192,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"HARDER","color":2},"duration_ms":1006},{"at_ms":9198,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"BETTER","color":2},"duration_ms":934},{"at_ms":10132,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"FASTER","color":2},"duration_ms":1006},{"at_ms":11138,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"STRNGR","color":2},"duration_ms":1000},{"at_ms":15450,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"MORE","color":11},"duration_ms":335},{"at_ms":15785,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"THAN","color":11},"duration_ms":671},{"at_ms":16456,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"HOUR","color":11},"duration_ms":1964},{"at_ms":18420,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"NEVER","color":11},"duration_ms":695},{"at_ms":23785,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"EVER","color":11},"duration_ms":958},{"at_ms":24743,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"AFTER","color":11},"duration_ms":959},{"at_ms":25702,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"WORK IS","color":11},"duration_ms":958},{"at_ms":26660,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"OVER","color":11},"duration_ms":563},{"at_ms":31043,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"WORK IT","color":6},"duration_ms":1006},{"at_ms":32049,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"MAKE IT","color":6},"duration_ms":1006},{"at_ms":33055,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"DO IT","color":6},"duration_ms":910},{"at_ms":33965,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"MAKE US","color":6},"duration_ms":653},{"at_ms":39307,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"HARDER","color":2},"duration_ms":1030},{"at_ms":40337,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"BETTER","color":2},"duration_ms":934},{"at_ms":41271,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"FASTER","color":2},"duration_ms":982},{"at_ms":42253,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"STRNGR","color":2},"duration_ms":772}],"lyric_defaults":{"x_position":0,"y_position":1,"brightness":40,"animation":"static"}},"verse_2":{"nominal_duration_ms":15900,"base_effect":"EFFECT_OFF","base_palette":"PAL_DISCOVERY","cues":[{"at_ms":0,"effect":"EFFECT_EAR_BEAT_GRADIENT","zone":"BOTH_EARS","params":{"decay_steepness":170,"bottom_color":0,"bottom_brightness":0,"top_brightness":150,"downbeat_flash":210,"subbeat_sparkle":70}},{"at_ms":0,"effect":"EFFECT_VISOR_GRADIENT_V","zone":"BOTH_VISORS","params":{"bottom_color":0,"top_color":2,"bottom_brightness":20,"top_brightness":110}},{"at_ms":358,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"WORK IT","color":6},"duration_ms":527},{"at_ms":885,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"HARDER","color":2},"duration_ms":479},{"at_ms":1364,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"MAKE IT","color":6},"duration_ms":503},{"at_ms":1867,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"BETTER","color":2},"duration_ms":503},{"at_ms":2370,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"DO IT","color":6},"duration_ms":431},{"at_ms":2801,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"FASTER","color":2},"duration_ms":503},{"at_ms":3304,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"MAKE US","color":6},"duration_ms":468},{"at_ms":3772,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"STRNGR","color":2},"duration_ms":1000},{"at_ms":8155,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"MORE","color":11},"duration_ms":263},{"at_ms":8418,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"THAN","color":11},"duration_ms":228},{"at_ms":8646,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"EVER","color":11},"duration_ms":455},{"at_ms":9101,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"HOUR","color":11},"duration_ms":491},{"at_ms":9592,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"AFTER","color":11},"duration_ms":515},{"at_ms":10107,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"HOUR","color":11},"duration_ms":491},{"at_ms":10598,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"WORK IS","color":11},"duration_ms":491},{"at_ms":11089,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"NEVER","color":11},"duration_ms":491},{"at_ms":11580,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"OVER","color":11},"duration_ms":1000}],"lyric_defaults":{"x_position":0,"y_position":1,"brightness":40,"animation":"static"}},"verse_3":{"nominal_duration_ms":46711,"base_effect":"EFFECT_OFF","base_palette":"PAL_DISCOVERY","cues":[{"at_ms":0,"effect":"EFFECT_EAR_BEAT_GRADIENT","zone":"BOTH_EARS","params":{"decay_steepness":190,"bottom_color":0,"bottom_brightness":0,"top_brightness":150,"downbeat_flash":230,"subbeat_sparkle":95}},{"at_ms":0,"effect":"EFFECT_VISOR_GRADIENT_V","zone":"BOTH_VISORS","params":{"bottom_color":0,"top_color":11,"bottom_brightness":20,"top_brightness":115}},{"at_ms":51,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"WORK IT","color":6},"duration_ms":456},{"at_ms":507,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"HARDER","color":2},"duration_ms":479},{"at_ms":986,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"MAKE IT","color":6},"duration_ms":527},{"at_ms":1513,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"BETTER","color":2},"duration_ms":491},{"at_ms":2004,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"DO IT","color":6},"duration_ms":467},{"at_ms":2471,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"FASTER","color":2},"duration_ms":491},{"at_ms":2962,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"MAKE US","color":6},"duration_ms":491},{"at_ms":3453,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"STRNGR","color":2},"duration_ms":491},{"at_ms":3944,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"MORE","color":11},"duration_ms":215},{"at_ms":4159,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"THAN","color":11},"duration_ms":240},{"at_ms":4399,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"EVER","color":11},"duration_ms":503},{"at_ms":4902,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"HOUR","color":11},"duration_ms":491},{"at_ms":5393,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"AFTER","color":11},"duration_ms":479},{"at_ms":5872,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"HOUR","color":11},"duration_ms":479},{"at_ms":6351,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"WORK IS","color":11},"duration_ms":491},{"at_ms":6842,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"NEVER","color":11},"duration_ms":479},{"at_ms":7321,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"OVER","color":11},"duration_ms":479},{"at_ms":7800,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"WORK IT","color":6},"duration_ms":491},{"at_ms":8291,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"HARDER","color":2},"duration_ms":491},{"at_ms":8782,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"MAKE IT","color":6},"duration_ms":491},{"at_ms":9273,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"BETTER","color":2},"duration_ms":503},{"at_ms":9776,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"DO IT","color":6},"duration_ms":467},{"at_ms":10243,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"FASTER","color":2},"duration_ms":503},{"at_ms":10746,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"MAKE US","color":6},"duration_ms":455},{"at_ms":11201,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"STRNGR","color":2},"duration_ms":504},{"at_ms":11705,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"MORE","color":11},"duration_ms":215},{"at_ms":11920,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"THAN","color":11},"duration_ms":240},{"at_ms":12160,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"EVER","color":11},"duration_ms":443},{"at_ms":12603,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"HOUR","color":11},"duration_ms":575},{"at_ms":13178,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"AFTER","color":11},"duration_ms":467},{"at_ms":13645,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"HOUR","color":11},"duration_ms":479},{"at_ms":14124,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"WORK IS","color":11},"duration_ms":527},{"at_ms":14651,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"NEVER","color":11},"duration_ms":479},{"at_ms":15130,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"OVER","color":11},"duration_ms":467},{"at_ms":15597,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"WORK IT","color":6},"duration_ms":479},{"at_ms":16076,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"HARDER","color":2},"duration_ms":479},{"at_ms":16555,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"MAKE IT","color":6},"duration_ms":491},{"at_ms":17046,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"BETTER","color":2},"duration_ms":491},{"at_ms":17537,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"DO IT","color":6},"duration_ms":479},{"at_ms":18016,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"FASTER","color":2},"duration_ms":491},{"at_ms":18507,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"MAKE US","color":6},"duration_ms":491},{"at_ms":18998,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"STRNGR","color":2},"duration_ms":479},{"at_ms":19477,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"MORE","color":11},"duration_ms":264},{"at_ms":19741,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"THAN","color":11},"duration_ms":227},{"at_ms":19968,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"EVER","color":11},"duration_ms":455},{"at_ms":20423,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"HOUR","color":11},"duration_ms":503},{"at_ms":20926,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"AFTER","color":11},"duration_ms":491},{"at_ms":21417,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"HOUR","color":11},"duration_ms":491},{"at_ms":21908,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"WORK IS","color":11},"duration_ms":491},{"at_ms":22399,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"NEVER","color":11},"duration_ms":479},{"at_ms":22878,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"OVER","color":11},"duration_ms":491},{"at_ms":23369,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"WORK IT","color":6},"duration_ms":480},{"at_ms":23849,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"HARDER","color":2},"duration_ms":491},{"at_ms":24340,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"MAKE IT","color":6},"duration_ms":491},{"at_ms":24831,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"BETTER","color":2},"duration_ms":491},{"at_ms":25322,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"DO IT","color":6},"duration_ms":479},{"at_ms":25801,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"FASTER","color":2},"duration_ms":467},{"at_ms":26268,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"MAKE US","color":6},"duration_ms":455},{"at_ms":26723,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"STRNGR","color":2},"duration_ms":539},{"at_ms":27262,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"MORE","color":11},"duration_ms":263},{"at_ms":27525,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"THAN","color":11},"duration_ms":228},{"at_ms":27753,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"EVER","color":11},"duration_ms":467},{"at_ms":28220,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"HOUR","color":11},"duration_ms":491},{"at_ms":28711,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"AFTER","color":11},"duration_ms":515},{"at_ms":29226,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"HOUR","color":11},"duration_ms":419},{"at_ms":29645,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"WORK IS","color":11},"duration_ms":539},{"at_ms":30184,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"NEVER","color":11},"duration_ms":455},{"at_ms":30639,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"OVER","color":11},"duration_ms":503},{"at_ms":31142,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"WORK IT","color":6},"duration_ms":491},{"at_ms":31633,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"HARDER","color":2},"duration_ms":491},{"at_ms":32124,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"MAKE IT","color":6},"duration_ms":467},{"at_ms":32591,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"BETTER","color":2},"duration_ms":491},{"at_ms":33082,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"DO IT","color":6},"duration_ms":479},{"at_ms":33561,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"FASTER","color":2},"duration_ms":491},{"at_ms":34052,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"MAKE US","color":6},"duration_ms":982},{"at_ms":35034,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"MORE","color":11},"duration_ms":264},{"at_ms":35298,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"THAN","color":11},"duration_ms":227},{"at_ms":35525,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"EVER","color":11},"duration_ms":444},{"at_ms":35969,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"HOUR","color":11},"duration_ms":443},{"at_ms":36412,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"AFTER","color":11},"duration_ms":575},{"at_ms":36987,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"HOUR","color":11},"duration_ms":467},{"at_ms":37454,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"WORK IS","color":11},"duration_ms":467},{"at_ms":37921,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"NEVER","color":11},"duration_ms":479},{"at_ms":38400,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"OVER","color":11},"duration_ms":503},{"at_ms":38903,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"WORK IT","color":6},"duration_ms":503},{"at_ms":39406,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"HARDER","color":2},"duration_ms":479},{"at_ms":39885,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"MAKE IT","color":6},"duration_ms":479},{"at_ms":40364,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"BETTER","color":2},"duration_ms":491},{"at_ms":40855,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"DO IT","color":6},"duration_ms":467},{"at_ms":41322,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"FASTER","color":2},"duration_ms":515},{"at_ms":41837,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"MAKE US","color":6},"duration_ms":455},{"at_ms":42292,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"STRNGR","color":2},"duration_ms":515},{"at_ms":42807,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"MORE","color":11},"duration_ms":252},{"at_ms":43059,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"THAN","color":11},"duration_ms":227},{"at_ms":43286,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"EVER","color":11},"duration_ms":491},{"at_ms":43777,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"HOUR","color":11},"duration_ms":491},{"at_ms":44268,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"AFTER","color":11},"duration_ms":479},{"at_ms":44747,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"HOUR","color":11},"duration_ms":479},{"at_ms":45226,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"WORK IS","color":11},"duration_ms":527},{"at_ms":45753,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"NEVER","color":11},"duration_ms":443},{"at_ms":46196,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"OVER","color":11},"duration_ms":515}],"lyric_defaults":{"x_position":0,"y_position":1,"brightness":40,"animation":"static"}},"breakdown":{"nominal_duration_ms":46700,"base_effect":"EFFECT_OFF","base_palette":"PAL_DISCOVERY","cues":[{"at_ms":0,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"WORK IT","color":2},"duration_ms":2063},{"at_ms":0,"effect":"EFFECT_VISOR_SOLID","zone":"BOTH_VISORS","params":{"color_index":2,"brightness":138},"duration_ms":2063},{"at_ms":0,"effect":"EFFECT_EAR_BEAT_GRADIENT","zone":"BOTH_EARS","params":{"decay_steepness":190,"bottom_color":0,"bottom_brightness":0,"top_brightness":150,"downbeat_flash":240,"subbeat_sparkle":100}},{"at_ms":2063,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"WORK IT","color":6},"duration_ms":2063},{"at_ms":2063,"effect":"EFFECT_VISOR_SOLID","zone":"BOTH_VISORS","params":{"color_index":6,"brightness":138},"duration_ms":2063},{"at_ms":4126,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"WORK IT","color":11},"duration_ms":2063},{"at_ms":4126,"effect":"EFFECT_VISOR_SOLID","zone":"BOTH_VISORS","params":{"color_index":11,"brightness":138},"duration_ms":2063},{"at_ms":6189,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"WORK IT","color":2},"duration_ms":2063},{"at_ms":6189,"effect":"EFFECT_VISOR_SOLID","zone":"BOTH_VISORS","params":{"color_index":2,"brightness":138},"duration_ms":2063},{"at_ms":8252,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"HARDER","color":2},"duration_ms":467},{"at_ms":8252,"effect":"EFFECT_VISOR_GRADIENT_V","zone":"BOTH_VISORS","params":{"bottom_color":0,"top_color":0,"bottom_brightness":20,"top_brightness":105}},{"at_ms":8719,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"MAKE IT","color":6},"duration_ms":958},{"at_ms":9677,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"DO IT","color":6},"duration_ms":491},{"at_ms":10168,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"FASTER","color":2},"duration_ms":671},{"at_ms":10839,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"MAKE US","color":6},"duration_ms":778},{"at_ms":11617,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"MORE","color":11},"duration_ms":276},{"at_ms":11893,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"THAN","color":11},"duration_ms":311},{"at_ms":12204,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"EVER","color":11},"duration_ms":408},{"at_ms":12612,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"HOUR","color":11},"duration_ms":395},{"at_ms":13007,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"AFTER","color":11},"duration_ms":551},{"at_ms":13558,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"HOUR","color":11},"duration_ms":491},{"at_ms":14049,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"WORK IS","color":11},"duration_ms":610},{"at_ms":14659,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"NEVER","color":11},"duration_ms":348},{"at_ms":15007,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"OVER","color":11},"duration_ms":479},{"at_ms":15486,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"WORK IT","color":6},"duration_ms":503},{"at_ms":15989,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"HARDER","color":2},"duration_ms":383},{"at_ms":16372,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"MAKE IT","color":6},"duration_ms":623},{"at_ms":16995,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"BETTER","color":2},"duration_ms":587},{"at_ms":17582,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"DO IT","color":6},"duration_ms":383},{"at_ms":17965,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"FASTER","color":2},"duration_ms":347},{"at_ms":18312,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"MAKE US","color":6},"duration_ms":623},{"at_ms":18935,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"STRNGR","color":2},"duration_ms":479},{"at_ms":19414,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"MORE","color":11},"duration_ms":252},{"at_ms":19666,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"THAN","color":11},"duration_ms":323},{"at_ms":19989,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"EVER","color":11},"duration_ms":347},{"at_ms":20336,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"HOUR","color":11},"duration_ms":288},{"at_ms":20624,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"AFTER","color":11},"duration_ms":742},{"at_ms":21366,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"HOUR","color":11},"duration_ms":431},{"at_ms":21797,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"WORK IS","color":11},"duration_ms":683},{"at_ms":22480,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"NEVER","color":11},"duration_ms":347},{"at_ms":22827,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"OVER","color":11},"duration_ms":467},{"at_ms":23294,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"WORK IT","color":6},"duration_ms":959},{"at_ms":24253,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"MAKE IT","color":6},"duration_ms":527},{"at_ms":24780,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"BETTER","color":2},"duration_ms":455},{"at_ms":25235,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"DO IT","color":6},"duration_ms":491},{"at_ms":25726,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"FASTER","color":2},"duration_ms":503},{"at_ms":26229,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"MAKE US","color":6},"duration_ms":455},{"at_ms":26684,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"STRNGR","color":2},"duration_ms":515},{"at_ms":27199,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"MORE","color":11},"duration_ms":251},{"at_ms":27450,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"THAN","color":11},"duration_ms":228},{"at_ms":27678,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"EVER","color":11},"duration_ms":467},{"at_ms":28145,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"HOUR","color":11},"duration_ms":491},{"at_ms":28636,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"AFTER","color":11},"duration_ms":503},{"at_ms":29139,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"HOUR","color":11},"duration_ms":359},{"at_ms":29498,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"WORK IS","color":11},"duration_ms":635},{"at_ms":30133,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"NEVER","color":11},"duration_ms":443},{"at_ms":30576,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"OVER","color":11},"duration_ms":503},{"at_ms":31079,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"WORK IT","color":6},"duration_ms":455},{"at_ms":31534,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"HARDER","color":2},"duration_ms":503},{"at_ms":32037,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"MAKE IT","color":6},"duration_ms":428},{"at_ms":32465,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"BETTER","color":2},"duration_ms":650},{"at_ms":33115,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"DO IT","color":6},"duration_ms":419},{"at_ms":33534,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"FASTER","color":2},"duration_ms":467},{"at_ms":34001,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"MAKE US","color":6},"duration_ms":575},{"at_ms":34576,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"STRNGR","color":2},"duration_ms":395},{"at_ms":34971,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"MORE","color":11},"duration_ms":264},{"at_ms":35235,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"THAN","color":11},"duration_ms":203},{"at_ms":35438,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"EVER","color":11},"duration_ms":384},{"at_ms":35822,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"HOUR","color":11},"duration_ms":455},{"at_ms":36277,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"AFTER","color":11},"duration_ms":635},{"at_ms":36912,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"HOUR","color":11},"duration_ms":455},{"at_ms":37367,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"WORK IS","color":11},"duration_ms":539},{"at_ms":37906,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"NEVER","color":11},"duration_ms":479},{"at_ms":38385,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"OVER","color":11},"duration_ms":500}],"lyric_defaults":{"x_position":0,"y_position":1,"brightness":40,"animation":"static"}},"outro_lyr":{"nominal_duration_ms":15636,"base_effect":"EFFECT_OFF","base_palette":"PAL_DISCOVERY","cues":[{"at_ms":0,"effect":"EFFECT_EAR_BEAT_GRADIENT","zone":"BOTH_EARS","params":{"decay_steepness":175,"bottom_color":0,"bottom_brightness":0,"top_brightness":150,"downbeat_flash":215,"subbeat_sparkle":80}},{"at_ms":0,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"WORK IT","color":6},"duration_ms":599},{"at_ms":0,"effect":"EFFECT_VISOR_GRADIENT_V","zone":"BOTH_VISORS","params":{"bottom_color":0,"top_color":2,"bottom_brightness":20,"top_brightness":100}},{"at_ms":599,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"HARDER","color":2},"duration_ms":635},{"at_ms":1234,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"DO IT","color":6},"duration_ms":1210},{"at_ms":2444,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"FASTER","color":2},"duration_ms":742},{"at_ms":3186,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"MORE","color":11},"duration_ms":1030},{"at_ms":4216,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"THAN","color":11},"duration_ms":359},{"at_ms":4575,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"EVER","color":11},"duration_ms":557},{"at_ms":5132,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"HOUR","color":11},"duration_ms":1168},{"at_ms":6300,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"WORK IS","color":11},"duration_ms":551},{"at_ms":6851,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"NEVER","color":11},"duration_ms":575},{"at_ms":7426,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"OVER","color":11},"duration_ms":359},{"at_ms":7785,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"WORK IT","color":6},"duration_ms":587},{"at_ms":8372,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"HARDER","color":2},"duration_ms":407},{"at_ms":8779,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"MAKE IT","color":6},"duration_ms":557},{"at_ms":9336,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"BETTER","color":2},"duration_ms":419},{"at_ms":9755,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"DO IT","color":6},"duration_ms":473},{"at_ms":10228,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"FASTER","color":2},"duration_ms":539},{"at_ms":10767,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"MAKE US","color":6},"duration_ms":425},{"at_ms":11192,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"STRNGR","color":2},"duration_ms":497},{"at_ms":11689,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"MORE","color":11},"duration_ms":324},{"at_ms":12013,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"THAN","color":11},"duration_ms":149},{"at_ms":12162,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"EVER","color":11},"duration_ms":551},{"at_ms":12713,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"HOUR","color":11},"duration_ms":431},{"at_ms":13144,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"AFTER","color":11},"duration_ms":515},{"at_ms":13659,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"HOUR","color":11},"duration_ms":444},{"at_ms":14103,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"WORK IS","color":11},"duration_ms":509},{"at_ms":14612,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"NEVER","color":11},"duration_ms":586},{"at_ms":15198,"effect":"EFFECT_MATRIX_TEXT","zone":"MATRIX","params":{"text":"OVER","color":11},"duration_ms":438}],"lyric_defaults":{"x_position":0,"y_position":1,"brightness":40,"animation":"static"}},"outro_end":{"nominal_duration_ms":1700,"base_effect":"EFFECT_OFF","base_palette":"PAL_DISCOVERY","is_outro":true,"cues":[{"at_ms":0,"effect":"EFFECT_AMBIENT_BREATHE","zone":"BOTH_EARS","params":{"color":2,"period_100ms":16,"min_brightness":0,"max_brightness":130}},{"at_ms":0,"effect":"EFFECT_VISOR_GRADIENT_V","zone":"BOTH_VISORS","params":{"bottom_color":0,"top_color":2,"bottom_brightness":5,"top_brightness":40}}]}},"timeline":[{"at_ms":0,"play":"pre_intro"},{"at_ms":1196,"play":"intro"},{"at_ms":51546,"play":"verse_1"},{"at_ms":97800,"play":"verse_2"},{"at_ms":113700,"play":"verse_3"},{"at_ms":160411,"play":"breakdown"},{"at_ms":207023,"play":"outro_lyr"},{"at_ms":222659,"play":"outro_end"}],"resources":{"sprites":[],"vu_sequences":[],"text_strings":["AFTER","BETTER","DAFT PUNK","DISCOVERY","DO IT","EVER","FASTER","HARDER","HOUR","MAKE IT","MAKE US","MORE","NEVER","OVER","STRNGR","THAN","WORK IS","WORK IT"]}}
+{
+  "schema_version": 1,
+  "scene_name": "harder_better_faster",
+  "total_duration_ms": 224293,
+  "beat_grid": {
+    "first_downbeat_ms": 1196,
+    "period_ms": 484.72,
+    "beats_per_bar": 4
+  },
+  "base_palette": "PAL_DISCOVERY",
+  "base_effect": "EFFECT_OFF",
+  "mirror_lr": true,
+  "segments": {
+    "pre_intro": {
+      "nominal_duration_ms": 1200,
+      "base_effect": "EFFECT_OFF",
+      "base_palette": "PAL_DISCOVERY",
+      "cues": []
+    },
+    "intro": {
+      "nominal_duration_ms": 50400,
+      "base_effect": "EFFECT_OFF",
+      "base_palette": "PAL_DISCOVERY",
+      "cues": [
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_EAR_BEAT_SOLID",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "color": 128,
+            "peak_brightness": 160,
+            "decay_steepness": 140,
+            "downbeat_flash": 190
+          }
+        },
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_VISOR_GRADIENT_V",
+          "zone": "BOTH_VISORS",
+          "params": {
+            "bottom_color": 0,
+            "top_color": 6,
+            "bottom_brightness": 20,
+            "top_brightness": 110
+          }
+        },
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "DAFT PUNK",
+            "x_position": -8,
+            "y_position": 1,
+            "color": 2,
+            "brightness": 40,
+            "animation": "scroll_left_slow"
+          },
+          "duration_ms": 4000
+        },
+        {
+          "at_ms": 4000,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "DISCOVERY",
+            "x_position": -8,
+            "y_position": 1,
+            "color": 6,
+            "brightness": 38,
+            "animation": "scroll_left_slow"
+          },
+          "duration_ms": 4000
+        },
+        {
+          "at_ms": 8000,
+          "effect": "EFFECT_MATRIX_VU_LIVE",
+          "zone": "MATRIX",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "sensitivity": 150,
+            "noise_floor": 25,
+            "decay_rate": 90,
+            "peak_hold": 1,
+            "color_mode": 0,
+            "color": 0
+          },
+          "_comment": "Matrix: VU live fires as text clears before verse_1."
+        }
+      ]
+    },
+    "verse_1": {
+      "nominal_duration_ms": 46300,
+      "base_effect": "EFFECT_OFF",
+      "base_palette": "PAL_DISCOVERY",
+      "cues": [
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_EAR_BEAT_SOLID",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "color": 128,
+            "peak_brightness": 160,
+            "decay_steepness": 150,
+            "downbeat_flash": 180
+          }
+        },
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "WORK IT",
+            "color": 6
+          },
+          "duration_ms": 958
+        },
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_VISOR_VU_LIVE",
+          "zone": "BOTH_VISORS",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "color_mode": 1,
+            "color": 128,
+            "sensitivity": 160,
+            "decay_rate": 120,
+            "peak_hold": 1,
+            "bass_emphasis": 1
+          },
+          "_comment": "Visors: traffic-light VU live \u2014 verse_1 audio reaction."
+        },
+        {
+          "at_ms": 958,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "MAKE IT",
+            "color": 6
+          },
+          "duration_ms": 1006
+        },
+        {
+          "at_ms": 1964,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "DO IT",
+            "color": 6
+          },
+          "duration_ms": 934
+        },
+        {
+          "at_ms": 2898,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "MAKE US",
+            "color": 6
+          },
+          "duration_ms": 1000
+        },
+        {
+          "at_ms": 8192,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "HARDER",
+            "color": 2
+          },
+          "duration_ms": 1006
+        },
+        {
+          "at_ms": 9198,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "BETTER",
+            "color": 2
+          },
+          "duration_ms": 934
+        },
+        {
+          "at_ms": 10132,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "FASTER",
+            "color": 2
+          },
+          "duration_ms": 1006
+        },
+        {
+          "at_ms": 11138,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "STRNGR",
+            "color": 2
+          },
+          "duration_ms": 1000
+        },
+        {
+          "at_ms": 15450,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "MORE",
+            "color": 11
+          },
+          "duration_ms": 335
+        },
+        {
+          "at_ms": 15785,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "THAN",
+            "color": 11
+          },
+          "duration_ms": 671
+        },
+        {
+          "at_ms": 16456,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "HOUR",
+            "color": 11
+          },
+          "duration_ms": 1964
+        },
+        {
+          "at_ms": 18420,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "NEVER",
+            "color": 11
+          },
+          "duration_ms": 695
+        },
+        {
+          "at_ms": 23785,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "EVER",
+            "color": 11
+          },
+          "duration_ms": 958
+        },
+        {
+          "at_ms": 24743,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "AFTER",
+            "color": 11
+          },
+          "duration_ms": 959
+        },
+        {
+          "at_ms": 25702,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "WORK IS",
+            "color": 11
+          },
+          "duration_ms": 958
+        },
+        {
+          "at_ms": 26660,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "OVER",
+            "color": 11
+          },
+          "duration_ms": 563
+        },
+        {
+          "at_ms": 31043,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "WORK IT",
+            "color": 6
+          },
+          "duration_ms": 1006
+        },
+        {
+          "at_ms": 32049,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "MAKE IT",
+            "color": 6
+          },
+          "duration_ms": 1006
+        },
+        {
+          "at_ms": 33055,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "DO IT",
+            "color": 6
+          },
+          "duration_ms": 910
+        },
+        {
+          "at_ms": 33965,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "MAKE US",
+            "color": 6
+          },
+          "duration_ms": 653
+        },
+        {
+          "at_ms": 39307,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "HARDER",
+            "color": 2
+          },
+          "duration_ms": 1030
+        },
+        {
+          "at_ms": 40337,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "BETTER",
+            "color": 2
+          },
+          "duration_ms": 934
+        },
+        {
+          "at_ms": 41271,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "FASTER",
+            "color": 2
+          },
+          "duration_ms": 982
+        },
+        {
+          "at_ms": 42253,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "STRNGR",
+            "color": 2
+          },
+          "duration_ms": 772
+        }
+      ],
+      "lyric_defaults": {
+        "x_position": 0,
+        "y_position": 1,
+        "brightness": 40,
+        "animation": "static"
+      }
+    },
+    "verse_2": {
+      "nominal_duration_ms": 15900,
+      "base_effect": "EFFECT_OFF",
+      "base_palette": "PAL_DISCOVERY",
+      "cues": [
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_EAR_BEAT_SOLID",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "color": 128,
+            "peak_brightness": 160,
+            "decay_steepness": 170,
+            "downbeat_flash": 210
+          }
+        },
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_VISOR_VU_LIVE",
+          "zone": "BOTH_VISORS",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "color_mode": 1,
+            "color": 128,
+            "sensitivity": 160,
+            "decay_rate": 120,
+            "peak_hold": 1,
+            "bass_emphasis": 1
+          },
+          "_comment": "Visors: traffic-light VU live \u2014 verse_2 audio reaction."
+        },
+        {
+          "at_ms": 358,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "WORK IT",
+            "color": 6
+          },
+          "duration_ms": 527
+        },
+        {
+          "at_ms": 885,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "HARDER",
+            "color": 2
+          },
+          "duration_ms": 479
+        },
+        {
+          "at_ms": 1364,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "MAKE IT",
+            "color": 6
+          },
+          "duration_ms": 503
+        },
+        {
+          "at_ms": 1867,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "BETTER",
+            "color": 2
+          },
+          "duration_ms": 503
+        },
+        {
+          "at_ms": 2370,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "DO IT",
+            "color": 6
+          },
+          "duration_ms": 431
+        },
+        {
+          "at_ms": 2801,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "FASTER",
+            "color": 2
+          },
+          "duration_ms": 503
+        },
+        {
+          "at_ms": 3304,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "MAKE US",
+            "color": 6
+          },
+          "duration_ms": 468
+        },
+        {
+          "at_ms": 3772,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "STRNGR",
+            "color": 2
+          },
+          "duration_ms": 1000
+        },
+        {
+          "at_ms": 8155,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "MORE",
+            "color": 11
+          },
+          "duration_ms": 263
+        },
+        {
+          "at_ms": 8418,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "THAN",
+            "color": 11
+          },
+          "duration_ms": 228
+        },
+        {
+          "at_ms": 8646,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "EVER",
+            "color": 11
+          },
+          "duration_ms": 455
+        },
+        {
+          "at_ms": 9101,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "HOUR",
+            "color": 11
+          },
+          "duration_ms": 491
+        },
+        {
+          "at_ms": 9592,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "AFTER",
+            "color": 11
+          },
+          "duration_ms": 515
+        },
+        {
+          "at_ms": 10107,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "HOUR",
+            "color": 11
+          },
+          "duration_ms": 491
+        },
+        {
+          "at_ms": 10598,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "WORK IS",
+            "color": 11
+          },
+          "duration_ms": 491
+        },
+        {
+          "at_ms": 11089,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "NEVER",
+            "color": 11
+          },
+          "duration_ms": 491
+        },
+        {
+          "at_ms": 11580,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "OVER",
+            "color": 11
+          },
+          "duration_ms": 1000
+        }
+      ],
+      "lyric_defaults": {
+        "x_position": 0,
+        "y_position": 1,
+        "brightness": 40,
+        "animation": "static"
+      }
+    },
+    "verse_3": {
+      "nominal_duration_ms": 46711,
+      "base_effect": "EFFECT_OFF",
+      "base_palette": "PAL_DISCOVERY",
+      "cues": [
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_EAR_BEAT_SOLID",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "color": 128,
+            "peak_brightness": 160,
+            "decay_steepness": 190,
+            "downbeat_flash": 230
+          }
+        },
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_VISOR_VU_LIVE",
+          "zone": "BOTH_VISORS",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "color_mode": 1,
+            "color": 128,
+            "sensitivity": 160,
+            "decay_rate": 120,
+            "peak_hold": 1,
+            "bass_emphasis": 1
+          },
+          "_comment": "Visors: traffic-light VU live \u2014 verse_3 audio reaction."
+        },
+        {
+          "at_ms": 51,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "WORK IT",
+            "color": 6
+          },
+          "duration_ms": 456
+        },
+        {
+          "at_ms": 507,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "HARDER",
+            "color": 2
+          },
+          "duration_ms": 479
+        },
+        {
+          "at_ms": 986,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "MAKE IT",
+            "color": 6
+          },
+          "duration_ms": 527
+        },
+        {
+          "at_ms": 1513,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "BETTER",
+            "color": 2
+          },
+          "duration_ms": 491
+        },
+        {
+          "at_ms": 2004,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "DO IT",
+            "color": 6
+          },
+          "duration_ms": 467
+        },
+        {
+          "at_ms": 2471,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "FASTER",
+            "color": 2
+          },
+          "duration_ms": 491
+        },
+        {
+          "at_ms": 2962,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "MAKE US",
+            "color": 6
+          },
+          "duration_ms": 491
+        },
+        {
+          "at_ms": 3453,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "STRNGR",
+            "color": 2
+          },
+          "duration_ms": 491
+        },
+        {
+          "at_ms": 3944,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "MORE",
+            "color": 11
+          },
+          "duration_ms": 215
+        },
+        {
+          "at_ms": 4159,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "THAN",
+            "color": 11
+          },
+          "duration_ms": 240
+        },
+        {
+          "at_ms": 4399,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "EVER",
+            "color": 11
+          },
+          "duration_ms": 503
+        },
+        {
+          "at_ms": 4902,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "HOUR",
+            "color": 11
+          },
+          "duration_ms": 491
+        },
+        {
+          "at_ms": 5393,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "AFTER",
+            "color": 11
+          },
+          "duration_ms": 479
+        },
+        {
+          "at_ms": 5872,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "HOUR",
+            "color": 11
+          },
+          "duration_ms": 479
+        },
+        {
+          "at_ms": 6351,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "WORK IS",
+            "color": 11
+          },
+          "duration_ms": 491
+        },
+        {
+          "at_ms": 6842,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "NEVER",
+            "color": 11
+          },
+          "duration_ms": 479
+        },
+        {
+          "at_ms": 7321,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "OVER",
+            "color": 11
+          },
+          "duration_ms": 479
+        },
+        {
+          "at_ms": 7800,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "WORK IT",
+            "color": 6
+          },
+          "duration_ms": 491
+        },
+        {
+          "at_ms": 8291,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "HARDER",
+            "color": 2
+          },
+          "duration_ms": 491
+        },
+        {
+          "at_ms": 8782,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "MAKE IT",
+            "color": 6
+          },
+          "duration_ms": 491
+        },
+        {
+          "at_ms": 9273,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "BETTER",
+            "color": 2
+          },
+          "duration_ms": 503
+        },
+        {
+          "at_ms": 9776,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "DO IT",
+            "color": 6
+          },
+          "duration_ms": 467
+        },
+        {
+          "at_ms": 10243,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "FASTER",
+            "color": 2
+          },
+          "duration_ms": 503
+        },
+        {
+          "at_ms": 10746,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "MAKE US",
+            "color": 6
+          },
+          "duration_ms": 455
+        },
+        {
+          "at_ms": 11201,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "STRNGR",
+            "color": 2
+          },
+          "duration_ms": 504
+        },
+        {
+          "at_ms": 11705,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "MORE",
+            "color": 11
+          },
+          "duration_ms": 215
+        },
+        {
+          "at_ms": 11920,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "THAN",
+            "color": 11
+          },
+          "duration_ms": 240
+        },
+        {
+          "at_ms": 12160,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "EVER",
+            "color": 11
+          },
+          "duration_ms": 443
+        },
+        {
+          "at_ms": 12603,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "HOUR",
+            "color": 11
+          },
+          "duration_ms": 575
+        },
+        {
+          "at_ms": 13178,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "AFTER",
+            "color": 11
+          },
+          "duration_ms": 467
+        },
+        {
+          "at_ms": 13645,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "HOUR",
+            "color": 11
+          },
+          "duration_ms": 479
+        },
+        {
+          "at_ms": 14124,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "WORK IS",
+            "color": 11
+          },
+          "duration_ms": 527
+        },
+        {
+          "at_ms": 14651,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "NEVER",
+            "color": 11
+          },
+          "duration_ms": 479
+        },
+        {
+          "at_ms": 15130,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "OVER",
+            "color": 11
+          },
+          "duration_ms": 467
+        },
+        {
+          "at_ms": 15597,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "WORK IT",
+            "color": 6
+          },
+          "duration_ms": 479
+        },
+        {
+          "at_ms": 16076,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "HARDER",
+            "color": 2
+          },
+          "duration_ms": 479
+        },
+        {
+          "at_ms": 16555,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "MAKE IT",
+            "color": 6
+          },
+          "duration_ms": 491
+        },
+        {
+          "at_ms": 17046,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "BETTER",
+            "color": 2
+          },
+          "duration_ms": 491
+        },
+        {
+          "at_ms": 17537,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "DO IT",
+            "color": 6
+          },
+          "duration_ms": 479
+        },
+        {
+          "at_ms": 18016,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "FASTER",
+            "color": 2
+          },
+          "duration_ms": 491
+        },
+        {
+          "at_ms": 18507,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "MAKE US",
+            "color": 6
+          },
+          "duration_ms": 491
+        },
+        {
+          "at_ms": 18998,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "STRNGR",
+            "color": 2
+          },
+          "duration_ms": 479
+        },
+        {
+          "at_ms": 19477,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "MORE",
+            "color": 11
+          },
+          "duration_ms": 264
+        },
+        {
+          "at_ms": 19741,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "THAN",
+            "color": 11
+          },
+          "duration_ms": 227
+        },
+        {
+          "at_ms": 19968,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "EVER",
+            "color": 11
+          },
+          "duration_ms": 455
+        },
+        {
+          "at_ms": 20423,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "HOUR",
+            "color": 11
+          },
+          "duration_ms": 503
+        },
+        {
+          "at_ms": 20926,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "AFTER",
+            "color": 11
+          },
+          "duration_ms": 491
+        },
+        {
+          "at_ms": 21417,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "HOUR",
+            "color": 11
+          },
+          "duration_ms": 491
+        },
+        {
+          "at_ms": 21908,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "WORK IS",
+            "color": 11
+          },
+          "duration_ms": 491
+        },
+        {
+          "at_ms": 22399,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "NEVER",
+            "color": 11
+          },
+          "duration_ms": 479
+        },
+        {
+          "at_ms": 22878,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "OVER",
+            "color": 11
+          },
+          "duration_ms": 491
+        },
+        {
+          "at_ms": 23369,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "WORK IT",
+            "color": 6
+          },
+          "duration_ms": 480
+        },
+        {
+          "at_ms": 23849,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "HARDER",
+            "color": 2
+          },
+          "duration_ms": 491
+        },
+        {
+          "at_ms": 24340,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "MAKE IT",
+            "color": 6
+          },
+          "duration_ms": 491
+        },
+        {
+          "at_ms": 24831,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "BETTER",
+            "color": 2
+          },
+          "duration_ms": 491
+        },
+        {
+          "at_ms": 25322,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "DO IT",
+            "color": 6
+          },
+          "duration_ms": 479
+        },
+        {
+          "at_ms": 25801,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "FASTER",
+            "color": 2
+          },
+          "duration_ms": 467
+        },
+        {
+          "at_ms": 26268,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "MAKE US",
+            "color": 6
+          },
+          "duration_ms": 455
+        },
+        {
+          "at_ms": 26723,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "STRNGR",
+            "color": 2
+          },
+          "duration_ms": 539
+        },
+        {
+          "at_ms": 27262,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "MORE",
+            "color": 11
+          },
+          "duration_ms": 263
+        },
+        {
+          "at_ms": 27525,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "THAN",
+            "color": 11
+          },
+          "duration_ms": 228
+        },
+        {
+          "at_ms": 27753,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "EVER",
+            "color": 11
+          },
+          "duration_ms": 467
+        },
+        {
+          "at_ms": 28220,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "HOUR",
+            "color": 11
+          },
+          "duration_ms": 491
+        },
+        {
+          "at_ms": 28711,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "AFTER",
+            "color": 11
+          },
+          "duration_ms": 515
+        },
+        {
+          "at_ms": 29226,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "HOUR",
+            "color": 11
+          },
+          "duration_ms": 419
+        },
+        {
+          "at_ms": 29645,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "WORK IS",
+            "color": 11
+          },
+          "duration_ms": 539
+        },
+        {
+          "at_ms": 30184,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "NEVER",
+            "color": 11
+          },
+          "duration_ms": 455
+        },
+        {
+          "at_ms": 30639,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "OVER",
+            "color": 11
+          },
+          "duration_ms": 503
+        },
+        {
+          "at_ms": 31142,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "WORK IT",
+            "color": 6
+          },
+          "duration_ms": 491
+        },
+        {
+          "at_ms": 31633,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "HARDER",
+            "color": 2
+          },
+          "duration_ms": 491
+        },
+        {
+          "at_ms": 32124,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "MAKE IT",
+            "color": 6
+          },
+          "duration_ms": 467
+        },
+        {
+          "at_ms": 32591,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "BETTER",
+            "color": 2
+          },
+          "duration_ms": 491
+        },
+        {
+          "at_ms": 33082,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "DO IT",
+            "color": 6
+          },
+          "duration_ms": 479
+        },
+        {
+          "at_ms": 33561,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "FASTER",
+            "color": 2
+          },
+          "duration_ms": 491
+        },
+        {
+          "at_ms": 34052,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "MAKE US",
+            "color": 6
+          },
+          "duration_ms": 982
+        },
+        {
+          "at_ms": 35034,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "MORE",
+            "color": 11
+          },
+          "duration_ms": 264
+        },
+        {
+          "at_ms": 35298,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "THAN",
+            "color": 11
+          },
+          "duration_ms": 227
+        },
+        {
+          "at_ms": 35525,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "EVER",
+            "color": 11
+          },
+          "duration_ms": 444
+        },
+        {
+          "at_ms": 35969,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "HOUR",
+            "color": 11
+          },
+          "duration_ms": 443
+        },
+        {
+          "at_ms": 36412,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "AFTER",
+            "color": 11
+          },
+          "duration_ms": 575
+        },
+        {
+          "at_ms": 36987,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "HOUR",
+            "color": 11
+          },
+          "duration_ms": 467
+        },
+        {
+          "at_ms": 37454,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "WORK IS",
+            "color": 11
+          },
+          "duration_ms": 467
+        },
+        {
+          "at_ms": 37921,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "NEVER",
+            "color": 11
+          },
+          "duration_ms": 479
+        },
+        {
+          "at_ms": 38400,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "OVER",
+            "color": 11
+          },
+          "duration_ms": 503
+        },
+        {
+          "at_ms": 38903,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "WORK IT",
+            "color": 6
+          },
+          "duration_ms": 503
+        },
+        {
+          "at_ms": 39406,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "HARDER",
+            "color": 2
+          },
+          "duration_ms": 479
+        },
+        {
+          "at_ms": 39885,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "MAKE IT",
+            "color": 6
+          },
+          "duration_ms": 479
+        },
+        {
+          "at_ms": 40364,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "BETTER",
+            "color": 2
+          },
+          "duration_ms": 491
+        },
+        {
+          "at_ms": 40855,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "DO IT",
+            "color": 6
+          },
+          "duration_ms": 467
+        },
+        {
+          "at_ms": 41322,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "FASTER",
+            "color": 2
+          },
+          "duration_ms": 515
+        },
+        {
+          "at_ms": 41837,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "MAKE US",
+            "color": 6
+          },
+          "duration_ms": 455
+        },
+        {
+          "at_ms": 42292,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "STRNGR",
+            "color": 2
+          },
+          "duration_ms": 515
+        },
+        {
+          "at_ms": 42807,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "MORE",
+            "color": 11
+          },
+          "duration_ms": 252
+        },
+        {
+          "at_ms": 43059,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "THAN",
+            "color": 11
+          },
+          "duration_ms": 227
+        },
+        {
+          "at_ms": 43286,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "EVER",
+            "color": 11
+          },
+          "duration_ms": 491
+        },
+        {
+          "at_ms": 43777,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "HOUR",
+            "color": 11
+          },
+          "duration_ms": 491
+        },
+        {
+          "at_ms": 44268,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "AFTER",
+            "color": 11
+          },
+          "duration_ms": 479
+        },
+        {
+          "at_ms": 44747,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "HOUR",
+            "color": 11
+          },
+          "duration_ms": 479
+        },
+        {
+          "at_ms": 45226,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "WORK IS",
+            "color": 11
+          },
+          "duration_ms": 527
+        },
+        {
+          "at_ms": 45753,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "NEVER",
+            "color": 11
+          },
+          "duration_ms": 443
+        },
+        {
+          "at_ms": 46196,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "OVER",
+            "color": 11
+          },
+          "duration_ms": 515
+        }
+      ],
+      "lyric_defaults": {
+        "x_position": 0,
+        "y_position": 1,
+        "brightness": 40,
+        "animation": "static"
+      }
+    },
+    "breakdown": {
+      "nominal_duration_ms": 46700,
+      "base_effect": "EFFECT_OFF",
+      "base_palette": "PAL_DISCOVERY",
+      "cues": [
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "WORK IT",
+            "color": 2
+          },
+          "duration_ms": 2063
+        },
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_VISOR_SOLID",
+          "zone": "BOTH_VISORS",
+          "params": {
+            "color_index": 2,
+            "brightness": 138
+          },
+          "duration_ms": 2063
+        },
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_EAR_BEAT_SOLID",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "color": 128,
+            "peak_brightness": 160,
+            "decay_steepness": 190,
+            "downbeat_flash": 240
+          }
+        },
+        {
+          "at_ms": 2063,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "WORK IT",
+            "color": 6
+          },
+          "duration_ms": 2063
+        },
+        {
+          "at_ms": 2063,
+          "effect": "EFFECT_VISOR_SOLID",
+          "zone": "BOTH_VISORS",
+          "params": {
+            "color_index": 6,
+            "brightness": 138
+          },
+          "duration_ms": 2063
+        },
+        {
+          "at_ms": 4126,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "WORK IT",
+            "color": 11
+          },
+          "duration_ms": 2063
+        },
+        {
+          "at_ms": 4126,
+          "effect": "EFFECT_VISOR_SOLID",
+          "zone": "BOTH_VISORS",
+          "params": {
+            "color_index": 11,
+            "brightness": 138
+          },
+          "duration_ms": 2063
+        },
+        {
+          "at_ms": 6189,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "WORK IT",
+            "color": 2
+          },
+          "duration_ms": 2063
+        },
+        {
+          "at_ms": 6189,
+          "effect": "EFFECT_VISOR_SOLID",
+          "zone": "BOTH_VISORS",
+          "params": {
+            "color_index": 2,
+            "brightness": 138
+          },
+          "duration_ms": 2063
+        },
+        {
+          "at_ms": 8252,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "HARDER",
+            "color": 2
+          },
+          "duration_ms": 467
+        },
+        {
+          "at_ms": 8252,
+          "effect": "EFFECT_VISOR_GRADIENT_V",
+          "zone": "BOTH_VISORS",
+          "params": {
+            "bottom_color": 0,
+            "top_color": 0,
+            "bottom_brightness": 20,
+            "top_brightness": 105
+          }
+        },
+        {
+          "at_ms": 8719,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "MAKE IT",
+            "color": 6
+          },
+          "duration_ms": 958
+        },
+        {
+          "at_ms": 9677,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "DO IT",
+            "color": 6
+          },
+          "duration_ms": 491
+        },
+        {
+          "at_ms": 10168,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "FASTER",
+            "color": 2
+          },
+          "duration_ms": 671
+        },
+        {
+          "at_ms": 10839,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "MAKE US",
+            "color": 6
+          },
+          "duration_ms": 778
+        },
+        {
+          "at_ms": 11617,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "MORE",
+            "color": 11
+          },
+          "duration_ms": 276
+        },
+        {
+          "at_ms": 11893,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "THAN",
+            "color": 11
+          },
+          "duration_ms": 311
+        },
+        {
+          "at_ms": 12204,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "EVER",
+            "color": 11
+          },
+          "duration_ms": 408
+        },
+        {
+          "at_ms": 12612,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "HOUR",
+            "color": 11
+          },
+          "duration_ms": 395
+        },
+        {
+          "at_ms": 13007,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "AFTER",
+            "color": 11
+          },
+          "duration_ms": 551
+        },
+        {
+          "at_ms": 13558,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "HOUR",
+            "color": 11
+          },
+          "duration_ms": 491
+        },
+        {
+          "at_ms": 14049,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "WORK IS",
+            "color": 11
+          },
+          "duration_ms": 610
+        },
+        {
+          "at_ms": 14659,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "NEVER",
+            "color": 11
+          },
+          "duration_ms": 348
+        },
+        {
+          "at_ms": 15007,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "OVER",
+            "color": 11
+          },
+          "duration_ms": 479
+        },
+        {
+          "at_ms": 15486,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "WORK IT",
+            "color": 6
+          },
+          "duration_ms": 503
+        },
+        {
+          "at_ms": 15989,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "HARDER",
+            "color": 2
+          },
+          "duration_ms": 383
+        },
+        {
+          "at_ms": 16372,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "MAKE IT",
+            "color": 6
+          },
+          "duration_ms": 623
+        },
+        {
+          "at_ms": 16995,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "BETTER",
+            "color": 2
+          },
+          "duration_ms": 587
+        },
+        {
+          "at_ms": 17582,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "DO IT",
+            "color": 6
+          },
+          "duration_ms": 383
+        },
+        {
+          "at_ms": 17965,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "FASTER",
+            "color": 2
+          },
+          "duration_ms": 347
+        },
+        {
+          "at_ms": 18312,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "MAKE US",
+            "color": 6
+          },
+          "duration_ms": 623
+        },
+        {
+          "at_ms": 18935,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "STRNGR",
+            "color": 2
+          },
+          "duration_ms": 479
+        },
+        {
+          "at_ms": 19414,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "MORE",
+            "color": 11
+          },
+          "duration_ms": 252
+        },
+        {
+          "at_ms": 19666,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "THAN",
+            "color": 11
+          },
+          "duration_ms": 323
+        },
+        {
+          "at_ms": 19989,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "EVER",
+            "color": 11
+          },
+          "duration_ms": 347
+        },
+        {
+          "at_ms": 20336,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "HOUR",
+            "color": 11
+          },
+          "duration_ms": 288
+        },
+        {
+          "at_ms": 20624,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "AFTER",
+            "color": 11
+          },
+          "duration_ms": 742
+        },
+        {
+          "at_ms": 21366,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "HOUR",
+            "color": 11
+          },
+          "duration_ms": 431
+        },
+        {
+          "at_ms": 21797,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "WORK IS",
+            "color": 11
+          },
+          "duration_ms": 683
+        },
+        {
+          "at_ms": 22480,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "NEVER",
+            "color": 11
+          },
+          "duration_ms": 347
+        },
+        {
+          "at_ms": 22827,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "OVER",
+            "color": 11
+          },
+          "duration_ms": 467
+        },
+        {
+          "at_ms": 23294,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "WORK IT",
+            "color": 6
+          },
+          "duration_ms": 959
+        },
+        {
+          "at_ms": 24253,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "MAKE IT",
+            "color": 6
+          },
+          "duration_ms": 527
+        },
+        {
+          "at_ms": 24780,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "BETTER",
+            "color": 2
+          },
+          "duration_ms": 455
+        },
+        {
+          "at_ms": 25235,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "DO IT",
+            "color": 6
+          },
+          "duration_ms": 491
+        },
+        {
+          "at_ms": 25726,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "FASTER",
+            "color": 2
+          },
+          "duration_ms": 503
+        },
+        {
+          "at_ms": 26229,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "MAKE US",
+            "color": 6
+          },
+          "duration_ms": 455
+        },
+        {
+          "at_ms": 26684,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "STRNGR",
+            "color": 2
+          },
+          "duration_ms": 515
+        },
+        {
+          "at_ms": 27199,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "MORE",
+            "color": 11
+          },
+          "duration_ms": 251
+        },
+        {
+          "at_ms": 27450,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "THAN",
+            "color": 11
+          },
+          "duration_ms": 228
+        },
+        {
+          "at_ms": 27678,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "EVER",
+            "color": 11
+          },
+          "duration_ms": 467
+        },
+        {
+          "at_ms": 28145,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "HOUR",
+            "color": 11
+          },
+          "duration_ms": 491
+        },
+        {
+          "at_ms": 28636,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "AFTER",
+            "color": 11
+          },
+          "duration_ms": 503
+        },
+        {
+          "at_ms": 29139,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "HOUR",
+            "color": 11
+          },
+          "duration_ms": 359
+        },
+        {
+          "at_ms": 29498,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "WORK IS",
+            "color": 11
+          },
+          "duration_ms": 635
+        },
+        {
+          "at_ms": 30133,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "NEVER",
+            "color": 11
+          },
+          "duration_ms": 443
+        },
+        {
+          "at_ms": 30576,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "OVER",
+            "color": 11
+          },
+          "duration_ms": 503
+        },
+        {
+          "at_ms": 31079,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "WORK IT",
+            "color": 6
+          },
+          "duration_ms": 455
+        },
+        {
+          "at_ms": 31534,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "HARDER",
+            "color": 2
+          },
+          "duration_ms": 503
+        },
+        {
+          "at_ms": 32037,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "MAKE IT",
+            "color": 6
+          },
+          "duration_ms": 428
+        },
+        {
+          "at_ms": 32465,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "BETTER",
+            "color": 2
+          },
+          "duration_ms": 650
+        },
+        {
+          "at_ms": 33115,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "DO IT",
+            "color": 6
+          },
+          "duration_ms": 419
+        },
+        {
+          "at_ms": 33534,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "FASTER",
+            "color": 2
+          },
+          "duration_ms": 467
+        },
+        {
+          "at_ms": 34001,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "MAKE US",
+            "color": 6
+          },
+          "duration_ms": 575
+        },
+        {
+          "at_ms": 34576,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "STRNGR",
+            "color": 2
+          },
+          "duration_ms": 395
+        },
+        {
+          "at_ms": 34971,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "MORE",
+            "color": 11
+          },
+          "duration_ms": 264
+        },
+        {
+          "at_ms": 35235,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "THAN",
+            "color": 11
+          },
+          "duration_ms": 203
+        },
+        {
+          "at_ms": 35438,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "EVER",
+            "color": 11
+          },
+          "duration_ms": 384
+        },
+        {
+          "at_ms": 35822,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "HOUR",
+            "color": 11
+          },
+          "duration_ms": 455
+        },
+        {
+          "at_ms": 36277,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "AFTER",
+            "color": 11
+          },
+          "duration_ms": 635
+        },
+        {
+          "at_ms": 36912,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "HOUR",
+            "color": 11
+          },
+          "duration_ms": 455
+        },
+        {
+          "at_ms": 37367,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "WORK IS",
+            "color": 11
+          },
+          "duration_ms": 539
+        },
+        {
+          "at_ms": 37906,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "NEVER",
+            "color": 11
+          },
+          "duration_ms": 479
+        },
+        {
+          "at_ms": 38385,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "OVER",
+            "color": 11
+          },
+          "duration_ms": 500
+        }
+      ],
+      "lyric_defaults": {
+        "x_position": 0,
+        "y_position": 1,
+        "brightness": 40,
+        "animation": "static"
+      }
+    },
+    "outro_lyr": {
+      "nominal_duration_ms": 15636,
+      "base_effect": "EFFECT_OFF",
+      "base_palette": "PAL_DISCOVERY",
+      "cues": [
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_EAR_BEAT_SOLID",
+          "zone": "BOTH_EARS",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "color": 128,
+            "peak_brightness": 160,
+            "decay_steepness": 175,
+            "downbeat_flash": 215
+          }
+        },
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "WORK IT",
+            "color": 6
+          },
+          "duration_ms": 599
+        },
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_VISOR_GRADIENT_V",
+          "zone": "BOTH_VISORS",
+          "params": {
+            "bottom_color": 0,
+            "top_color": 2,
+            "bottom_brightness": 20,
+            "top_brightness": 100
+          }
+        },
+        {
+          "at_ms": 599,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "HARDER",
+            "color": 2
+          },
+          "duration_ms": 635
+        },
+        {
+          "at_ms": 1234,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "DO IT",
+            "color": 6
+          },
+          "duration_ms": 1210
+        },
+        {
+          "at_ms": 2444,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "FASTER",
+            "color": 2
+          },
+          "duration_ms": 742
+        },
+        {
+          "at_ms": 3186,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "MORE",
+            "color": 11
+          },
+          "duration_ms": 1030
+        },
+        {
+          "at_ms": 4216,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "THAN",
+            "color": 11
+          },
+          "duration_ms": 359
+        },
+        {
+          "at_ms": 4575,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "EVER",
+            "color": 11
+          },
+          "duration_ms": 557
+        },
+        {
+          "at_ms": 5132,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "HOUR",
+            "color": 11
+          },
+          "duration_ms": 1168
+        },
+        {
+          "at_ms": 6300,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "WORK IS",
+            "color": 11
+          },
+          "duration_ms": 551
+        },
+        {
+          "at_ms": 6851,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "NEVER",
+            "color": 11
+          },
+          "duration_ms": 575
+        },
+        {
+          "at_ms": 7426,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "OVER",
+            "color": 11
+          },
+          "duration_ms": 359
+        },
+        {
+          "at_ms": 7785,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "WORK IT",
+            "color": 6
+          },
+          "duration_ms": 587
+        },
+        {
+          "at_ms": 8372,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "HARDER",
+            "color": 2
+          },
+          "duration_ms": 407
+        },
+        {
+          "at_ms": 8779,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "MAKE IT",
+            "color": 6
+          },
+          "duration_ms": 557
+        },
+        {
+          "at_ms": 9336,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "BETTER",
+            "color": 2
+          },
+          "duration_ms": 419
+        },
+        {
+          "at_ms": 9755,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "DO IT",
+            "color": 6
+          },
+          "duration_ms": 473
+        },
+        {
+          "at_ms": 10228,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "FASTER",
+            "color": 2
+          },
+          "duration_ms": 539
+        },
+        {
+          "at_ms": 10767,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "MAKE US",
+            "color": 6
+          },
+          "duration_ms": 425
+        },
+        {
+          "at_ms": 11192,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "STRNGR",
+            "color": 2
+          },
+          "duration_ms": 497
+        },
+        {
+          "at_ms": 11689,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "MORE",
+            "color": 11
+          },
+          "duration_ms": 324
+        },
+        {
+          "at_ms": 12013,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "THAN",
+            "color": 11
+          },
+          "duration_ms": 149
+        },
+        {
+          "at_ms": 12162,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "EVER",
+            "color": 11
+          },
+          "duration_ms": 551
+        },
+        {
+          "at_ms": 12713,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "HOUR",
+            "color": 11
+          },
+          "duration_ms": 431
+        },
+        {
+          "at_ms": 13144,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "AFTER",
+            "color": 11
+          },
+          "duration_ms": 515
+        },
+        {
+          "at_ms": 13659,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "HOUR",
+            "color": 11
+          },
+          "duration_ms": 444
+        },
+        {
+          "at_ms": 14103,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "WORK IS",
+            "color": 11
+          },
+          "duration_ms": 509
+        },
+        {
+          "at_ms": 14612,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "NEVER",
+            "color": 11
+          },
+          "duration_ms": 586
+        },
+        {
+          "at_ms": 15198,
+          "effect": "EFFECT_MATRIX_TEXT",
+          "zone": "MATRIX",
+          "params": {
+            "text": "OVER",
+            "color": 11
+          },
+          "duration_ms": 438
+        }
+      ],
+      "lyric_defaults": {
+        "x_position": 0,
+        "y_position": 1,
+        "brightness": 40,
+        "animation": "static"
+      }
+    },
+    "outro_end": {
+      "nominal_duration_ms": 1700,
+      "base_effect": "EFFECT_OFF",
+      "base_palette": "PAL_DISCOVERY",
+      "is_outro": true,
+      "cues": [
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_AMBIENT_BREATHE",
+          "zone": "BOTH_EARS",
+          "params": {
+            "color": 2,
+            "period_100ms": 16,
+            "min_brightness": 0,
+            "max_brightness": 130
+          }
+        },
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_VISOR_GRADIENT_V",
+          "zone": "BOTH_VISORS",
+          "params": {
+            "bottom_color": 0,
+            "top_color": 2,
+            "bottom_brightness": 5,
+            "top_brightness": 40
+          }
+        }
+      ]
+    }
+  },
+  "timeline": [
+    {
+      "at_ms": 0,
+      "play": "pre_intro"
+    },
+    {
+      "at_ms": 1196,
+      "play": "intro"
+    },
+    {
+      "at_ms": 51546,
+      "play": "verse_1"
+    },
+    {
+      "at_ms": 97800,
+      "play": "verse_2"
+    },
+    {
+      "at_ms": 113700,
+      "play": "verse_3"
+    },
+    {
+      "at_ms": 160411,
+      "play": "breakdown"
+    },
+    {
+      "at_ms": 207023,
+      "play": "outro_lyr"
+    },
+    {
+      "at_ms": 222659,
+      "play": "outro_end"
+    }
+  ],
+  "resources": {
+    "sprites": [],
+    "vu_sequences": [],
+    "text_strings": [
+      "AFTER",
+      "BETTER",
+      "DAFT PUNK",
+      "DISCOVERY",
+      "DO IT",
+      "EVER",
+      "FASTER",
+      "HARDER",
+      "HOUR",
+      "MAKE IT",
+      "MAKE US",
+      "MORE",
+      "NEVER",
+      "OVER",
+      "STRNGR",
+      "THAN",
+      "WORK IS",
+      "WORK IT"
+    ]
+  }
+}

@@ -12,14 +12,14 @@
     "total_bars": 105,
     "beat_tracker": "librosa + Audacity VAMP (cross-validated)",
     "structural_summary": [
-      "0–3.9s:      pre_intro — reverse pad / silence",
-      "3.9–15.5s:   intro — arpeggiated synth bursts every 2 bars, no drums (bars 1–6)",
-      "15.5–62.0s:  groove_1 — kick + bass enters, building full groove (bars 7–30)",
-      "62.0–93.8s:  mid — energy dips to ~0.14 RMS, lighter texture (bars 30–46)",
-      "93.8–139.5s: groove_2 — full groove resumes, escalates to 0.22 RMS peak (bars 46–69)",
-      "139.5–171.7s:solo — guitar solo, near-silence then climbs (bars 69–86)",
-      "171.7–203.5s:groove_3 — groove returns strong (bars 86–102)",
-      "203.5–207.5s:outro — fade out (bars 102–105)"
+      "0\u20133.9s:      pre_intro \u2014 reverse pad / silence",
+      "3.9\u201315.5s:   intro \u2014 arpeggiated synth bursts every 2 bars, no drums (bars 1\u20136)",
+      "15.5\u201362.0s:  groove_1 \u2014 kick + bass enters, building full groove (bars 7\u201330)",
+      "62.0\u201393.8s:  mid \u2014 energy dips to ~0.14 RMS, lighter texture (bars 30\u201346)",
+      "93.8\u2013139.5s: groove_2 \u2014 full groove resumes, escalates to 0.22 RMS peak (bars 46\u201369)",
+      "139.5\u2013171.7s:solo \u2014 guitar solo, near-silence then climbs (bars 69\u201386)",
+      "171.7\u2013203.5s:groove_3 \u2014 groove returns strong (bars 86\u2013102)",
+      "203.5\u2013207.5s:outro \u2014 fade out (bars 102\u2013105)"
     ]
   },
   "beat_grid": {
@@ -32,14 +32,14 @@
   "mirror_lr": true,
   "segments": {
     "pre_intro": {
-      "_comment": "Reverse pad decays to silence. 3.9s. Nothing runs — pure anticipation.",
+      "_comment": "Reverse pad decays to silence. 3.9s. Nothing runs \u2014 pure anticipation.",
       "nominal_duration_ms": 3900,
       "base_effect": "EFFECT_OFF",
       "base_palette": "PAL_DISCOVERY",
       "cues": []
     },
     "intro": {
-      "_comment": "Arpeggiated synth motif, no drums. Bursts every 2 bars (~3.9s). Bars 1-6, 11.6s. Ears echo the burst pattern — bright flash on attack, breathe down in decay. Matrix announces the song title on the first beat.",
+      "_comment": "Arpeggiated synth motif, no drums. Bursts every 2 bars (~3.9s). Bars 1-6, 11.6s. Ears echo the burst pattern \u2014 bright flash on attack, breathe down in decay. Matrix announces the song title on the first beat.",
       "nominal_duration_ms": 11700,
       "base_effect": "EFFECT_OFF",
       "base_palette": "PAL_INTRO_WARM",
@@ -87,7 +87,7 @@
         },
         {
           "at_ms": 350,
-          "_comment": "Breathe down through bar 1-2 decay. Diffuser blends all 16 ear LEDs — min 0 so it pulses to dark between breaths.",
+          "_comment": "Breathe down through bar 1-2 decay. Diffuser blends all 16 ear LEDs \u2014 min 0 so it pulses to dark between breaths.",
           "effect": "EFFECT_EAR_BREATHE",
           "zone": "BOTH_EARS",
           "palette": "PAL_INTRO_WARM",
@@ -128,7 +128,7 @@
         },
         {
           "at_ms": 7824,
-          "_comment": "Bar 5 burst (third arpeggio, t≈7.8s into segment).",
+          "_comment": "Bar 5 burst (third arpeggio, t\u22487.8s into segment).",
           "effect": "EFFECT_FULL_FLASH",
           "zone": "BOTH_EARS",
           "palette": "PAL_INTRO_WARM",
@@ -156,7 +156,7 @@
       ]
     },
     "groove_1": {
-      "_comment": "Kick + bass enters at bar 7 (t=15.5s). Energy builds from ~0.13 to ~0.19 RMS over 46.5s. Matrix runs diagonal gold/indigo stripes — techy, like a computer display. Upgrades brightness at bar 15 when groove fully opens.",
+      "_comment": "Kick + bass enters at bar 7 (t=15.5s). Energy builds from ~0.13 to ~0.19 RMS over 46.5s. Matrix runs diagonal gold/indigo stripes \u2014 techy, like a computer display. Upgrades brightness at bar 15 when groove fully opens.",
       "nominal_duration_ms": 46600,
       "base_effect": "EFFECT_OFF",
       "base_palette": "PAL_DISCOVERY",
@@ -189,62 +189,59 @@
         },
         {
           "at_ms": 0,
-          "_comment": "Matrix: diagonal stripes, gold over deep indigo. Slow scroll for early groove.",
-          "effect": "EFFECT_MATRIX_SCROLL_BG",
+          "effect": "EFFECT_MATRIX_VU_LIVE",
           "zone": "MATRIX",
           "palette": "PAL_DISCOVERY",
           "params": {
-            "pattern": "diagonal",
-            "color_a": 128,
-            "color_b": 0,
-            "scroll_speed": 14,
-            "brightness": 30,
-            "pattern_period": 4
-          }
+            "sensitivity": 140,
+            "noise_floor": 25,
+            "decay_rate": 80,
+            "peak_hold": 1,
+            "color_mode": 0,
+            "color": 0
+          },
+          "_comment": "Matrix: live spectrum analyzer \u2014 traffic light during main groove."
         },
         {
           "at_ms": 120,
-          "_comment": "Early groove: beat gradient, building energy. bottom_brightness 0 — ears dark between beats, punchy flashes only.",
-          "effect": "EFFECT_EAR_BEAT_GRADIENT",
+          "effect": "EFFECT_EAR_BEAT_SOLID",
           "zone": "BOTH_EARS",
           "palette": "PAL_DISCOVERY",
           "params": {
+            "color": 128,
+            "peak_brightness": 160,
             "decay_steepness": 120,
-            "bottom_color": 0,
-            "bottom_brightness": 0,
-            "top_brightness": 140,
-            "downbeat_flash": 160,
-            "subbeat_sparkle": 0
-          }
+            "downbeat_flash": 160
+          },
+          "_comment": "Early groove: beat solid, building energy. bottom_brightness 0 \u2014 ears dark between beats, punchy flashes only."
         },
         {
           "at_ms": 15610,
-          "_comment": "~bar 15: groove fully open. Upgrade ears to full beat gradient, matrix brighter.",
-          "effect": "EFFECT_EAR_BEAT_GRADIENT",
+          "effect": "EFFECT_EAR_BEAT_SOLID",
           "zone": "BOTH_EARS",
           "palette": "PAL_DISCOVERY",
           "params": {
+            "color": 128,
+            "peak_brightness": 160,
             "decay_steepness": 155,
-            "bottom_color": 0,
-            "bottom_brightness": 0,
-            "top_brightness": 175,
-            "downbeat_flash": 190,
-            "subbeat_sparkle": 50
-          }
+            "downbeat_flash": 190
+          },
+          "_comment": "~bar 15: groove fully open. Upgrade ears to full beat solid, matrix brighter."
         },
         {
           "at_ms": 15610,
-          "effect": "EFFECT_VISOR_BEAT_WIPE",
+          "effect": "EFFECT_VISOR_VU_LIVE",
           "zone": "BOTH_VISORS",
           "palette": "PAL_DISCOVERY",
           "params": {
-            "direction": "bottom_to_top",
-            "beats_per_wipe": 1,
-            "wave_color": 6,
-            "wave_width": 2,
-            "wave_brightness": 145,
-            "bg_brightness": 30
-          }
+            "color_mode": 0,
+            "color": 128,
+            "sensitivity": 160,
+            "decay_rate": 110,
+            "peak_hold": 1,
+            "bass_emphasis": 1
+          },
+          "_comment": "Visors: gold VU live \u2014 groove intensifies."
         },
         {
           "at_ms": 15610,
@@ -264,25 +261,23 @@
       ]
     },
     "mid": {
-      "_comment": "Energy dips to ~0.14 RMS (bars 30-46, 31.8s). PAL_COOL_SWEEP gives a distinct cooler identity. Matrix switches to horizontal stripes — less aggressive, like a radar sweep.",
+      "_comment": "Energy dips to ~0.14 RMS (bars 30-46, 31.8s). PAL_COOL_SWEEP gives a distinct cooler identity. Matrix switches to horizontal stripes \u2014 less aggressive, like a radar sweep.",
       "nominal_duration_ms": 31900,
       "base_effect": "EFFECT_OFF",
       "base_palette": "PAL_COOL_SWEEP",
       "cues": [
         {
           "at_ms": 0,
-          "effect": "EFFECT_EAR_BEAT_GRADIENT",
+          "effect": "EFFECT_EAR_BEAT_SOLID",
           "zone": "BOTH_EARS",
           "palette": "PAL_COOL_SWEEP",
           "params": {
+            "color": 128,
+            "peak_brightness": 160,
             "decay_steepness": 130,
-            "bottom_color": 0,
-            "bottom_brightness": 0,
-            "top_brightness": 140,
-            "downbeat_flash": 155,
-            "subbeat_sparkle": 25
+            "downbeat_flash": 155
           },
-          "_comment": "Softer beat gradient. bottom 0 — punchy beats against silence."
+          "_comment": "Softer beat solid. bottom 0 \u2014 punchy beats against silence."
         },
         {
           "at_ms": 0,
@@ -299,17 +294,17 @@
         },
         {
           "at_ms": 0,
-          "_comment": "Matrix: horizontal stripes in cool palette. Slower scroll matches the lower energy.",
-          "effect": "EFFECT_MATRIX_SCROLL_BG",
+          "_comment": "Matrix: cylon sweep \u2014 bar bounces across the display, beat-locked.",
+          "effect": "EFFECT_MATRIX_CYLON",
           "zone": "MATRIX",
           "palette": "PAL_COOL_SWEEP",
           "params": {
-            "pattern": "h_stripes",
-            "color_a": 0,
-            "color_b": 128,
-            "scroll_speed": 8,
-            "brightness": 28,
-            "pattern_period": 6
+            "color": 128,
+            "bar_width": 2,
+            "trail_length": 7,
+            "speed": 30,
+            "brightness": 42,
+            "beat_sync": 1
           }
         }
       ]
@@ -336,17 +331,18 @@
         },
         {
           "at_ms": 0,
-          "effect": "EFFECT_VISOR_BEAT_WIPE",
+          "effect": "EFFECT_VISOR_VU_LIVE",
           "zone": "BOTH_VISORS",
           "palette": "PAL_DISCOVERY",
           "params": {
-            "direction": "bottom_to_top",
-            "beats_per_wipe": 1,
-            "wave_color": 7,
-            "wave_width": 2,
-            "wave_brightness": 160,
-            "bg_brightness": 35
-          }
+            "color_mode": 0,
+            "color": 128,
+            "sensitivity": 160,
+            "decay_rate": 110,
+            "peak_hold": 1,
+            "bass_emphasis": 1
+          },
+          "_comment": "Visors: gold VU live for the return groove."
         },
         {
           "at_ms": 0,
@@ -365,21 +361,19 @@
         },
         {
           "at_ms": 140,
-          "effect": "EFFECT_EAR_BEAT_GRADIENT",
+          "effect": "EFFECT_EAR_BEAT_SOLID",
           "zone": "BOTH_EARS",
           "palette": "PAL_DISCOVERY",
           "params": {
+            "color": 128,
+            "peak_brightness": 160,
             "decay_steepness": 175,
-            "bottom_color": 0,
-            "bottom_brightness": 0,
-            "top_brightness": 185,
-            "downbeat_flash": 215,
-            "subbeat_sparkle": 75
+            "downbeat_flash": 215
           }
         },
         {
           "at_ms": 15510,
-          "_comment": "Peak energy hit (bar 55, t≈109s in song). Extra flash punch.",
+          "_comment": "Peak energy hit (bar 55, t\u2248109s in song). Extra flash punch.",
           "effect": "EFFECT_FULL_FLASH",
           "zone": "BOTH_EARS",
           "palette": "PAL_DISCOVERY",
@@ -393,32 +387,30 @@
         },
         {
           "at_ms": 15610,
-          "effect": "EFFECT_EAR_BEAT_GRADIENT",
+          "effect": "EFFECT_EAR_BEAT_SOLID",
           "zone": "BOTH_EARS",
           "palette": "PAL_DISCOVERY",
           "params": {
+            "color": 128,
+            "peak_brightness": 160,
             "decay_steepness": 195,
-            "bottom_color": 0,
-            "bottom_brightness": 0,
-            "top_brightness": 185,
-            "downbeat_flash": 240,
-            "subbeat_sparkle": 100
+            "downbeat_flash": 240
           },
-          "_comment": "After the peak hit: maximum beat gradient for groove_2 climax."
+          "_comment": "After the peak hit: maximum beat solid for groove_2 climax."
         },
         {
           "at_ms": 15610,
-          "_comment": "Matrix at peak: fastest scroll, ceiling brightness.",
-          "effect": "EFFECT_MATRIX_SCROLL_BG",
+          "_comment": "Matrix: cylon sweep \u2014 bar bounces across the display, beat-locked.",
+          "effect": "EFFECT_MATRIX_CYLON",
           "zone": "MATRIX",
           "palette": "PAL_DISCOVERY",
           "params": {
-            "pattern": "diagonal",
-            "color_a": 128,
-            "color_b": 0,
-            "scroll_speed": 30,
-            "brightness": 44,
-            "pattern_period": 4
+            "color": 128,
+            "bar_width": 2,
+            "trail_length": 7,
+            "speed": 30,
+            "brightness": 42,
+            "beat_sync": 1
           }
         }
       ]
@@ -458,33 +450,30 @@
         },
         {
           "at_ms": 0,
-          "_comment": "Matrix: slow vertical red stripes — barely moving, building dread.",
-          "effect": "EFFECT_MATRIX_SCROLL_BG",
+          "_comment": "Matrix: twinkling starfield backdrop \u2014 atmospheric cosmic fill.",
+          "effect": "EFFECT_MATRIX_STARFIELD",
           "zone": "MATRIX",
           "palette": "PAL_RED_BREAKDOWN",
           "params": {
-            "pattern": "v_stripes",
-            "color_a": 128,
-            "color_b": 0,
-            "scroll_speed": 5,
-            "brightness": 18,
-            "pattern_period": 8
+            "density": 12,
+            "twinkle_speed": 30,
+            "max_brightness": 40,
+            "color_mode": 0,
+            "drift_speed": 3
           }
         },
         {
           "at_ms": 8000,
-          "_comment": "Solo starting to build (~t=147.5s in song). Beat gradient emerges.",
-          "effect": "EFFECT_EAR_BEAT_GRADIENT",
+          "effect": "EFFECT_EAR_BEAT_SOLID",
           "zone": "BOTH_EARS",
           "palette": "PAL_RED_BREAKDOWN",
           "params": {
+            "color": 128,
+            "peak_brightness": 160,
             "decay_steepness": 140,
-            "bottom_color": 0,
-            "bottom_brightness": 0,
-            "top_brightness": 130,
-            "downbeat_flash": 160,
-            "subbeat_sparkle": 0
-          }
+            "downbeat_flash": 160
+          },
+          "_comment": "Solo starting to build (~t=147.5s in song). Beat solid emerges."
         },
         {
           "at_ms": 8000,
@@ -500,61 +489,60 @@
         },
         {
           "at_ms": 8000,
-          "_comment": "Matrix: stripes speed up as solo builds.",
-          "effect": "EFFECT_MATRIX_SCROLL_BG",
+          "_comment": "Matrix: rings radiate from center on each beat \u2014 kinetic drop energy.",
+          "effect": "EFFECT_MATRIX_RADIATE",
           "zone": "MATRIX",
           "palette": "PAL_RED_BREAKDOWN",
           "params": {
-            "pattern": "v_stripes",
-            "color_a": 128,
-            "color_b": 0,
-            "scroll_speed": 18,
-            "brightness": 30,
-            "pattern_period": 6
+            "color": 128,
+            "brightness": 42,
+            "speed": 20,
+            "ring_spacing": 6,
+            "fade_out": 1,
+            "beat_trigger": 1
           }
         },
         {
           "at_ms": 20000,
-          "_comment": "Solo climax (~t=159.5s, bar 78). Maximum red drama.",
-          "effect": "EFFECT_EAR_BEAT_GRADIENT",
+          "effect": "EFFECT_EAR_BEAT_SOLID",
           "zone": "BOTH_EARS",
           "palette": "PAL_RED_BREAKDOWN",
           "params": {
+            "color": 128,
+            "peak_brightness": 160,
             "decay_steepness": 185,
-            "bottom_color": 0,
-            "bottom_brightness": 0,
-            "top_brightness": 185,
-            "downbeat_flash": 230,
-            "subbeat_sparkle": 90
-          }
+            "downbeat_flash": 230
+          },
+          "_comment": "Solo climax (~t=159.5s, bar 78). Maximum red drama."
         },
         {
           "at_ms": 20000,
-          "effect": "EFFECT_VISOR_BEAT_WIPE",
+          "effect": "EFFECT_VISOR_VU_LIVE",
           "zone": "BOTH_VISORS",
-          "palette": "PAL_RED_BREAKDOWN",
+          "palette": "PAL_DISCOVERY",
           "params": {
-            "direction": "bottom_to_top",
-            "beats_per_wipe": 1,
-            "wave_color": 8,
-            "wave_width": 2,
-            "wave_brightness": 150,
-            "bg_brightness": 25
-          }
+            "color_mode": 0,
+            "color": 128,
+            "sensitivity": 160,
+            "decay_rate": 110,
+            "peak_hold": 1,
+            "bass_emphasis": 1
+          },
+          "_comment": "Visors: VU live \u2014 peak solo intensity."
         },
         {
           "at_ms": 20000,
-          "_comment": "Matrix: stripes at max aggression for climax.",
-          "effect": "EFFECT_MATRIX_SCROLL_BG",
+          "_comment": "Matrix: rain \u2014 falling columns with glow trails, building intensity.",
+          "effect": "EFFECT_MATRIX_RAIN",
           "zone": "MATRIX",
           "palette": "PAL_RED_BREAKDOWN",
           "params": {
-            "pattern": "v_stripes",
-            "color_a": 128,
-            "color_b": 0,
-            "scroll_speed": 35,
+            "color": 128,
+            "density": 14,
+            "speed": 20,
+            "trail_length": 4,
             "brightness": 40,
-            "pattern_period": 4
+            "spawn_mode": 0
           }
         }
       ]
@@ -577,49 +565,48 @@
             "include_matrix": 1
           },
           "duration_ms": 160,
-          "_comment": "Return flash includes matrix — biggest entrance after the solo tension."
+          "_comment": "Return flash includes matrix \u2014 biggest entrance after the solo tension."
         },
         {
           "at_ms": 0,
-          "effect": "EFFECT_VISOR_BEAT_WIPE",
+          "effect": "EFFECT_VISOR_VU_LIVE",
           "zone": "BOTH_VISORS",
           "palette": "PAL_DISCOVERY",
           "params": {
-            "direction": "bottom_to_top",
-            "beats_per_wipe": 1,
-            "wave_color": 6,
-            "wave_width": 2,
-            "wave_brightness": 165,
-            "bg_brightness": 30
-          }
+            "color_mode": 0,
+            "color": 128,
+            "sensitivity": 160,
+            "decay_rate": 110,
+            "peak_hold": 1,
+            "bass_emphasis": 1
+          },
+          "_comment": "Visors: gold VU live \u2014 final groove."
         },
         {
           "at_ms": 0,
-          "_comment": "Matrix: triumphant return — diagonal gold stripes at full energy.",
-          "effect": "EFFECT_MATRIX_SCROLL_BG",
+          "effect": "EFFECT_MATRIX_VU_LIVE",
           "zone": "MATRIX",
           "palette": "PAL_DISCOVERY",
           "params": {
-            "pattern": "diagonal",
-            "color_a": 128,
-            "color_b": 0,
-            "scroll_speed": 25,
-            "brightness": 42,
-            "pattern_period": 4
-          }
+            "sensitivity": 140,
+            "noise_floor": 25,
+            "decay_rate": 80,
+            "peak_hold": 1,
+            "color_mode": 0,
+            "color": 0
+          },
+          "_comment": "Matrix: live spectrum \u2014 final groove return."
         },
         {
           "at_ms": 160,
-          "effect": "EFFECT_EAR_BEAT_GRADIENT",
+          "effect": "EFFECT_EAR_BEAT_SOLID",
           "zone": "BOTH_EARS",
           "palette": "PAL_DISCOVERY",
           "params": {
+            "color": 128,
+            "peak_brightness": 160,
             "decay_steepness": 180,
-            "bottom_color": 0,
-            "bottom_brightness": 0,
-            "top_brightness": 185,
-            "downbeat_flash": 220,
-            "subbeat_sparkle": 85
+            "downbeat_flash": 220
           }
         },
         {
@@ -654,7 +641,7 @@
       ]
     },
     "outro": {
-      "_comment": "Fade out. 4.1s. Ears breathe to darkness. Matrix off — let the silence land.",
+      "_comment": "Fade out. 4.1s. Ears breathe to darkness. Matrix off \u2014 let the silence land.",
       "nominal_duration_ms": 4100,
       "base_effect": "EFFECT_OFF",
       "base_palette": "PAL_INTRO_WARM",
@@ -683,6 +670,21 @@
             "bottom_brightness": 5,
             "top_brightness": 30
           }
+        },
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_MATRIX_EYES",
+          "zone": "MATRIX",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "color": 64,
+            "brightness": 35,
+            "blink_rate": 10,
+            "blink_speed": 2,
+            "look_mode": 1,
+            "expression": 0
+          },
+          "_comment": "Matrix: eyes slowly wander as the song fades \u2014 eerie sign-off."
         }
       ]
     }
