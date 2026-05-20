@@ -2245,6 +2245,113 @@
         }
       ]
     },
+    "EFFECT_MATRIX_RADIATE": {
+      "id": 47,
+      "zones": ["MATRIX"],
+      "params": [
+        {
+          "name": "color",
+          "type": "palette_index",
+          "description": "Palette index for the expanding ring. Bright saturated colors read best against the dark matrix background."
+        },
+        {
+          "name": "brightness",
+          "type": "uint8",
+          "range": [0, 45],
+          "description": "Peak brightness of the ring at the moment it fires. Subject to MATRIX_BRIGHTNESS_MAX=45. Rings fade as they expand if fade_out is enabled."
+        },
+        {
+          "name": "speed",
+          "type": "uint8",
+          "range": [1, 255],
+          "description": "Expansion rate in pixels per frame tick. 8=slow pulse, 20=moderate, 40=fast burst. At beat_trigger=1, speed controls how quickly the fired ring travels outward before it vanishes — too slow and rings stack up; too fast and they're gone before you see them. 15–25 is the sweet spot for beat-locked radiating."
+        },
+        {
+          "name": "ring_thickness",
+          "type": "uint8",
+          "range": [1, 4],
+          "description": "Width of the ring wavefront in pixels. 1=razor thin, 2=solid ring, 3–4=fat band. Thicker rings are more visible on the sparse matrix."
+        },
+        {
+          "name": "ring_count",
+          "type": "uint8",
+          "range": [1, 4],
+          "description": "Number of concentric rings simultaneously in flight. Each subsequent ring is spaced ring_spacing pixels behind the leading ring, creating a ripple effect. 1=single pulse, 2–3=ripple pool, 4=dense ripple."
+        },
+        {
+          "name": "ring_spacing",
+          "type": "uint8",
+          "range": [2, 16],
+          "description": "Distance in pixels between the leading edges of simultaneous rings. Only meaningful when ring_count > 1. 4–6 gives tight ripples, 8–12 gives airy separated rings."
+        },
+        {
+          "name": "fade_out",
+          "type": "uint8",
+          "range": [0, 1],
+          "description": "0=rings maintain brightness until they hit the edge and vanish abruptly. 1=rings fade linearly from peak_brightness at center down to 0 at max radius. Fade mode looks more organic; no-fade is punchy and sharp."
+        },
+        {
+          "name": "beat_trigger",
+          "type": "uint8",
+          "range": [0, 2],
+          "description": "0=continuous looping: a new ring fires automatically as soon as the previous set reaches the edge. 1=beat-triggered: a new leading ring fires on each beat downbeat, up to ring_count rings in flight simultaneously. 2=bar-triggered: fires on bar 1 only, creating a single outward pulse per musical phrase."
+        }
+      ],
+      "description": "Beat-synced concentric rings expanding outward from the center of the 32×8 matrix. On a 32×8 display the rings are elliptical — they reach the top/bottom edges (4 rows) well before the left/right edges (16 columns), producing a wide oval pulse. Each ring starts at peak brightness and optionally fades as it travels. Multiple rings can be in flight simultaneously for a ripple-pool effect. In beat_trigger mode a fresh ring fires on each downbeat, creating the visual equivalent of a bass drum hitting water.",
+      "when_to_use": "Drops, chorus entries, downbeat punctuation moments. Especially powerful when paired with EFFECT_EAR_BEAT_SOLID so the ears and matrix fire together on each beat — the ear flashes and the ring expands simultaneously. Works well in slower, more atmospheric songs where the ring expansion is clearly visible between beats. beat_trigger=2 (bar-triggered) is useful for very fast songs where per-beat rings would stack up too fast.",
+      "when_not_to_use": "Very fast tempos with beat_trigger=1 — rings won't clear before the next fires and the display becomes a blob. Not ideal simultaneously with EFFECT_MATRIX_CYLON since both dominate the full matrix surface. Use EFFECT_MATRIX_SCROLL_BG or EFFECT_MATRIX_STARFIELD as a backdrop layer instead.",
+      "notes": [
+        "The 32×8 aspect ratio means rings are oval, not circular. Max radius top/bottom = 4px, left/right = 16px. Rings reach the edge at those distances.",
+        "ring_count 2, ring_spacing 6, beat_trigger 1, fade_out 1 is a good starting point for chorus sections.",
+        "At 120 BPM (500ms/beat) with speed=20, a ring travels 10px per beat-tick — it just clears the short axis (4px) in under one beat, which looks clean.",
+        "Combining with EFFECT_EAR_BEAT_SOLID (same color, same beat) creates a unified helmet-wide pulse that reads as one system: ears flash + rings radiate simultaneously.",
+        "beat_trigger=0 (continuous) is good for non-beat sections — just a calm, looping outward breathe on the matrix."
+      ],
+      "examples": [
+        {
+          "context": "One More Time chorus — cyan rings expanding on each beat alongside ear beat solid",
+          "cue": {
+            "at_ms": 0,
+            "duration_ms": 16000,
+            "effect": "EFFECT_MATRIX_RADIATE",
+            "zone": "MATRIX",
+            "palette": "PAL_DISCOVERY",
+            "params": {
+              "color": 64,
+              "brightness": 42,
+              "speed": 20,
+              "ring_thickness": 2,
+              "ring_count": 2,
+              "ring_spacing": 7,
+              "fade_out": 1,
+              "beat_trigger": 1
+            }
+          },
+          "notes": "color 64 = octave_cyan in PAL_DISCOVERY. beat_trigger 1 fires a new ring on each downbeat. ring_count 2 means two rings are in flight — the leading ring and one ripple behind it. ring_spacing 7 keeps them visually separated. fade_out 1 makes rings dissolve gracefully at the edges. Pair with EFFECT_EAR_BEAT_SOLID using the same cyan palette index for a unified pulse."
+        },
+        {
+          "context": "Crescendolls breakdown — slow continuous gold radiate while ears breathe",
+          "cue": {
+            "at_ms": 0,
+            "duration_ms": 8000,
+            "effect": "EFFECT_MATRIX_RADIATE",
+            "zone": "MATRIX",
+            "palette": "PAL_DISCOVERY",
+            "params": {
+              "color": 128,
+              "brightness": 35,
+              "speed": 8,
+              "ring_thickness": 2,
+              "ring_count": 3,
+              "ring_spacing": 5,
+              "fade_out": 1,
+              "beat_trigger": 0
+            }
+          },
+          "notes": "color 128 = helmet_gold. beat_trigger 0 = continuous loop, no beat dependency. speed 8 is a slow meditative expansion. ring_count 3 + ring_spacing 5 creates a dense ripple-pool that fills the matrix with gentle motion. brightness 35 is soft enough to feel atmospheric rather than assertive."
+        }
+      ]
+    },
     "EFFECT_FULL_FLASH": {
       "id": 60,
       "zones": [
