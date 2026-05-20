@@ -2147,6 +2147,104 @@
         }
       ]
     },
+    "EFFECT_MATRIX_CYLON": {
+      "id": 46,
+      "zones": ["MATRIX"],
+      "params": [
+        {
+          "name": "color",
+          "type": "palette_index",
+          "description": "Palette index for the leading bar and trail. Use a vivid mid-range palette color for maximum visual impact."
+        },
+        {
+          "name": "bar_width",
+          "type": "uint8",
+          "range": [1, 8],
+          "description": "Width of the bright leading bar in LEDs. 1=single column laser, 2=tight bar, 3–4=classic cylon width. Applies in the sweep direction."
+        },
+        {
+          "name": "trail_length",
+          "type": "uint8",
+          "range": [0, 16],
+          "description": "Number of columns behind the bar that fade exponentially from bar brightness down to zero. 0=no trail (hard edge), 4=subtle glow, 8=long comet tail, 12+=dramatic sweep."
+        },
+        {
+          "name": "speed",
+          "type": "uint8",
+          "range": [1, 255],
+          "description": "Sweep speed in LEDs per frame tick. 10=slow scan, 40=moderate, 80=fast bounce, 120+=very fast strobe-like. At beat_sync=1 this is overridden by BPM."
+        },
+        {
+          "name": "brightness",
+          "type": "uint8",
+          "range": [0, 45],
+          "description": "Peak brightness of the leading bar. Subject to MATRIX_BRIGHTNESS_MAX=45 cap. 35–45 recommended for the bar; trail fades below this."
+        },
+        {
+          "name": "direction",
+          "type": "uint8",
+          "range": [0, 1],
+          "description": "0=horizontal sweep (left→right→left across 32 columns, full 8-row height). 1=vertical sweep (top→bottom→top across 8 rows, full 32-column width)."
+        },
+        {
+          "name": "beat_sync",
+          "type": "uint8",
+          "range": [0, 2],
+          "description": "0=free-running at speed param. 1=one full sweep per bar (left-to-right on bar 1, right-to-left on bar 2). 2=one half-sweep per beat (reaches far edge on each downbeat). Overrides speed param when nonzero."
+        }
+      ],
+      "description": "Classic sweeping scanner bar with exponential glow trail, bouncing left-right (or top-bottom) across the matrix. The leading bar is at peak brightness; the trail decays exponentially over trail_length columns behind it. At the far edges the bar reverses direction, creating the iconic Cylon/KITT bounce. Supports free-running speed or beat-locked timing. Fills the full matrix height (horizontal mode) or width (vertical mode) for maximum visual impact.",
+      "when_to_use": "High-energy verses and choruses with a driving beat — especially songs with a strong left-right rhythmic feel. Works as a standalone effect or layered under EFFECT_MATRIX_TEXT with additive compositing. Beat-sync mode makes the sweep feel locked to the music. Red (PAL_WARM red stop) is the classic Cylon color; yellow-gold fits Daft Punk's palette. Vertical mode adds variety mid-song.",
+      "when_not_to_use": "Quiet atmospheric sections (use EFFECT_MATRIX_STARFIELD or EFFECT_MATRIX_SCROLL_BG instead). Not ideal simultaneously with a sprite effect since both compete for horizontal space.",
+      "notes": [
+        "For a 32-column matrix at beat_sync=1 and 120 BPM (500ms/beat, 2 beats/bar = 1000ms bar): the bar travels 32 columns in ~1000ms, which is ~32 columns/second = speed param ~32.",
+        "trail_length 6–8 with bar_width 2 is the classic KITT look. bar_width 1 + trail_length 10 is a comet.",
+        "direction 1 (vertical) on an 8-row matrix is a very fast sweep — use lower speed values (5–15) to keep it readable.",
+        "Pairing a red cylon sweep (beat_sync=1) with EFFECT_EAR_BEAT_SOLID in matching red creates a unified visual that pulses as one system."
+      ],
+      "examples": [
+        {
+          "context": "Harder Better Faster Stronger verse — red cylon sweep locked to the bar",
+          "cue": {
+            "at_ms": 0,
+            "duration_ms": 8000,
+            "effect": "EFFECT_MATRIX_CYLON",
+            "zone": "MATRIX",
+            "palette": "PAL_DISCOVERY",
+            "params": {
+              "color": 192,
+              "bar_width": 2,
+              "trail_length": 8,
+              "speed": 30,
+              "brightness": 42,
+              "direction": 0,
+              "beat_sync": 1
+            }
+          },
+          "notes": "color 192 = a warm red stop in PAL_DISCOVERY. bar_width 2 + trail_length 8 is the classic KITT comet look. beat_sync 1 locks one full bounce per bar so the sweep lands on the downbeat every time. brightness 42 is just under the matrix ceiling for full visual impact."
+        },
+        {
+          "context": "Aerodynamic solo — fast gold vertical sweep with long trail",
+          "cue": {
+            "at_ms": 0,
+            "duration_ms": 6000,
+            "effect": "EFFECT_MATRIX_CYLON",
+            "zone": "MATRIX",
+            "palette": "PAL_DISCOVERY",
+            "params": {
+              "color": 128,
+              "bar_width": 1,
+              "trail_length": 5,
+              "speed": 12,
+              "brightness": 40,
+              "direction": 1,
+              "beat_sync": 2
+            }
+          },
+          "notes": "color 128 = helmet_gold in PAL_DISCOVERY. direction 1 = vertical sweep on the 8-row axis. beat_sync 2 = half-sweep per beat snaps the top→bottom → bottom→top rhythm to every downbeat. bar_width 1 + trail_length 5 gives a sharp laser-thin vertical sweep."
+        }
+      ]
+    },
     "EFFECT_FULL_FLASH": {
       "id": 60,
       "zones": [
