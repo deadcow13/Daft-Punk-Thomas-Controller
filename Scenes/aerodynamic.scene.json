@@ -189,18 +189,18 @@
         },
         {
           "at_ms": 0,
-          "_comment": "Matrix: diagonal stripes, gold over deep indigo. Slow scroll for early groove.",
-          "effect": "EFFECT_MATRIX_SCROLL_BG",
+          "effect": "EFFECT_MATRIX_VU_LIVE",
           "zone": "MATRIX",
           "palette": "PAL_DISCOVERY",
           "params": {
-            "pattern": "diagonal",
-            "color_a": 128,
-            "color_b": 0,
-            "scroll_speed": 14,
-            "brightness": 30,
-            "pattern_period": 4
-          }
+            "sensitivity": 140,
+            "noise_floor": 25,
+            "decay_rate": 80,
+            "peak_hold": 1,
+            "color_mode": 0,
+            "color": 0
+          },
+          "_comment": "Matrix: live spectrum analyzer \u2014 traffic light during main groove."
         },
         {
           "at_ms": 120,
@@ -230,17 +230,18 @@
         },
         {
           "at_ms": 15610,
-          "effect": "EFFECT_VISOR_BEAT_WIPE",
+          "effect": "EFFECT_VISOR_VU_LIVE",
           "zone": "BOTH_VISORS",
           "palette": "PAL_DISCOVERY",
           "params": {
-            "direction": "bottom_to_top",
-            "beats_per_wipe": 1,
-            "wave_color": 6,
-            "wave_width": 2,
-            "wave_brightness": 145,
-            "bg_brightness": 30
-          }
+            "color_mode": 0,
+            "color": 128,
+            "sensitivity": 160,
+            "decay_rate": 110,
+            "peak_hold": 1,
+            "bass_emphasis": 1
+          },
+          "_comment": "Visors: gold VU live \u2014 groove intensifies."
         },
         {
           "at_ms": 15610,
@@ -330,17 +331,18 @@
         },
         {
           "at_ms": 0,
-          "effect": "EFFECT_VISOR_BEAT_WIPE",
+          "effect": "EFFECT_VISOR_VU_LIVE",
           "zone": "BOTH_VISORS",
           "palette": "PAL_DISCOVERY",
           "params": {
-            "direction": "bottom_to_top",
-            "beats_per_wipe": 1,
-            "wave_color": 7,
-            "wave_width": 2,
-            "wave_brightness": 160,
-            "bg_brightness": 35
-          }
+            "color_mode": 0,
+            "color": 128,
+            "sensitivity": 160,
+            "decay_rate": 110,
+            "peak_hold": 1,
+            "bass_emphasis": 1
+          },
+          "_comment": "Visors: gold VU live for the return groove."
         },
         {
           "at_ms": 0,
@@ -515,17 +517,18 @@
         },
         {
           "at_ms": 20000,
-          "effect": "EFFECT_VISOR_BEAT_WIPE",
+          "effect": "EFFECT_VISOR_VU_LIVE",
           "zone": "BOTH_VISORS",
-          "palette": "PAL_RED_BREAKDOWN",
+          "palette": "PAL_DISCOVERY",
           "params": {
-            "direction": "bottom_to_top",
-            "beats_per_wipe": 1,
-            "wave_color": 8,
-            "wave_width": 2,
-            "wave_brightness": 150,
-            "bg_brightness": 25
-          }
+            "color_mode": 0,
+            "color": 128,
+            "sensitivity": 160,
+            "decay_rate": 110,
+            "peak_hold": 1,
+            "bass_emphasis": 1
+          },
+          "_comment": "Visors: VU live \u2014 peak solo intensity."
         },
         {
           "at_ms": 20000,
@@ -566,32 +569,33 @@
         },
         {
           "at_ms": 0,
-          "effect": "EFFECT_VISOR_BEAT_WIPE",
+          "effect": "EFFECT_VISOR_VU_LIVE",
           "zone": "BOTH_VISORS",
           "palette": "PAL_DISCOVERY",
           "params": {
-            "direction": "bottom_to_top",
-            "beats_per_wipe": 1,
-            "wave_color": 6,
-            "wave_width": 2,
-            "wave_brightness": 165,
-            "bg_brightness": 30
-          }
+            "color_mode": 0,
+            "color": 128,
+            "sensitivity": 160,
+            "decay_rate": 110,
+            "peak_hold": 1,
+            "bass_emphasis": 1
+          },
+          "_comment": "Visors: gold VU live \u2014 final groove."
         },
         {
           "at_ms": 0,
-          "_comment": "Matrix: triumphant return \u2014 diagonal gold stripes at full energy.",
-          "effect": "EFFECT_MATRIX_SCROLL_BG",
+          "effect": "EFFECT_MATRIX_VU_LIVE",
           "zone": "MATRIX",
           "palette": "PAL_DISCOVERY",
           "params": {
-            "pattern": "diagonal",
-            "color_a": 128,
-            "color_b": 0,
-            "scroll_speed": 25,
-            "brightness": 42,
-            "pattern_period": 4
-          }
+            "sensitivity": 140,
+            "noise_floor": 25,
+            "decay_rate": 80,
+            "peak_hold": 1,
+            "color_mode": 0,
+            "color": 0
+          },
+          "_comment": "Matrix: live spectrum \u2014 final groove return."
         },
         {
           "at_ms": 160,
@@ -666,6 +670,21 @@
             "bottom_brightness": 5,
             "top_brightness": 30
           }
+        },
+        {
+          "at_ms": 0,
+          "effect": "EFFECT_MATRIX_EYES",
+          "zone": "MATRIX",
+          "palette": "PAL_DISCOVERY",
+          "params": {
+            "color": 64,
+            "brightness": 35,
+            "blink_rate": 10,
+            "blink_speed": 2,
+            "look_mode": 1,
+            "expression": 0
+          },
+          "_comment": "Matrix: eyes slowly wander as the song fades \u2014 eerie sign-off."
         }
       ]
     }

@@ -139,18 +139,18 @@
         },
         {
           "at_ms": 0,
-          "_comment": "Matrix: warm horizontal stripes scroll upward, pace building to the drop.",
-          "effect": "EFFECT_MATRIX_SCROLL_BG",
+          "effect": "EFFECT_MATRIX_VU_LIVE",
           "zone": "MATRIX",
           "palette": "PAL_DISCOVERY",
           "params": {
-            "pattern": "h_stripes",
-            "color_a": 128,
-            "color_b": 0,
-            "scroll_speed": 16,
-            "brightness": 32,
-            "pattern_period": 5
-          }
+            "sensitivity": 140,
+            "noise_floor": 25,
+            "decay_rate": 80,
+            "peak_hold": 1,
+            "color_mode": 0,
+            "color": 0
+          },
+          "_comment": "Matrix: VU live builds tension before the drop."
         }
       ]
     },
@@ -176,18 +176,18 @@
         },
         {
           "at_ms": 0,
-          "effect": "EFFECT_VISOR_BEAT_WIPE",
+          "effect": "EFFECT_VISOR_VU_LIVE",
           "zone": "BOTH_VISORS",
           "palette": "PAL_DISCOVERY",
           "params": {
-            "direction": "bottom_to_top",
-            "beats_per_wipe": 1,
-            "wave_color": 6,
-            "wave_width": 2,
-            "wave_brightness": 150,
-            "bg_brightness": 30
+            "color_mode": 0,
+            "color": 64,
+            "sensitivity": 165,
+            "decay_rate": 100,
+            "peak_hold": 1,
+            "bass_emphasis": 1
           },
-          "_comment": "Beat-synced sweep upward on the visor \u2014 synchronized with kick."
+          "_comment": "Visors: cyan VU live \u2014 the first chorus drop."
         },
         {
           "at_ms": 0,
@@ -289,17 +289,18 @@
         },
         {
           "at_ms": 0,
-          "effect": "EFFECT_VISOR_BEAT_WIPE",
+          "effect": "EFFECT_VISOR_VU_LIVE",
           "zone": "BOTH_VISORS",
           "palette": "PAL_DISCOVERY",
           "params": {
-            "direction": "bottom_to_top",
-            "beats_per_wipe": 1,
-            "wave_color": 8,
-            "wave_width": 2,
-            "wave_brightness": 170,
-            "bg_brightness": 35
-          }
+            "color_mode": 0,
+            "color": 64,
+            "sensitivity": 165,
+            "decay_rate": 100,
+            "peak_hold": 1,
+            "bass_emphasis": 1
+          },
+          "_comment": "Visors: cyan VU live \u2014 second chorus."
         },
         {
           "at_ms": 150,
@@ -387,18 +388,18 @@
         },
         {
           "at_ms": 0,
-          "effect": "EFFECT_VISOR_BEAT_WIPE",
+          "effect": "EFFECT_VISOR_VU_LIVE",
           "zone": "BOTH_VISORS",
-          "palette": "PAL_MAGENTA_CYAN",
+          "palette": "PAL_DISCOVERY",
           "params": {
-            "direction": "bottom_to_top",
-            "beats_per_wipe": 1,
-            "wave_color": 6,
-            "wave_width": 2,
-            "wave_brightness": 140,
-            "bg_brightness": 25
+            "color_mode": 0,
+            "color": 64,
+            "sensitivity": 165,
+            "decay_rate": 100,
+            "peak_hold": 1,
+            "bass_emphasis": 1
           },
-          "_comment": "PAL_MAGENTA_CYAN on visor for visual variety \u2014 differentiates from chorus_2."
+          "_comment": "Visors: cyan VU live \u2014 third chorus."
         },
         {
           "at_ms": 0,
@@ -558,18 +559,18 @@
         },
         {
           "at_ms": 0,
-          "effect": "EFFECT_VISOR_BEAT_WIPE",
+          "effect": "EFFECT_VISOR_VU_LIVE",
           "zone": "BOTH_VISORS",
           "palette": "PAL_DISCOVERY",
           "params": {
-            "direction": "bottom_to_top",
-            "beats_per_wipe": 1,
-            "wave_color": 8,
-            "wave_width": 3,
-            "wave_brightness": 185,
-            "bg_brightness": 40
+            "color_mode": 0,
+            "color": 64,
+            "sensitivity": 165,
+            "decay_rate": 100,
+            "peak_hold": 1,
+            "bass_emphasis": 1
           },
-          "_comment": "Max brightness sweep. Final section deserves maximum visual presence."
+          "_comment": "Visors: cyan VU live \u2014 final drop."
         },
         {
           "at_ms": 200,
@@ -601,18 +602,18 @@
         },
         {
           "at_ms": 8000,
-          "_comment": "After title scroll clears: max-energy checkerboard for the rest of the drop.",
-          "effect": "EFFECT_MATRIX_SCROLL_BG",
+          "effect": "EFFECT_MATRIX_VU_LIVE",
           "zone": "MATRIX",
           "palette": "PAL_DISCOVERY",
           "params": {
-            "pattern": "checkerboard",
-            "color_a": 128,
-            "color_b": 0,
-            "scroll_speed": 28,
-            "brightness": 44,
-            "pattern_period": 4
-          }
+            "sensitivity": 140,
+            "noise_floor": 25,
+            "decay_rate": 80,
+            "peak_hold": 1,
+            "color_mode": 0,
+            "color": 0
+          },
+          "_comment": "Matrix: VU live sustains through the final drop body."
         },
         {
           "at_ms": 55000,

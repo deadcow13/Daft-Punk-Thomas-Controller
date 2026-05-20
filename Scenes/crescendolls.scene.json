@@ -185,18 +185,18 @@
         },
         {
           "at_ms": 0,
-          "effect": "EFFECT_VISOR_BEAT_WIPE",
+          "effect": "EFFECT_VISOR_VU_LIVE",
           "zone": "BOTH_VISORS",
-          "palette": "PAL_DISCOVERY",
+          "palette": "PAL_NEON",
           "params": {
-            "direction": 0,
-            "beats_per_wipe": 1,
-            "wave_color": 6,
-            "wave_width": 2,
-            "wave_brightness": 160,
-            "bg_brightness": 20
+            "color_mode": 2,
+            "color": 0,
+            "sensitivity": 150,
+            "decay_rate": 90,
+            "peak_hold": 1,
+            "bass_emphasis": 1
           },
-          "_comment": "Bottom-to-top wipe each beat. Stacking feel matches music layering."
+          "_comment": "Visors: rainbow VU live \u2014 building intensity."
         },
         {
           "at_ms": 0,
@@ -249,18 +249,18 @@
         },
         {
           "at_ms": 0,
-          "effect": "EFFECT_VISOR_BEAT_WIPE",
+          "effect": "EFFECT_VISOR_VU_LIVE",
           "zone": "BOTH_VISORS",
-          "palette": "PAL_DISCOVERY",
+          "palette": "PAL_NEON",
           "params": {
-            "direction": 1,
-            "beats_per_wipe": 1,
-            "wave_color": 4,
-            "wave_width": 2,
-            "wave_brightness": 170,
-            "bg_brightness": 25
+            "color_mode": 2,
+            "color": 0,
+            "sensitivity": 150,
+            "decay_rate": 90,
+            "peak_hold": 1,
+            "bass_emphasis": 1
           },
-          "_comment": "Top-to-bottom wipe \u2014 gravity after the upward fill of seg_c."
+          "_comment": "Visors: rainbow VU live continues."
         },
         {
           "at_ms": 0,
@@ -363,18 +363,18 @@
         },
         {
           "at_ms": 0,
-          "effect": "EFFECT_VISOR_BEAT_WIPE",
+          "effect": "EFFECT_VISOR_VU_LIVE",
           "zone": "BOTH_VISORS",
-          "palette": "PAL_DISCOVERY",
+          "palette": "PAL_NEON",
           "params": {
-            "direction": 2,
-            "beats_per_wipe": 1,
-            "wave_color": 8,
-            "wave_width": 3,
-            "wave_brightness": 175,
-            "bg_brightness": 22
+            "color_mode": 2,
+            "color": 0,
+            "sensitivity": 150,
+            "decay_rate": 90,
+            "peak_hold": 1,
+            "bass_emphasis": 1
           },
-          "_comment": "Inner-to-outer wipe \u2014 new direction for visual variety in the long sustained section."
+          "_comment": "Visors: rainbow VU live \u2014 groove variation."
         },
         {
           "at_ms": 0,
@@ -429,18 +429,18 @@
         },
         {
           "at_ms": 0,
-          "_comment": "Matrix: slow horizontal cool stripes \u2014 calm, breathing contrast to the peak sections.",
-          "effect": "EFFECT_MATRIX_SCROLL_BG",
+          "effect": "EFFECT_MATRIX_VU_LIVE",
           "zone": "MATRIX",
-          "palette": "PAL_COOL_SWEEP",
+          "palette": "PAL_DISCOVERY",
           "params": {
-            "pattern": "h_stripes",
-            "color_a": 0,
-            "color_b": 128,
-            "scroll_speed": 8,
-            "brightness": 26,
-            "pattern_period": 6
-          }
+            "sensitivity": 140,
+            "noise_floor": 25,
+            "decay_rate": 80,
+            "peak_hold": 1,
+            "color_mode": 0,
+            "color": 0
+          },
+          "_comment": "Matrix: VU live spectrum during the cool-down groove."
         },
         {
           "at_ms": 12000,
@@ -507,18 +507,18 @@
         },
         {
           "at_ms": 0,
-          "effect": "EFFECT_VISOR_BEAT_WIPE",
+          "effect": "EFFECT_VISOR_VU_LIVE",
           "zone": "BOTH_VISORS",
-          "palette": "PAL_DISCOVERY",
+          "palette": "PAL_NEON",
           "params": {
-            "direction": 3,
-            "beats_per_wipe": 1,
-            "wave_color": 7,
-            "wave_width": 3,
-            "wave_brightness": 180,
-            "bg_brightness": 22
+            "color_mode": 2,
+            "color": 0,
+            "sensitivity": 150,
+            "decay_rate": 90,
+            "peak_hold": 1,
+            "bass_emphasis": 1
           },
-          "_comment": "Outer-to-inner wipe \u2014 'gathering' motion matching the groove re-consolidating."
+          "_comment": "Visors: rainbow VU live \u2014 seg_h groove."
         },
         {
           "at_ms": 160,
@@ -534,18 +534,18 @@
         },
         {
           "at_ms": 160,
-          "_comment": "Matrix: checkerboard picks up after the entry flash.",
-          "effect": "EFFECT_MATRIX_SCROLL_BG",
+          "effect": "EFFECT_MATRIX_VU_LIVE",
           "zone": "MATRIX",
           "palette": "PAL_DISCOVERY",
           "params": {
-            "pattern": "checkerboard",
-            "color_a": 128,
-            "color_b": 0,
-            "scroll_speed": 26,
-            "brightness": 42,
-            "pattern_period": 4
-          }
+            "sensitivity": 140,
+            "noise_floor": 25,
+            "decay_rate": 80,
+            "peak_hold": 1,
+            "color_mode": 0,
+            "color": 0
+          },
+          "_comment": "Matrix: VU live \u2014 runs until title text fires at 16000ms."
         },
         {
           "at_ms": 16000,
@@ -639,17 +639,18 @@
         },
         {
           "at_ms": 6500,
-          "_comment": "Matrix: twinkling starfield backdrop \u2014 atmospheric cosmic fill.",
-          "effect": "EFFECT_MATRIX_STARFIELD",
+          "effect": "EFFECT_MATRIX_EYES",
           "zone": "MATRIX",
           "palette": "PAL_DISCOVERY",
           "params": {
-            "density": 12,
-            "twinkle_speed": 30,
-            "max_brightness": 40,
-            "color_mode": 0,
-            "drift_speed": 3
-          }
+            "color": 190,
+            "brightness": 38,
+            "blink_rate": 6,
+            "blink_speed": 4,
+            "look_mode": 0,
+            "expression": 0
+          },
+          "_comment": "Matrix: eerie stare into the final groove \u2014 unblinking."
         }
       ]
     },
@@ -675,18 +676,18 @@
         },
         {
           "at_ms": 0,
-          "effect": "EFFECT_VISOR_BEAT_WIPE",
+          "effect": "EFFECT_VISOR_VU_LIVE",
           "zone": "BOTH_VISORS",
-          "palette": "PAL_DISCOVERY",
+          "palette": "PAL_NEON",
           "params": {
-            "direction": 0,
-            "beats_per_wipe": 1,
-            "wave_color": 6,
-            "wave_width": 3,
-            "wave_brightness": 185,
-            "bg_brightness": 25
+            "color_mode": 2,
+            "color": 0,
+            "sensitivity": 150,
+            "decay_rate": 90,
+            "peak_hold": 1,
+            "bass_emphasis": 1
           },
-          "_comment": "Phase 1 (0\u201316 bars \u2248 31s): bottom-to-top wipe at maximum energy."
+          "_comment": "Visors: rainbow VU live \u2014 climactic final groove."
         },
         {
           "at_ms": 180,
@@ -733,18 +734,18 @@
         },
         {
           "at_ms": 30939,
-          "effect": "EFFECT_VISOR_BEAT_WIPE",
+          "effect": "EFFECT_VISOR_VU_LIVE",
           "zone": "BOTH_VISORS",
-          "palette": "PAL_DISCOVERY",
+          "palette": "PAL_NEON",
           "params": {
-            "direction": 2,
-            "beats_per_wipe": 1,
-            "wave_color": 4,
-            "wave_width": 3,
-            "wave_brightness": 185,
-            "bg_brightness": 25
+            "color_mode": 2,
+            "color": 0,
+            "sensitivity": 150,
+            "decay_rate": 90,
+            "peak_hold": 1,
+            "bass_emphasis": 1
           },
-          "_comment": "Phase 2 (bars 16\u201325 \u2248 31s\u201349.5s): inner-to-outer wipe for variety."
+          "_comment": "Visors: VU live into the outro."
         },
         {
           "at_ms": 33000,

@@ -75,14 +75,18 @@
         },
         {
           "at_ms": 8000,
-          "effect": "EFFECT_MATRIX_SCROLL_BG",
+          "effect": "EFFECT_MATRIX_VU_LIVE",
           "zone": "MATRIX",
+          "palette": "PAL_DISCOVERY",
           "params": {
-            "brightness": 22,
-            "pattern_period": 8,
-            "pattern": "h_stripes",
-            "scroll_speed": 12
-          }
+            "sensitivity": 150,
+            "noise_floor": 25,
+            "decay_rate": 90,
+            "peak_hold": 1,
+            "color_mode": 0,
+            "color": 0
+          },
+          "_comment": "Matrix: VU live fires as text clears before verse_1."
         }
       ]
     },
@@ -115,14 +119,18 @@
         },
         {
           "at_ms": 0,
-          "effect": "EFFECT_VISOR_GRADIENT_V",
+          "effect": "EFFECT_VISOR_VU_LIVE",
           "zone": "BOTH_VISORS",
+          "palette": "PAL_DISCOVERY",
           "params": {
-            "bottom_color": 0,
-            "top_color": 6,
-            "bottom_brightness": 20,
-            "top_brightness": 100
-          }
+            "color_mode": 1,
+            "color": 128,
+            "sensitivity": 160,
+            "decay_rate": 120,
+            "peak_hold": 1,
+            "bass_emphasis": 1
+          },
+          "_comment": "Visors: traffic-light VU live \u2014 verse_1 audio reaction."
         },
         {
           "at_ms": 958,
@@ -381,14 +389,18 @@
         },
         {
           "at_ms": 0,
-          "effect": "EFFECT_VISOR_GRADIENT_V",
+          "effect": "EFFECT_VISOR_VU_LIVE",
           "zone": "BOTH_VISORS",
+          "palette": "PAL_DISCOVERY",
           "params": {
-            "bottom_color": 0,
-            "top_color": 2,
-            "bottom_brightness": 20,
-            "top_brightness": 110
-          }
+            "color_mode": 1,
+            "color": 128,
+            "sensitivity": 160,
+            "decay_rate": 120,
+            "peak_hold": 1,
+            "bass_emphasis": 1
+          },
+          "_comment": "Visors: traffic-light VU live \u2014 verse_2 audio reaction."
         },
         {
           "at_ms": 358,
@@ -587,14 +599,18 @@
         },
         {
           "at_ms": 0,
-          "effect": "EFFECT_VISOR_GRADIENT_V",
+          "effect": "EFFECT_VISOR_VU_LIVE",
           "zone": "BOTH_VISORS",
+          "palette": "PAL_DISCOVERY",
           "params": {
-            "bottom_color": 0,
-            "top_color": 11,
-            "bottom_brightness": 20,
-            "top_brightness": 115
-          }
+            "color_mode": 1,
+            "color": 128,
+            "sensitivity": 160,
+            "decay_rate": 120,
+            "peak_hold": 1,
+            "bass_emphasis": 1
+          },
+          "_comment": "Visors: traffic-light VU live \u2014 verse_3 audio reaction."
         },
         {
           "at_ms": 51,
