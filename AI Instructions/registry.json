@@ -2352,6 +2352,105 @@
         }
       ]
     },
+    "EFFECT_MATRIX_RAIN": {
+      "id": 48,
+      "zones": ["MATRIX"],
+      "params": [
+        {
+          "name": "color",
+          "type": "palette_index",
+          "description": "Palette index for the rain drops and trails. Classic digital rain uses green (try PAL_NEON green stop). Gold suits Daft Punk's palette. Use color_mode=1 for randomized column hues."
+        },
+        {
+          "name": "density",
+          "type": "uint8",
+          "range": [1, 32],
+          "description": "Number of columns with an active falling drop at any moment. On a 32-column matrix: 4–8=sparse drizzle, 12–18=moderate rain, 24–32=downpour. Columns without a drop are dark."
+        },
+        {
+          "name": "speed",
+          "type": "uint8",
+          "range": [1, 255],
+          "description": "Fall speed in rows per frame tick. On an 8-row matrix: 5=slow drift (drop takes ~1.6s to cross), 20=medium (0.4s), 60=fast flash (0.13s). Higher values make drops look like strobes rather than falls."
+        },
+        {
+          "name": "trail_length",
+          "type": "uint8",
+          "range": [0, 7],
+          "description": "Number of rows fading behind the leading pixel. 0=single pixel dot (no trail), 2=short comet, 4=half-column fade, 7=full column fade from top. Trail decays exponentially: each row is ~50% the brightness of the row ahead."
+        },
+        {
+          "name": "brightness",
+          "type": "uint8",
+          "range": [0, 45],
+          "description": "Peak brightness of the leading pixel. Trail rows are exponentially dimmer. Subject to MATRIX_BRIGHTNESS_MAX=45."
+        },
+        {
+          "name": "color_mode",
+          "type": "uint8",
+          "range": [0, 2],
+          "description": "0=uniform (all drops use color param). 1=random_column (each column gets a random palette color at spawn, held for its full fall). 2=gradient_fall (each drop starts at one palette end and shifts hue as it falls — dramatic on long trails)."
+        },
+        {
+          "name": "spawn_mode",
+          "type": "uint8",
+          "range": [0, 1],
+          "description": "0=staggered (each column spawns at a random delay after the previous drop clears, creating organic async rain). 1=synchronized (all active columns fall in lockstep — creates a waterfall/curtain feel rather than individual drops)."
+        }
+      ],
+      "description": "Falling pixel drops with exponential glow trails cascade from the top to the bottom of the 32×8 matrix, column by column. Each active column has one leading bright pixel and a trail of fading rows above it. When a drop reaches row 7 (bottom) it clears and the column goes dark until a new drop spawns. In staggered mode columns fire independently for an organic rain look; in synchronized mode all active columns fall in lockstep for a curtain or waterfall effect. On a shallow 8-row matrix the drop transit time is short — fast speeds look like strobing columns, slow speeds look like drips. Best at moderate speed (15–30) with trail_length 3–5 to make the fall clearly readable.",
+      "when_to_use": "Energetic verses and breakdowns, particularly for songs with a mechanical or digital feel (Harder Better Faster Stronger, Technologic). Works as a standalone full-matrix effect or as a backdrop with EFFECT_MATRIX_TEXT layered on top (additive). density 8–14 fills the matrix without looking cluttered. Pairs well with EFFECT_EAR_BEAT_SOLID firing on the same beat for a unified system pulse.",
+      "when_not_to_use": "Very slow atmospheric sections where the constant motion feels restless (use EFFECT_MATRIX_STARFIELD instead). Avoid on sections where a sprite or text is the primary content — rain competes for every column. spawn_mode=1 (synchronized) can feel stiff for organic song sections; reserve it for robotic/mechanical parts.",
+      "notes": [
+        "8-row matrix means drops transit very quickly. speed 15–25 is the most visually readable range — you see the leading pixel and trail before it exits the bottom.",
+        "trail_length 4–5 fills most of the 8-row column, which looks dramatic on this shallow matrix. trail_length 7 = the whole column lights up and fades, which looks like a column flash more than a falling drop.",
+        "density 16 (half the columns) + spawn_mode 0 (staggered) is a good default that fills the matrix without looking like a solid block.",
+        "color_mode 1 (random per column) with PAL_NEON gives a festive multi-color downpour — good for high-energy sections. color_mode 0 + a single strong color is more focused and readable.",
+        "Layering EFFECT_MATRIX_TEXT on top with additive compositing lets title text float over the rain — cinematic."
+      ],
+      "examples": [
+        {
+          "context": "Harder Better Faster Stronger verse — fast gold rain, moderate density",
+          "cue": {
+            "at_ms": 0,
+            "duration_ms": 8000,
+            "effect": "EFFECT_MATRIX_RAIN",
+            "zone": "MATRIX",
+            "palette": "PAL_DISCOVERY",
+            "params": {
+              "color": 128,
+              "density": 16,
+              "speed": 22,
+              "trail_length": 4,
+              "brightness": 40,
+              "color_mode": 0,
+              "spawn_mode": 0
+            }
+          },
+          "notes": "color 128 = helmet_gold in PAL_DISCOVERY. density 16 = half the columns active at any time, staggered async. speed 22 gives a brisk fall that reads cleanly on 8 rows. trail_length 4 produces a half-column fade. brightness 40 is near the matrix ceiling for vivid leading pixels."
+        },
+        {
+          "context": "Crescendolls intro — slow colorful drizzle before the groove kicks in",
+          "cue": {
+            "at_ms": 0,
+            "duration_ms": 6000,
+            "effect": "EFFECT_MATRIX_RAIN",
+            "zone": "MATRIX",
+            "palette": "PAL_NEON",
+            "params": {
+              "color": 0,
+              "density": 8,
+              "speed": 10,
+              "trail_length": 5,
+              "brightness": 38,
+              "color_mode": 1,
+              "spawn_mode": 0
+            }
+          },
+          "notes": "color_mode 1 = each column picks a random PAL_NEON color at spawn. density 8 is sparse enough to feel like an opening drizzle. speed 10 is slow and deliberate — you can watch each drop fall. trail_length 5 creates long fading tails that fill most of the column height."
+        }
+      ]
+    },
     "EFFECT_FULL_FLASH": {
       "id": 60,
       "zones": [
