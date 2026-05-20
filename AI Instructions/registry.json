@@ -1182,7 +1182,7 @@
       ],
       "description": "A bright pulse travels through the diamond: BOT_PEAK \u2192 LOWER \u2192 FLAT \u2192 UPPER \u2192 TOP_PEAK and back. Anchored to the beat grid.",
       "when_to_use": "When the ear should feel 'alive' with rhythmic motion. Distinct from EFFECT_EAR_BEAT_GRADIENT \u2014 that fills the whole ear with each beat color, this is a discrete pulse traveling through.",
-      "when_not_to_use": "When the visor is already doing a lot of motion \u2014 the ear pulse might compete. Quiet sections. NOT SUITABLE FOR THOMAS HELMET: the ears sit behind a diffuser for edge lighting \u2014 individual LED pulse patterns are invisible through diffuser material. Use EFFECT_EAR_BEAT_SOLID instead for Thomas helmet — it produces a uniform whole-zone brightness pulse with no gradient, which is exactly what reads through a diffuser. EFFECT_EAR_BEAT_GRADIENT is appropriate for Guy's helmet where the diamond zones are individually visible.",
+      "when_not_to_use": "When the visor is already doing a lot of motion \u2014 the ear pulse might compete. Quiet sections. NOT SUITABLE FOR THOMAS HELMET: the ears sit behind a diffuser for edge lighting \u2014 individual LED pulse patterns are invisible through diffuser material. Use EFFECT_EAR_BEAT_SOLID instead for Thomas helmet \u2014 it produces a uniform whole-zone brightness pulse with no gradient, which is exactly what reads through a diffuser. EFFECT_EAR_BEAT_GRADIENT is appropriate for Guy's helmet where the diamond zones are individually visible.",
       "examples": [
         {
           "context": "Aerodynamic breakdown \u2014 ear pulses with the beat, blood-red wave traveling BOT_PEAK to TOP_PEAK",
@@ -1214,34 +1214,43 @@
         {
           "name": "color",
           "type": "palette_index",
-          "description": "Single color applied uniformly to all 16 ear LEDs. All LEDs are identical — no gradient."
+          "description": "Single color applied uniformly to all 16 ear LEDs. All LEDs are identical \u2014 no gradient."
         },
         {
           "name": "peak_brightness",
           "type": "uint8",
-          "range": [0, 255],
-          "description": "Brightness at the beat peak. Subject to EAR_VISOR_BRIGHTNESS_MAX (185) in firmware. Recommended range 125–185 when ears are behind a diffuser."
+          "range": [
+            0,
+            255
+          ],
+          "description": "Brightness at the beat peak. Subject to EAR_VISOR_BRIGHTNESS_MAX (185) in firmware. Recommended range 125\u2013185 when ears are behind a diffuser."
         },
         {
           "name": "decay_steepness",
           "type": "uint8",
-          "range": [0, 255],
+          "range": [
+            0,
+            255
+          ],
           "description": "How fast brightness falls after each beat peak. 0 = no decay (held flat), 180 = tight beat-locked decay, 255 = instant cut to zero. Match to music feel."
         },
         {
           "name": "downbeat_flash",
           "type": "uint8",
-          "range": [0, 255],
+          "range": [
+            0,
+            255
+          ],
           "description": "0 = disabled. Otherwise, a uniform white-flash overlay applied to all LEDs on beat 1 of each bar. Adds a stronger visual punch on the downbeat vs the regular beat flashes."
         }
       ],
-      "description": "Uniform single-color beat flash. All 16 ear LEDs are the same color and brightness at all times — no gradient, no zone differentiation. The whole ear pulses as one unit in sync with the beat grid, with a brightness envelope that peaks on each beat and decays between beats. Designed for ears behind a diffuser where gradient detail is invisible.",
-      "when_to_use": "Thomas helmet in all beat-driven sections. Primary ear effect for the Thomas helmet since the diffuser makes gradient detail invisible. Looks like a single large LED pulsing with the music — clean, punchy, and readable at distance.",
-      "when_not_to_use": "Guy helmet (use EFFECT_EAR_BEAT_GRADIENT there — LEDs are fully visible). Atmospheric sections without a clear beat (use EFFECT_EAR_BREATHE instead). Any context where color variation per LED zone is desired.",
-      "notes": "The companion to EFFECT_EAR_BEAT_GRADIENT — same beat-sync behavior, no gradient. EFFECT_EAR_BEAT_GRADIENT remains the correct choice for Guy's helmet where the diamond zones are individually visible.",
+      "description": "Uniform single-color beat flash. All 16 ear LEDs are the same color and brightness at all times \u2014 no gradient, no zone differentiation. The whole ear pulses as one unit in sync with the beat grid, with a brightness envelope that peaks on each beat and decays between beats. Designed for ears behind a diffuser where gradient detail is invisible.",
+      "when_to_use": "Thomas helmet in all beat-driven sections. Primary ear effect for the Thomas helmet since the diffuser makes gradient detail invisible. Looks like a single large LED pulsing with the music \u2014 clean, punchy, and readable at distance.",
+      "when_not_to_use": "Guy helmet (use EFFECT_EAR_BEAT_GRADIENT there \u2014 LEDs are fully visible). Atmospheric sections without a clear beat (use EFFECT_EAR_BREATHE instead). Any context where color variation per LED zone is desired.",
+      "notes": "The companion to EFFECT_EAR_BEAT_GRADIENT \u2014 same beat-sync behavior, no gradient. EFFECT_EAR_BEAT_GRADIENT remains the correct choice for Guy's helmet where the diamond zones are individually visible.",
       "examples": [
         {
-          "context": "One More Time chorus — whole ear flashes gold on every beat, strong downbeat emphasis",
+          "context": "One More Time chorus \u2014 whole ear flashes gold on every beat, strong downbeat emphasis",
           "cue": {
             "at_ms": 0,
             "effect": "EFFECT_EAR_BEAT_SOLID",
@@ -1254,10 +1263,10 @@
               "downbeat_flash": 220
             }
           },
-          "notes": "color 128 = helmet_gold in PAL_DISCOVERY. peak_brightness 185 is the EAR_VISOR_BRIGHTNESS_MAX ceiling — all 16 LEDs hit max on every beat. decay_steepness 180 gives a tight decay that clears before the next beat, keeping each hit punchy. downbeat_flash 220 adds a white boost on beat 1 of each bar for emphasis."
+          "notes": "color 128 = helmet_gold in PAL_DISCOVERY. peak_brightness 185 is the EAR_VISOR_BRIGHTNESS_MAX ceiling \u2014 all 16 LEDs hit max on every beat. decay_steepness 180 gives a tight decay that clears before the next beat, keeping each hit punchy. downbeat_flash 220 adds a white boost on beat 1 of each bar for emphasis."
         },
         {
-          "context": "Aerodynamic solo section — dim red uniform pulse, building intensity",
+          "context": "Aerodynamic solo section \u2014 dim red uniform pulse, building intensity",
           "cue": {
             "at_ms": 0,
             "effect": "EFFECT_EAR_BEAT_SOLID",
@@ -1270,7 +1279,7 @@
               "downbeat_flash": 0
             }
           },
-          "notes": "No downbeat_flash during the building tension phase — the regular beat pulse is enough. Raise peak_brightness and add downbeat_flash at the climax moment."
+          "notes": "No downbeat_flash during the building tension phase \u2014 the regular beat pulse is enough. Raise peak_brightness and add downbeat_flash at the climax moment."
         }
       ]
     },
@@ -2065,40 +2074,57 @@
     },
     "EFFECT_MATRIX_STARFIELD": {
       "id": 45,
-      "zones": ["MATRIX"],
+      "zones": [
+        "MATRIX"
+      ],
       "params": [
         {
           "name": "density",
           "type": "uint8",
-          "range": [1, 64],
-          "description": "Number of simultaneously active stars. 8–20 is typical. Higher values fill the matrix more densely."
+          "range": [
+            1,
+            64
+          ],
+          "description": "Number of simultaneously active stars. 8\u201320 is typical. Higher values fill the matrix more densely."
         },
         {
           "name": "twinkle_speed",
           "type": "uint8",
-          "range": [1, 255],
+          "range": [
+            1,
+            255
+          ],
           "description": "Sine-wave cycle speed for each star's brightness. 20 = slow dreamy twinkle, 80 = lively shimmer, 150+ = rapid sparkle."
         },
         {
           "name": "max_brightness",
           "type": "uint8",
-          "range": [0, 45],
-          "description": "Peak brightness of each star at the top of its sine cycle. Subject to MATRIX_BRIGHTNESS_MAX=45 firmware cap. 35–45 recommended."
+          "range": [
+            0,
+            45
+          ],
+          "description": "Peak brightness of each star at the top of its sine cycle. Subject to MATRIX_BRIGHTNESS_MAX=45 firmware cap. 35\u201345 recommended."
         },
         {
           "name": "color_mode",
           "type": "uint8",
-          "range": [0, 3],
+          "range": [
+            0,
+            3
+          ],
           "description": "0=white, 1=warm_white (slight amber), 2=random_per_star (each star picks a random hue at spawn), 3=palette_sweep (stars cycle through the active palette). Default 0 for classic starfield."
         },
         {
           "name": "drift_speed",
           "type": "uint8",
-          "range": [0, 255],
-          "description": "Slow horizontal drift of the star field. 0=stationary, 1–30=subtle parallax, higher=visible scroll. Used to simulate motion through space."
+          "range": [
+            0,
+            255
+          ],
+          "description": "Slow horizontal drift of the star field. 0=stationary, 1\u201330=subtle parallax, higher=visible scroll. Used to simulate motion through space."
         }
       ],
-      "description": "Procedural twinkling starfield across the full 32×8 matrix. Stars are placed at random positions and breathe in/out using independent sine-wave oscillators at slightly different phases and speeds, producing a living sky effect. Stars respawn at new random positions when their cycle completes (density is maintained). No pre-rendered sprite data needed — effect runs entirely in firmware. Inspired by the star layer in the Around the World Arduino sketch.",
+      "description": "Procedural twinkling starfield across the full 32\u00d78 matrix. Stars are placed at random positions and breathe in/out using independent sine-wave oscillators at slightly different phases and speeds, producing a living sky effect. Stars respawn at new random positions when their cycle completes (density is maintained). No pre-rendered sprite data needed \u2014 effect runs entirely in firmware. Inspired by the star layer in the Around the World Arduino sketch.",
       "when_to_use": "Atmospheric intros, breakdowns, quiet verses, or any moment needing a 'space' or 'cosmic' backdrop. Excellent underneath a simultaneously playing EFFECT_MATRIX_TEXT cue (layer with additive flag) so the text rides on a starfield. Works in nearly every Daft Punk song given the Interstella 5555 space aesthetic.",
       "when_not_to_use": "High-energy peak sections where something more dynamic (VU, strobes, cylon) better matches the energy. Don't layer with EFFECT_MATRIX_SPRITE unless the sprite leaves blank columns for stars to show through.",
       "notes": [
@@ -2106,11 +2132,11 @@
         "For around-the-world: density 14 matches the 14 hardcoded stars in the reference sketch.",
         "color_mode 2 (random per star) gives a festive/Crescendolls feel. color_mode 0 (white) is cinematic/space.",
         "Combining drift_speed 8 + color_mode 1 (warm_white) creates a cozy, nostalgic feel for slower songs.",
-        "Can run simultaneously with EFFECT_MATRIX_TEXT using additive compositing — text pixels override stars, stars fill the blank space."
+        "Can run simultaneously with EFFECT_MATRIX_TEXT using additive compositing \u2014 text pixels override stars, stars fill the blank space."
       ],
       "examples": [
         {
-          "context": "Atmospheric intro before the Around the World drop — white starfield, slow twinkle",
+          "context": "Atmospheric intro before the Around the World drop \u2014 white starfield, slow twinkle",
           "cue": {
             "at_ms": 0,
             "duration_ms": 12000,
@@ -2128,7 +2154,7 @@
           "notes": "density 14 matches the 14 stars in the Around the World reference sketch. twinkle_speed 30 is a slow dreamy twinkle. max_brightness 40 is safely under the matrix ceiling of 45. color_mode 0 = white stars for a classic space look. drift_speed 4 adds subtle motion without looking like a scroll."
         },
         {
-          "context": "Crescendolls breakdown — colorful starfield while ears breathe slowly",
+          "context": "Crescendolls breakdown \u2014 colorful starfield while ears breathe slowly",
           "cue": {
             "at_ms": 0,
             "duration_ms": 8000,
@@ -2143,13 +2169,15 @@
               "drift_speed": 0
             }
           },
-          "notes": "density 20 gives a dense festive feel. color_mode 2 assigns each star a random hue — colorful and energetic. twinkle_speed 50 is lively but not frantic. drift_speed 0 keeps the field stationary so it reads as a backdrop, not a scroll effect."
+          "notes": "density 20 gives a dense festive feel. color_mode 2 assigns each star a random hue \u2014 colorful and energetic. twinkle_speed 50 is lively but not frantic. drift_speed 0 keeps the field stationary so it reads as a backdrop, not a scroll effect."
         }
       ]
     },
     "EFFECT_MATRIX_CYLON": {
       "id": 46,
-      "zones": ["MATRIX"],
+      "zones": [
+        "MATRIX"
+      ],
       "params": [
         {
           "name": "color",
@@ -2159,52 +2187,62 @@
         {
           "name": "bar_width",
           "type": "uint8",
-          "range": [1, 8],
-          "description": "Width of the bright leading bar in LEDs. 1=single column laser, 2=tight bar, 3–4=classic cylon width. Applies in the sweep direction."
+          "range": [
+            1,
+            8
+          ],
+          "description": "Width of the bright leading bar in LEDs. 1=single column laser, 2=tight bar, 3\u20134=classic cylon width. Applies in the sweep direction."
         },
         {
           "name": "trail_length",
           "type": "uint8",
-          "range": [0, 16],
+          "range": [
+            0,
+            16
+          ],
           "description": "Number of columns behind the bar that fade exponentially from bar brightness down to zero. 0=no trail (hard edge), 4=subtle glow, 8=long comet tail, 12+=dramatic sweep."
         },
         {
           "name": "speed",
           "type": "uint8",
-          "range": [1, 255],
+          "range": [
+            1,
+            255
+          ],
           "description": "Sweep speed in LEDs per frame tick. 10=slow scan, 40=moderate, 80=fast bounce, 120+=very fast strobe-like. At beat_sync=1 this is overridden by BPM."
         },
         {
           "name": "brightness",
           "type": "uint8",
-          "range": [0, 45],
-          "description": "Peak brightness of the leading bar. Subject to MATRIX_BRIGHTNESS_MAX=45 cap. 35–45 recommended for the bar; trail fades below this."
-        },
-        {
-          "name": "direction",
-          "type": "uint8",
-          "range": [0, 1],
-          "description": "0=horizontal sweep (left→right→left across 32 columns, full 8-row height). 1=vertical sweep (top→bottom→top across 8 rows, full 32-column width)."
+          "range": [
+            0,
+            45
+          ],
+          "description": "Peak brightness of the leading bar. Subject to MATRIX_BRIGHTNESS_MAX=45 cap. 35\u201345 recommended for the bar; trail fades below this."
         },
         {
           "name": "beat_sync",
           "type": "uint8",
-          "range": [0, 2],
+          "range": [
+            0,
+            2
+          ],
           "description": "0=free-running at speed param. 1=one full sweep per bar (left-to-right on bar 1, right-to-left on bar 2). 2=one half-sweep per beat (reaches far edge on each downbeat). Overrides speed param when nonzero."
         }
       ],
       "description": "Classic sweeping scanner bar with exponential glow trail, bouncing left-right (or top-bottom) across the matrix. The leading bar is at peak brightness; the trail decays exponentially over trail_length columns behind it. At the far edges the bar reverses direction, creating the iconic Cylon/KITT bounce. Supports free-running speed or beat-locked timing. Fills the full matrix height (horizontal mode) or width (vertical mode) for maximum visual impact.",
-      "when_to_use": "High-energy verses and choruses with a driving beat — especially songs with a strong left-right rhythmic feel. Works as a standalone effect or layered under EFFECT_MATRIX_TEXT with additive compositing. Beat-sync mode makes the sweep feel locked to the music. Red (PAL_WARM red stop) is the classic Cylon color; yellow-gold fits Daft Punk's palette. Vertical mode adds variety mid-song.",
+      "when_to_use": "High-energy verses and choruses with a driving beat \u2014 especially songs with a strong left-right rhythmic feel. Works as a standalone effect or layered under EFFECT_MATRIX_TEXT with additive compositing. Beat-sync mode makes the sweep feel locked to the music. Red (PAL_WARM red stop) is the classic Cylon color; yellow-gold fits Daft Punk's palette. Vertical mode adds variety mid-song.",
       "when_not_to_use": "Quiet atmospheric sections (use EFFECT_MATRIX_STARFIELD or EFFECT_MATRIX_SCROLL_BG instead). Not ideal simultaneously with a sprite effect since both compete for horizontal space.",
       "notes": [
+        "direction is fixed horizontal (left\u2194right sweep) in firmware v1. Vertical mode planned for a future release.",
         "For a 32-column matrix at beat_sync=1 and 120 BPM (500ms/beat, 2 beats/bar = 1000ms bar): the bar travels 32 columns in ~1000ms, which is ~32 columns/second = speed param ~32.",
-        "trail_length 6–8 with bar_width 2 is the classic KITT look. bar_width 1 + trail_length 10 is a comet.",
-        "direction 1 (vertical) on an 8-row matrix is a very fast sweep — use lower speed values (5–15) to keep it readable.",
+        "trail_length 6\u20138 with bar_width 2 is the classic KITT look. bar_width 1 + trail_length 10 is a comet.",
+        "direction 1 (vertical) on an 8-row matrix is a very fast sweep \u2014 use lower speed values (5\u201315) to keep it readable.",
         "Pairing a red cylon sweep (beat_sync=1) with EFFECT_EAR_BEAT_SOLID in matching red creates a unified visual that pulses as one system."
       ],
       "examples": [
         {
-          "context": "Harder Better Faster Stronger verse — red cylon sweep locked to the bar",
+          "context": "Harder Better Faster Stronger verse \u2014 red cylon sweep locked to the bar",
           "cue": {
             "at_ms": 0,
             "duration_ms": 8000,
@@ -2224,7 +2262,7 @@
           "notes": "color 192 = a warm red stop in PAL_DISCOVERY. bar_width 2 + trail_length 8 is the classic KITT comet look. beat_sync 1 locks one full bounce per bar so the sweep lands on the downbeat every time. brightness 42 is just under the matrix ceiling for full visual impact."
         },
         {
-          "context": "Aerodynamic solo — fast gold vertical sweep with long trail",
+          "context": "Aerodynamic solo \u2014 fast gold vertical sweep with long trail",
           "cue": {
             "at_ms": 0,
             "duration_ms": 6000,
@@ -2241,13 +2279,15 @@
               "beat_sync": 2
             }
           },
-          "notes": "color 128 = helmet_gold in PAL_DISCOVERY. direction 1 = vertical sweep on the 8-row axis. beat_sync 2 = half-sweep per beat snaps the top→bottom → bottom→top rhythm to every downbeat. bar_width 1 + trail_length 5 gives a sharp laser-thin vertical sweep."
+          "notes": "color 128 = helmet_gold in PAL_DISCOVERY. direction 1 = vertical sweep on the 8-row axis. beat_sync 2 = half-sweep per beat snaps the top\u2192bottom \u2192 bottom\u2192top rhythm to every downbeat. bar_width 1 + trail_length 5 gives a sharp laser-thin vertical sweep."
         }
       ]
     },
     "EFFECT_MATRIX_RADIATE": {
       "id": 47,
-      "zones": ["MATRIX"],
+      "zones": [
+        "MATRIX"
+      ],
       "params": [
         {
           "name": "color",
@@ -2257,59 +2297,63 @@
         {
           "name": "brightness",
           "type": "uint8",
-          "range": [0, 45],
+          "range": [
+            0,
+            45
+          ],
           "description": "Peak brightness of the ring at the moment it fires. Subject to MATRIX_BRIGHTNESS_MAX=45. Rings fade as they expand if fade_out is enabled."
         },
         {
           "name": "speed",
           "type": "uint8",
-          "range": [1, 255],
-          "description": "Expansion rate in pixels per frame tick. 8=slow pulse, 20=moderate, 40=fast burst. At beat_trigger=1, speed controls how quickly the fired ring travels outward before it vanishes — too slow and rings stack up; too fast and they're gone before you see them. 15–25 is the sweet spot for beat-locked radiating."
-        },
-        {
-          "name": "ring_thickness",
-          "type": "uint8",
-          "range": [1, 4],
-          "description": "Width of the ring wavefront in pixels. 1=razor thin, 2=solid ring, 3–4=fat band. Thicker rings are more visible on the sparse matrix."
-        },
-        {
-          "name": "ring_count",
-          "type": "uint8",
-          "range": [1, 4],
-          "description": "Number of concentric rings simultaneously in flight. Each subsequent ring is spaced ring_spacing pixels behind the leading ring, creating a ripple effect. 1=single pulse, 2–3=ripple pool, 4=dense ripple."
+          "range": [
+            1,
+            255
+          ],
+          "description": "Expansion rate in pixels per frame tick. 8=slow pulse, 20=moderate, 40=fast burst. At beat_trigger=1, speed controls how quickly the fired ring travels outward before it vanishes \u2014 too slow and rings stack up; too fast and they're gone before you see them. 15\u201325 is the sweet spot for beat-locked radiating."
         },
         {
           "name": "ring_spacing",
           "type": "uint8",
-          "range": [2, 16],
-          "description": "Distance in pixels between the leading edges of simultaneous rings. Only meaningful when ring_count > 1. 4–6 gives tight ripples, 8–12 gives airy separated rings."
-        },
-        {
-          "name": "fade_out",
-          "type": "uint8",
-          "range": [0, 1],
-          "description": "0=rings maintain brightness until they hit the edge and vanish abruptly. 1=rings fade linearly from peak_brightness at center down to 0 at max radius. Fade mode looks more organic; no-fade is punchy and sharp."
+          "range": [
+            2,
+            16
+          ],
+          "description": "Distance in pixels between the leading edges of simultaneous rings. Only meaningful when ring_count > 1. 4\u20136 gives tight ripples, 8\u201312 gives airy separated rings."
         },
         {
           "name": "beat_trigger",
           "type": "uint8",
-          "range": [0, 2],
+          "range": [
+            0,
+            2
+          ],
           "description": "0=continuous looping: a new ring fires automatically as soon as the previous set reaches the edge. 1=beat-triggered: a new leading ring fires on each beat downbeat, up to ring_count rings in flight simultaneously. 2=bar-triggered: fires on bar 1 only, creating a single outward pulse per musical phrase."
+        },
+        {
+          "name": "fade_out",
+          "type": "uint8",
+          "range": [
+            0,
+            1
+          ],
+          "description": "0=rings maintain brightness until they hit the edge and vanish abruptly. 1=rings fade linearly from peak_brightness at center down to 0 at max radius. Fade mode looks more organic; no-fade is punchy and sharp."
         }
       ],
-      "description": "Beat-synced concentric rings expanding outward from the center of the 32×8 matrix. On a 32×8 display the rings are elliptical — they reach the top/bottom edges (4 rows) well before the left/right edges (16 columns), producing a wide oval pulse. Each ring starts at peak brightness and optionally fades as it travels. Multiple rings can be in flight simultaneously for a ripple-pool effect. In beat_trigger mode a fresh ring fires on each downbeat, creating the visual equivalent of a bass drum hitting water.",
-      "when_to_use": "Drops, chorus entries, downbeat punctuation moments. Especially powerful when paired with EFFECT_EAR_BEAT_SOLID so the ears and matrix fire together on each beat — the ear flashes and the ring expands simultaneously. Works well in slower, more atmospheric songs where the ring expansion is clearly visible between beats. beat_trigger=2 (bar-triggered) is useful for very fast songs where per-beat rings would stack up too fast.",
-      "when_not_to_use": "Very fast tempos with beat_trigger=1 — rings won't clear before the next fires and the display becomes a blob. Not ideal simultaneously with EFFECT_MATRIX_CYLON since both dominate the full matrix surface. Use EFFECT_MATRIX_SCROLL_BG or EFFECT_MATRIX_STARFIELD as a backdrop layer instead.",
+      "description": "Beat-synced concentric rings expanding outward from the center of the 32\u00d78 matrix. On a 32\u00d78 display the rings are elliptical \u2014 they reach the top/bottom edges (4 rows) well before the left/right edges (16 columns), producing a wide oval pulse. Each ring starts at peak brightness and optionally fades as it travels. Multiple rings can be in flight simultaneously for a ripple-pool effect. In beat_trigger mode a fresh ring fires on each downbeat, creating the visual equivalent of a bass drum hitting water.",
+      "when_to_use": "Drops, chorus entries, downbeat punctuation moments. Especially powerful when paired with EFFECT_EAR_BEAT_SOLID so the ears and matrix fire together on each beat \u2014 the ear flashes and the ring expands simultaneously. Works well in slower, more atmospheric songs where the ring expansion is clearly visible between beats. beat_trigger=2 (bar-triggered) is useful for very fast songs where per-beat rings would stack up too fast.",
+      "when_not_to_use": "Very fast tempos with beat_trigger=1 \u2014 rings won't clear before the next fires and the display becomes a blob. Not ideal simultaneously with EFFECT_MATRIX_CYLON since both dominate the full matrix surface. Use EFFECT_MATRIX_SCROLL_BG or EFFECT_MATRIX_STARFIELD as a backdrop layer instead.",
       "notes": [
-        "The 32×8 aspect ratio means rings are oval, not circular. Max radius top/bottom = 4px, left/right = 16px. Rings reach the edge at those distances.",
+        "ring_thickness and ring_count are fixed at 2 in firmware v1. The ring wavefront is always 2px wide and 2 rings travel simultaneously.",
+        "The 32\u00d78 aspect ratio means rings are oval, not circular. Max radius top/bottom = 4px, left/right = 16px. Rings reach the edge at those distances.",
         "ring_count 2, ring_spacing 6, beat_trigger 1, fade_out 1 is a good starting point for chorus sections.",
-        "At 120 BPM (500ms/beat) with speed=20, a ring travels 10px per beat-tick — it just clears the short axis (4px) in under one beat, which looks clean.",
+        "At 120 BPM (500ms/beat) with speed=20, a ring travels 10px per beat-tick \u2014 it just clears the short axis (4px) in under one beat, which looks clean.",
         "Combining with EFFECT_EAR_BEAT_SOLID (same color, same beat) creates a unified helmet-wide pulse that reads as one system: ears flash + rings radiate simultaneously.",
-        "beat_trigger=0 (continuous) is good for non-beat sections — just a calm, looping outward breathe on the matrix."
+        "beat_trigger=0 (continuous) is good for non-beat sections \u2014 just a calm, looping outward breathe on the matrix."
       ],
       "examples": [
         {
-          "context": "One More Time chorus — cyan rings expanding on each beat alongside ear beat solid",
+          "context": "One More Time chorus \u2014 cyan rings expanding on each beat alongside ear beat solid",
           "cue": {
             "at_ms": 0,
             "duration_ms": 16000,
@@ -2327,10 +2371,10 @@
               "beat_trigger": 1
             }
           },
-          "notes": "color 64 = octave_cyan in PAL_DISCOVERY. beat_trigger 1 fires a new ring on each downbeat. ring_count 2 means two rings are in flight — the leading ring and one ripple behind it. ring_spacing 7 keeps them visually separated. fade_out 1 makes rings dissolve gracefully at the edges. Pair with EFFECT_EAR_BEAT_SOLID using the same cyan palette index for a unified pulse."
+          "notes": "color 64 = octave_cyan in PAL_DISCOVERY. beat_trigger 1 fires a new ring on each downbeat. ring_count 2 means two rings are in flight \u2014 the leading ring and one ripple behind it. ring_spacing 7 keeps them visually separated. fade_out 1 makes rings dissolve gracefully at the edges. Pair with EFFECT_EAR_BEAT_SOLID using the same cyan palette index for a unified pulse."
         },
         {
-          "context": "Crescendolls breakdown — slow continuous gold radiate while ears breathe",
+          "context": "Crescendolls breakdown \u2014 slow continuous gold radiate while ears breathe",
           "cue": {
             "at_ms": 0,
             "duration_ms": 8000,
@@ -2354,7 +2398,9 @@
     },
     "EFFECT_MATRIX_RAIN": {
       "id": 48,
-      "zones": ["MATRIX"],
+      "zones": [
+        "MATRIX"
+      ],
       "params": [
         {
           "name": "color",
@@ -2364,53 +2410,63 @@
         {
           "name": "density",
           "type": "uint8",
-          "range": [1, 32],
-          "description": "Number of columns with an active falling drop at any moment. On a 32-column matrix: 4–8=sparse drizzle, 12–18=moderate rain, 24–32=downpour. Columns without a drop are dark."
+          "range": [
+            1,
+            32
+          ],
+          "description": "Number of columns with an active falling drop at any moment. On a 32-column matrix: 4\u20138=sparse drizzle, 12\u201318=moderate rain, 24\u201332=downpour. Columns without a drop are dark."
         },
         {
           "name": "speed",
           "type": "uint8",
-          "range": [1, 255],
+          "range": [
+            1,
+            255
+          ],
           "description": "Fall speed in rows per frame tick. On an 8-row matrix: 5=slow drift (drop takes ~1.6s to cross), 20=medium (0.4s), 60=fast flash (0.13s). Higher values make drops look like strobes rather than falls."
         },
         {
           "name": "trail_length",
           "type": "uint8",
-          "range": [0, 7],
+          "range": [
+            0,
+            7
+          ],
           "description": "Number of rows fading behind the leading pixel. 0=single pixel dot (no trail), 2=short comet, 4=half-column fade, 7=full column fade from top. Trail decays exponentially: each row is ~50% the brightness of the row ahead."
         },
         {
           "name": "brightness",
           "type": "uint8",
-          "range": [0, 45],
+          "range": [
+            0,
+            45
+          ],
           "description": "Peak brightness of the leading pixel. Trail rows are exponentially dimmer. Subject to MATRIX_BRIGHTNESS_MAX=45."
-        },
-        {
-          "name": "color_mode",
-          "type": "uint8",
-          "range": [0, 2],
-          "description": "0=uniform (all drops use color param). 1=random_column (each column gets a random palette color at spawn, held for its full fall). 2=gradient_fall (each drop starts at one palette end and shifts hue as it falls — dramatic on long trails)."
         },
         {
           "name": "spawn_mode",
           "type": "uint8",
-          "range": [0, 1],
-          "description": "0=staggered (each column spawns at a random delay after the previous drop clears, creating organic async rain). 1=synchronized (all active columns fall in lockstep — creates a waterfall/curtain feel rather than individual drops)."
+          "range": [
+            0,
+            1
+          ],
+          "description": "0=staggered (each column spawns at a random delay after the previous drop clears, creating organic async rain). 1=synchronized (all active columns fall in lockstep \u2014 creates a waterfall/curtain feel rather than individual drops)."
         }
       ],
-      "description": "Falling pixel drops with exponential glow trails cascade from the top to the bottom of the 32×8 matrix, column by column. Each active column has one leading bright pixel and a trail of fading rows above it. When a drop reaches row 7 (bottom) it clears and the column goes dark until a new drop spawns. In staggered mode columns fire independently for an organic rain look; in synchronized mode all active columns fall in lockstep for a curtain or waterfall effect. On a shallow 8-row matrix the drop transit time is short — fast speeds look like strobing columns, slow speeds look like drips. Best at moderate speed (15–30) with trail_length 3–5 to make the fall clearly readable.",
-      "when_to_use": "Energetic verses and breakdowns, particularly for songs with a mechanical or digital feel (Harder Better Faster Stronger, Technologic). Works as a standalone full-matrix effect or as a backdrop with EFFECT_MATRIX_TEXT layered on top (additive). density 8–14 fills the matrix without looking cluttered. Pairs well with EFFECT_EAR_BEAT_SOLID firing on the same beat for a unified system pulse.",
-      "when_not_to_use": "Very slow atmospheric sections where the constant motion feels restless (use EFFECT_MATRIX_STARFIELD instead). Avoid on sections where a sprite or text is the primary content — rain competes for every column. spawn_mode=1 (synchronized) can feel stiff for organic song sections; reserve it for robotic/mechanical parts.",
+      "description": "Falling pixel drops with exponential glow trails cascade from the top to the bottom of the 32\u00d78 matrix, column by column. Each active column has one leading bright pixel and a trail of fading rows above it. When a drop reaches row 7 (bottom) it clears and the column goes dark until a new drop spawns. In staggered mode columns fire independently for an organic rain look; in synchronized mode all active columns fall in lockstep for a curtain or waterfall effect. On a shallow 8-row matrix the drop transit time is short \u2014 fast speeds look like strobing columns, slow speeds look like drips. Best at moderate speed (15\u201330) with trail_length 3\u20135 to make the fall clearly readable.",
+      "when_to_use": "Energetic verses and breakdowns, particularly for songs with a mechanical or digital feel (Harder Better Faster Stronger, Technologic). Works as a standalone full-matrix effect or as a backdrop with EFFECT_MATRIX_TEXT layered on top (additive). density 8\u201314 fills the matrix without looking cluttered. Pairs well with EFFECT_EAR_BEAT_SOLID firing on the same beat for a unified system pulse.",
+      "when_not_to_use": "Very slow atmospheric sections where the constant motion feels restless (use EFFECT_MATRIX_STARFIELD instead). Avoid on sections where a sprite or text is the primary content \u2014 rain competes for every column. spawn_mode=1 (synchronized) can feel stiff for organic song sections; reserve it for robotic/mechanical parts.",
       "notes": [
-        "8-row matrix means drops transit very quickly. speed 15–25 is the most visually readable range — you see the leading pixel and trail before it exits the bottom.",
-        "trail_length 4–5 fills most of the 8-row column, which looks dramatic on this shallow matrix. trail_length 7 = the whole column lights up and fades, which looks like a column flash more than a falling drop.",
+        "color_mode is fixed at 0 (uniform color) in firmware v1. Per-column random colors planned for a future release.",
+        "8-row matrix means drops transit very quickly. speed 15\u201325 is the most visually readable range \u2014 you see the leading pixel and trail before it exits the bottom.",
+        "trail_length 4\u20135 fills most of the 8-row column, which looks dramatic on this shallow matrix. trail_length 7 = the whole column lights up and fades, which looks like a column flash more than a falling drop.",
         "density 16 (half the columns) + spawn_mode 0 (staggered) is a good default that fills the matrix without looking like a solid block.",
-        "color_mode 1 (random per column) with PAL_NEON gives a festive multi-color downpour — good for high-energy sections. color_mode 0 + a single strong color is more focused and readable.",
-        "Layering EFFECT_MATRIX_TEXT on top with additive compositing lets title text float over the rain — cinematic."
+        "color_mode 1 (random per column) with PAL_NEON gives a festive multi-color downpour \u2014 good for high-energy sections. color_mode 0 + a single strong color is more focused and readable.",
+        "Layering EFFECT_MATRIX_TEXT on top with additive compositing lets title text float over the rain \u2014 cinematic."
       ],
       "examples": [
         {
-          "context": "Harder Better Faster Stronger verse — fast gold rain, moderate density",
+          "context": "Harder Better Faster Stronger verse \u2014 fast gold rain, moderate density",
           "cue": {
             "at_ms": 0,
             "duration_ms": 8000,
@@ -2430,7 +2486,7 @@
           "notes": "color 128 = helmet_gold in PAL_DISCOVERY. density 16 = half the columns active at any time, staggered async. speed 22 gives a brisk fall that reads cleanly on 8 rows. trail_length 4 produces a half-column fade. brightness 40 is near the matrix ceiling for vivid leading pixels."
         },
         {
-          "context": "Crescendolls intro — slow colorful drizzle before the groove kicks in",
+          "context": "Crescendolls intro \u2014 slow colorful drizzle before the groove kicks in",
           "cue": {
             "at_ms": 0,
             "duration_ms": 6000,
@@ -2447,70 +2503,82 @@
               "spawn_mode": 0
             }
           },
-          "notes": "color_mode 1 = each column picks a random PAL_NEON color at spawn. density 8 is sparse enough to feel like an opening drizzle. speed 10 is slow and deliberate — you can watch each drop fall. trail_length 5 creates long fading tails that fill most of the column height."
+          "notes": "color_mode 1 = each column picks a random PAL_NEON color at spawn. density 8 is sparse enough to feel like an opening drizzle. speed 10 is slow and deliberate \u2014 you can watch each drop fall. trail_length 5 creates long fading tails that fill most of the column height."
         }
       ]
     },
     "EFFECT_MATRIX_EYES": {
       "id": 49,
-      "zones": ["MATRIX"],
+      "zones": [
+        "MATRIX"
+      ],
       "params": [
         {
           "name": "color",
           "type": "palette_index",
-          "description": "Palette index for the iris fill. Bright saturated colors read best — cyan, gold, red, or magenta. The pupil center (if pupil_mode>0) is rendered darker automatically."
+          "description": "Palette index for the iris fill. Bright saturated colors read best \u2014 cyan, gold, red, or magenta. The pupil center (if pupil_mode>0) is rendered darker automatically."
         },
         {
           "name": "brightness",
           "type": "uint8",
-          "range": [0, 45],
-          "description": "Peak iris brightness. Subject to MATRIX_BRIGHTNESS_MAX=45. 38–45 recommended — eyes need to be vivid to read as eyes rather than blobs."
+          "range": [
+            0,
+            45
+          ],
+          "description": "Peak iris brightness. Subject to MATRIX_BRIGHTNESS_MAX=45. 38\u201345 recommended \u2014 eyes need to be vivid to read as eyes rather than blobs."
         },
         {
           "name": "blink_rate",
           "type": "uint8",
-          "range": [1, 32],
+          "range": [
+            1,
+            32
+          ],
           "description": "Beats between blinks. 4=blinks every 4 beats (once per bar at 4/4), 8=every 2 bars, 16=very occasional. The blink closes and reopens within one beat regardless of this value."
         },
         {
           "name": "blink_speed",
           "type": "uint8",
-          "range": [1, 10],
+          "range": [
+            1,
+            10
+          ],
           "description": "How quickly the eyelid closes and reopens. 1=very slow dramatic blink (takes most of the beat), 5=natural blink, 10=snap blink (single frame). Slow blinks feel sleepy or ominous; snap blinks feel robotic."
         },
         {
           "name": "look_mode",
           "type": "uint8",
-          "range": [0, 2],
-          "description": "0=forward stare (pupils fixed center — unsettling). 1=wander (pupils drift slowly left/right at random intervals, pausing at each position). 2=beat-snap (pupils shift to a new random position on each downbeat, locked to the music rhythm)."
+          "range": [
+            0,
+            2
+          ],
+          "description": "0=forward stare (pupils fixed center \u2014 unsettling). 1=wander (pupils drift slowly left/right at random intervals, pausing at each position). 2=beat-snap (pupils shift to a new random position on each downbeat, locked to the music rhythm)."
         },
         {
           "name": "expression",
           "type": "uint8",
-          "range": [0, 2],
-          "description": "0=neutral oval (symmetrical open eye shape). 1=angry (top edge of each eye angles inward toward the nose — brow-furrowed look). 2=sleepy (top eyelid droops halfway, eyes are half-closed — heavy-lidded look). Expression changes the pixel mask used for the eye outline."
-        },
-        {
-          "name": "pupil_mode",
-          "type": "uint8",
-          "range": [0, 2],
-          "description": "0=solid iris (entire eye filled with color — simple and bold). 1=dark pupil (center 2×2 area rendered at ~20% brightness creating iris+pupil separation). 2=beat-dilate (pupil contracts to 1 pixel on downbeat then dilates back to 2×2 — eerie pulsing effect synchronized to music)."
+          "range": [
+            0,
+            2
+          ],
+          "description": "0=neutral oval (symmetrical open eye shape). 1=angry (top edge of each eye angles inward toward the nose \u2014 brow-furrowed look). 2=sleepy (top eyelid droops halfway, eyes are half-closed \u2014 heavy-lidded look). Expression changes the pixel mask used for the eye outline."
         }
       ],
-      "description": "Two procedurally animated eyes on the 32×8 matrix. Each eye is a ~10×6 pixel oval shape with an eyelid that blinks independently from a shared blink timer. The eyes are centered vertically (1-row margin top/bottom) and positioned symmetrically on the left and right halves of the matrix — left eye at approximately columns 4–13, right eye at approximately columns 18–27, with a 4-column gap between them. The pupils can drift or snap to look left/right within their socket. Blink animation collapses the eye vertically row-by-row from outside in, holds closed for one frame, then reopens. Combine with a slow EFFECT_EAR_BREATHE for an eerie staring presence effect.",
-      "when_to_use": "Intros, breakdowns, dramatic pauses, any moment calling for a spooky or robotic stare. Works extremely well for slower Daft Punk tracks and atmospheric transitions. The helmet literally has a face — lean into it. beat_snap look_mode (2) makes the eyes feel alive and reactive during active sections. expression=1 (angry) during intense builds, expression=2 (sleepy) during slow breakdowns.",
-      "when_not_to_use": "Very high-energy sections where faster effects (CYLON, RAIN, RADIATE) better match the energy. Don't layer with EFFECT_MATRIX_TEXT — the eyes and text compete for the same pixel real estate. Not suitable when a sprite is playing in the same column range.",
+      "description": "Two procedurally animated eyes on the 32\u00d78 matrix. Each eye is a ~10\u00d76 pixel oval shape with an eyelid that blinks independently from a shared blink timer. The eyes are centered vertically (1-row margin top/bottom) and positioned symmetrically on the left and right halves of the matrix \u2014 left eye at approximately columns 4\u201313, right eye at approximately columns 18\u201327, with a 4-column gap between them. The pupils can drift or snap to look left/right within their socket. Blink animation collapses the eye vertically row-by-row from outside in, holds closed for one frame, then reopens. Combine with a slow EFFECT_EAR_BREATHE for an eerie staring presence effect.",
+      "when_to_use": "Intros, breakdowns, dramatic pauses, any moment calling for a spooky or robotic stare. Works extremely well for slower Daft Punk tracks and atmospheric transitions. The helmet literally has a face \u2014 lean into it. beat_snap look_mode (2) makes the eyes feel alive and reactive during active sections. expression=1 (angry) during intense builds, expression=2 (sleepy) during slow breakdowns.",
+      "when_not_to_use": "Very high-energy sections where faster effects (CYLON, RAIN, RADIATE) better match the energy. Don't layer with EFFECT_MATRIX_TEXT \u2014 the eyes and text compete for the same pixel real estate. Not suitable when a sprite is playing in the same column range.",
       "notes": [
-        "The left eye occupies columns 4–13, right eye columns 18–27. Columns 0–3, 14–17, and 28–31 are dark — giving a natural frame around the eyes.",
-        "blink_rate 4 (every bar) is the most natural feel. blink_rate 8 feels occasional and eerie. blink_rate 1 (every beat) looks like rapid mechanical blinking — very robotic.",
+        "pupil_mode is fixed at 1 (dark center pupil) in firmware v1. Beat-dilating pupils planned for a future release.",
+        "The left eye occupies columns 4\u201313, right eye columns 18\u201327. Columns 0\u20133, 14\u201317, and 28\u201331 are dark \u2014 giving a natural frame around the eyes.",
+        "blink_rate 4 (every bar) is the most natural feel. blink_rate 8 feels occasional and eerie. blink_rate 1 (every beat) looks like rapid mechanical blinking \u2014 very robotic.",
         "look_mode 0 (unblinking forward stare) with expression 0 is deeply unsettling. Use intentionally.",
-        "pupil_mode 2 (beat-dilate) is subtle but effective — the pupil contraction lands on the kick drum, which reads as the eyes 'reacting' to the music.",
+        "pupil_mode 2 (beat-dilate) is subtle but effective \u2014 the pupil contraction lands on the kick drum, which reads as the eyes 'reacting' to the music.",
         "blink_speed 10 (snap) + blink_rate 4 + look_mode 2 (beat-snap) creates a robotic, precise feel good for Harder Better Faster Stronger.",
         "blink_speed 2 + look_mode 1 (wander) + expression 2 (sleepy) is perfect for slow breakdown sections."
       ],
       "examples": [
         {
-          "context": "Crescendolls breakdown — eerie forward stare, cyan eyes, slow blink",
+          "context": "Crescendolls breakdown \u2014 eerie forward stare, cyan eyes, slow blink",
           "cue": {
             "at_ms": 0,
             "duration_ms": 8000,
@@ -2527,10 +2595,10 @@
               "pupil_mode": 1
             }
           },
-          "notes": "color 64 = octave_cyan in PAL_DISCOVERY. blink_rate 8 = very infrequent blinking for an unsettling stare. blink_speed 3 = slow deliberate blink. look_mode 0 = fixed forward — no gaze drift. expression 0 = neutral oval. pupil_mode 1 = dark center adds iris/pupil detail. Pair with EFFECT_EAR_BREATHE using the same cyan for a calm, eerie atmosphere."
+          "notes": "color 64 = octave_cyan in PAL_DISCOVERY. blink_rate 8 = very infrequent blinking for an unsettling stare. blink_speed 3 = slow deliberate blink. look_mode 0 = fixed forward \u2014 no gaze drift. expression 0 = neutral oval. pupil_mode 1 = dark center adds iris/pupil detail. Pair with EFFECT_EAR_BREATHE using the same cyan for a calm, eerie atmosphere."
         },
         {
-          "context": "Harder Better Faster Stronger chorus — robotic snap-blinking gold eyes locked to the beat",
+          "context": "Harder Better Faster Stronger chorus \u2014 robotic snap-blinking gold eyes locked to the beat",
           "cue": {
             "at_ms": 0,
             "duration_ms": 16000,
@@ -2547,7 +2615,7 @@
               "pupil_mode": 2
             }
           },
-          "notes": "color 128 = helmet_gold. blink_rate 4 = one blink per bar. blink_speed 10 = snap blink (one frame) — robotic. look_mode 2 = pupils snap to new position on each downbeat. expression 1 = angry brow furrow matches the intensity of the track. pupil_mode 2 = beat-dilate pulses the pupil on every kick. Pair with EFFECT_EAR_BEAT_SOLID in matching gold."
+          "notes": "color 128 = helmet_gold. blink_rate 4 = one blink per bar. blink_speed 10 = snap blink (one frame) \u2014 robotic. look_mode 2 = pupils snap to new position on each downbeat. expression 1 = angry brow furrow matches the intensity of the track. pupil_mode 2 = beat-dilate pulses the pupil on every kick. Pair with EFFECT_EAR_BEAT_SOLID in matching gold."
         }
       ]
     },

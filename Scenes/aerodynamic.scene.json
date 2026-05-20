@@ -303,7 +303,6 @@
             "trail_length": 7,
             "speed": 30,
             "brightness": 42,
-            "direction": 0,
             "beat_sync": 1
           }
         }
@@ -409,7 +408,6 @@
             "trail_length": 7,
             "speed": 30,
             "brightness": 42,
-            "direction": 0,
             "beat_sync": 1
           }
         }
@@ -497,8 +495,6 @@
             "color": 128,
             "brightness": 42,
             "speed": 20,
-            "ring_thickness": 2,
-            "ring_count": 2,
             "ring_spacing": 6,
             "fade_out": 1,
             "beat_trigger": 1
@@ -543,7 +539,6 @@
             "speed": 20,
             "trail_length": 4,
             "brightness": 40,
-            "color_mode": 0,
             "spawn_mode": 0
           }
         }

@@ -4,10 +4,10 @@ Compiled one_more_time.scene.report successfully.
   Duration:         320.8 sec
   Segments:         10  (pre_intro, intro, pre_drop, chorus_1, gap_1, chorus_2, gap_2, chorus_3, breakdown, final_drop)
   Timeline entries: 10
-  Total cues:       36  (after mirror expansion)
+  Total cues:       38  (after mirror expansion)
   Palettes used:    5
   Text strings:     2  (87 bytes)
-  Binary size:      1036 bytes  (1.0 KB)
+  Binary size:      1068 bytes  (1.0 KB)
   RAM estimate:     ≤ 1.0 KB  /  64 KB ceiling
 
   Warnings: 5
