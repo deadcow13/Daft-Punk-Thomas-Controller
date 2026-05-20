@@ -2729,6 +2729,99 @@
         }
       ]
     },
+    "EFFECT_MATRIX_VU_LIVE": {
+      "id": 50,
+      "zones": ["MATRIX"],
+      "params": [
+        {
+          "name": "sensitivity",
+          "type": "uint8",
+          "range": [1, 255],
+          "description": "Input gain applied to the FFT band energies before mapping to bar height. 64=subtle (only loud transients light the top rows), 128=moderate (comfortable for typical room listening levels), 200=very reactive (quiet passages still animate). Start at 128 and tune by ear."
+        },
+        {
+          "name": "noise_floor",
+          "type": "uint8",
+          "range": [0, 255],
+          "description": "Minimum FFT energy level per band below which that column stays dark. Acts as a threshold to suppress mic hiss, room noise, and ADC idle noise. Typical values: 20-40 for a mic input in a quiet room, 5-15 for a clean line-in, 0 to disable. Too low = bars shimmer in silence; too high = quiet passages go completely dark."
+        },
+        {
+          "name": "decay_rate",
+          "type": "uint8",
+          "range": [1, 255],
+          "description": "How fast bar heights fall after a peak. Applied every frame. 20=slow gravity (bars linger, good for sustained chords), 60=natural fall (~150ms to drop from full to empty at 60fps), 120=brisk, 200=near-instant snap-back. Slower decay reads more like a level meter; faster reads more like a strobe."
+        },
+        {
+          "name": "peak_hold",
+          "type": "uint8",
+          "range": [0, 1],
+          "description": "0=no peak hold. 1=a single bright LED sits at the highest point each bar has reached in the last ~600ms, then begins its own slower fall. Classic professional VU meter look. Particularly readable on the 8-row matrix because it separates the current level from the recent maximum at a glance."
+        },
+        {
+          "name": "color_mode",
+          "type": "uint8",
+          "range": [0, 2],
+          "description": "0=traffic light (rows 0-2 red at top, rows 3-4 yellow, rows 5-7 green at bottom — the higher the bar the more red it shows). 1=single palette color (all bars uniform, set color param). 2=spectrum rainbow (each of the 16 bands has a fixed hue: band 1 = red/bass, band 16 = violet/treble, interpolated across the palette)."
+        },
+        {
+          "name": "color",
+          "type": "palette_index",
+          "description": "Palette index for bar fill when color_mode=1. Ignored for color_mode 0 and 2. Use a vivid palette stop — helmet_gold (128 in PAL_DISCOVERY) and octave_cyan (64) both read well on the matrix."
+        }
+      ],
+      "description": "Real-time FFT-driven spectrum analyzer across the full 32×8 matrix. The firmware samples audio from the board's mic or line-in input, computes a 256-point FFT each frame, and maps the result to 16 logarithmically spaced frequency bands (sub-bass → air). Each band drives a 2-column-wide vertical bar (columns 0-1 = band 1/lowest, columns 30-31 = band 16/highest). Bar heights are 0-8 rows, rising from the bottom row. Traffic-light mode colors rows by height: green base → yellow mid → red peaks. No pre-rendered data required — fully live. The 2-column bar width makes individual bands clearly visible and gives the effect a classic graphic-equalizer aesthetic on the 32-wide matrix.",
+      "when_to_use": "Any section where you want the visuals to react directly to the actual audio rather than the pre-scored beat grid. Especially powerful in: (1) live performance where timing might drift, (2) breakdowns with complex harmonic content (the bands distinguish synth pads from bass), (3) high-energy builds where the spectrum naturally fills top to bottom, (4) any moment where EFFECT_MATRIX_VU_PRERENDERED would require too many authored frames. Pair with EFFECT_VISOR_VU_LIVE on the visors for a full helmet frequency display.",
+      "when_not_to_use": "Quiet passages where the noise floor causes unwanted shimmer — increase noise_floor param or switch to EFFECT_MATRIX_STARFIELD for atmospheric sections. Don't use simultaneously with EFFECT_MATRIX_VU_PRERENDERED. If the audio source is not connected or the board has no mic/line-in, bars will be dark — verify hardware before authoring.",
+      "notes": [
+        "Band frequency centers (logarithmic, 16 bands): ~63, 100, 160, 250, 400, 630, 1k, 1.6k, 2.5k, 4k, 6.3k, 10k, 12.5k, 14k, 16k, 20k Hz approximately.",
+        "Column mapping: band 1 (bass) → cols 0-1, band 2 → cols 2-3, ..., band 16 (treble) → cols 30-31. Bass is always on the left side of the matrix.",
+        "Traffic light row thresholds: rows 7-5 = green (bottom 3), rows 4-3 = yellow (middle 2), rows 2-0 = red (top 3). A bar just hitting row 2 turns red — that's the 'danger zone' visually.",
+        "sensitivity and noise_floor interact: high sensitivity + low noise_floor = maximum reactivity but may shimmer in silence. For live show use, tune noise_floor first (raise until silence = dark bars), then tune sensitivity (raise until loud peaks hit the top rows).",
+        "peak_hold=1 is strongly recommended for traffic-light mode — the held red dot is immediately readable even when the bar is falling.",
+        "MATRIX_BRIGHTNESS_MAX=45 applies. The firmware will not exceed this even if bar heights are at max. Traffic-light green is bright enough at 35-40; red at the top may need full 45 to pop.",
+        "The 2-column bar width is fixed in firmware v1. A single-column (32-band) variant is planned for a future release."
+      ],
+      "examples": [
+        {
+          "context": "Harder Better Faster Stronger chorus — traffic-light spectrum analyzer, reactive to the dense synth stabs",
+          "cue": {
+            "at_ms": 0,
+            "duration_ms": 16000,
+            "effect": "EFFECT_MATRIX_VU_LIVE",
+            "zone": "MATRIX",
+            "palette": "PAL_DISCOVERY",
+            "params": {
+              "sensitivity": 140,
+              "noise_floor": 25,
+              "decay_rate": 80,
+              "peak_hold": 1,
+              "color_mode": 0,
+              "color": 128
+            }
+          },
+          "notes": "sensitivity 140 ensures the dense HBFS synth stabs push bars into the red zone on every hit. noise_floor 25 suppresses idle mic hiss between stabs. decay_rate 80 is a natural fall — bars clearly drop between hits without snapping back instantly. peak_hold 1 shows the red dot dancing at each band's recent max. color_mode 0 = traffic light. Pair with EFFECT_EAR_BEAT_SOLID (gold) and EFFECT_VISOR_VU_LIVE on the visors."
+        },
+        {
+          "context": "Aerodynamic groove — gold single-color spectrum, slow decay, no peak hold",
+          "cue": {
+            "at_ms": 0,
+            "duration_ms": 16000,
+            "effect": "EFFECT_MATRIX_VU_LIVE",
+            "zone": "MATRIX",
+            "palette": "PAL_DISCOVERY",
+            "params": {
+              "sensitivity": 120,
+              "noise_floor": 20,
+              "decay_rate": 50,
+              "peak_hold": 0,
+              "color_mode": 1,
+              "color": 128
+            }
+          },
+          "notes": "color_mode 1 + color 128 = all bars in helmet_gold — clean and consistent with the song's warm palette. decay_rate 50 = slow gravity; bars linger between the guitar hits, giving a fluid level-meter feel rather than a strobe. sensitivity 120 = moderate — the warm guitar frequencies fill the low-mid bands nicely without overwhelming."
+        }
+      ]
+    },
     "EFFECT_FULL_FLASH": {
       "id": 60,
       "zones": [
