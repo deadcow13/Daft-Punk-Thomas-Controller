@@ -21,12 +21,13 @@
         "ear_diffuser": "Thomas helmet ear hardware note: the ear LEDs sit behind a diffuser panel used for edge lighting. All 16 LEDs blend into a single perceived color \u2014 gradient detail is invisible. Use EFFECT_EAR_BEAT_SOLID for beat-driven sections (uniform color, whole-ear flash on beat). EFFECT_EAR_BREATHE for atmospheric sections. EFFECT_EAR_SOLID for static holds. Do NOT use EFFECT_EAR_BEAT_GRADIENT, EFFECT_EAR_EKG_PULSE, or EFFECT_EAR_GRADIENT on Thomas \u2014 those are for Guy's helmet where the diamond zones are individually visible.",
         "ear_effects_to_avoid": [
           "EFFECT_EAR_EKG_PULSE",
+          "EFFECT_EAR_BEAT_GRADIENT",
+          "EFFECT_EAR_GRADIENT",
           "EFFECT_VISOR_SPARKLE"
         ],
         "ear_effects_approved_for_thomas": [
           "EFFECT_EAR_SOLID",
-          "EFFECT_EAR_GRADIENT",
-          "EFFECT_EAR_BEAT_GRADIENT",
+          "EFFECT_EAR_BEAT_SOLID",
           "EFFECT_EAR_BREATHE"
         ]
       }
@@ -2059,6 +2060,90 @@
             }
           },
           "notes": "pattern diagonal at 45\u00b0. color_a 128 = helmet_gold in PAL_DISCOVERY, color_b 0 = deep_indigo. scroll_speed 12 pixels/sec is slow enough to read as texture rather than motion. brightness 20 keeps the background clearly subordinate to text layered on top via additive flag. pattern_period 4 = stripes 4 LEDs wide. Never use this effect alone \u2014 always layer foreground content on top."
+        }
+      ]
+    },
+    "EFFECT_MATRIX_STARFIELD": {
+      "id": 45,
+      "zones": ["MATRIX"],
+      "params": [
+        {
+          "name": "density",
+          "type": "uint8",
+          "range": [1, 64],
+          "description": "Number of simultaneously active stars. 8–20 is typical. Higher values fill the matrix more densely."
+        },
+        {
+          "name": "twinkle_speed",
+          "type": "uint8",
+          "range": [1, 255],
+          "description": "Sine-wave cycle speed for each star's brightness. 20 = slow dreamy twinkle, 80 = lively shimmer, 150+ = rapid sparkle."
+        },
+        {
+          "name": "max_brightness",
+          "type": "uint8",
+          "range": [0, 45],
+          "description": "Peak brightness of each star at the top of its sine cycle. Subject to MATRIX_BRIGHTNESS_MAX=45 firmware cap. 35–45 recommended."
+        },
+        {
+          "name": "color_mode",
+          "type": "uint8",
+          "range": [0, 3],
+          "description": "0=white, 1=warm_white (slight amber), 2=random_per_star (each star picks a random hue at spawn), 3=palette_sweep (stars cycle through the active palette). Default 0 for classic starfield."
+        },
+        {
+          "name": "drift_speed",
+          "type": "uint8",
+          "range": [0, 255],
+          "description": "Slow horizontal drift of the star field. 0=stationary, 1–30=subtle parallax, higher=visible scroll. Used to simulate motion through space."
+        }
+      ],
+      "description": "Procedural twinkling starfield across the full 32×8 matrix. Stars are placed at random positions and breathe in/out using independent sine-wave oscillators at slightly different phases and speeds, producing a living sky effect. Stars respawn at new random positions when their cycle completes (density is maintained). No pre-rendered sprite data needed — effect runs entirely in firmware. Inspired by the star layer in the Around the World Arduino sketch.",
+      "when_to_use": "Atmospheric intros, breakdowns, quiet verses, or any moment needing a 'space' or 'cosmic' backdrop. Excellent underneath a simultaneously playing EFFECT_MATRIX_TEXT cue (layer with additive flag) so the text rides on a starfield. Works in nearly every Daft Punk song given the Interstella 5555 space aesthetic.",
+      "when_not_to_use": "High-energy peak sections where something more dynamic (VU, strobes, cylon) better matches the energy. Don't layer with EFFECT_MATRIX_SPRITE unless the sprite leaves blank columns for stars to show through.",
+      "notes": [
+        "density 12, twinkle_speed 35, max_brightness 40, color_mode 0, drift_speed 0 is a safe conservative starting point.",
+        "For around-the-world: density 14 matches the 14 hardcoded stars in the reference sketch.",
+        "color_mode 2 (random per star) gives a festive/Crescendolls feel. color_mode 0 (white) is cinematic/space.",
+        "Combining drift_speed 8 + color_mode 1 (warm_white) creates a cozy, nostalgic feel for slower songs.",
+        "Can run simultaneously with EFFECT_MATRIX_TEXT using additive compositing — text pixels override stars, stars fill the blank space."
+      ],
+      "examples": [
+        {
+          "context": "Atmospheric intro before the Around the World drop — white starfield, slow twinkle",
+          "cue": {
+            "at_ms": 0,
+            "duration_ms": 12000,
+            "effect": "EFFECT_MATRIX_STARFIELD",
+            "zone": "MATRIX",
+            "palette": "PAL_DISCOVERY",
+            "params": {
+              "density": 14,
+              "twinkle_speed": 30,
+              "max_brightness": 40,
+              "color_mode": 0,
+              "drift_speed": 4
+            }
+          },
+          "notes": "density 14 matches the 14 stars in the Around the World reference sketch. twinkle_speed 30 is a slow dreamy twinkle. max_brightness 40 is safely under the matrix ceiling of 45. color_mode 0 = white stars for a classic space look. drift_speed 4 adds subtle motion without looking like a scroll."
+        },
+        {
+          "context": "Crescendolls breakdown — colorful starfield while ears breathe slowly",
+          "cue": {
+            "at_ms": 0,
+            "duration_ms": 8000,
+            "effect": "EFFECT_MATRIX_STARFIELD",
+            "zone": "MATRIX",
+            "palette": "PAL_DISCOVERY",
+            "params": {
+              "density": 20,
+              "twinkle_speed": 50,
+              "max_brightness": 38,
+              "color_mode": 2,
+              "drift_speed": 0
+            }
+          },
+          "notes": "density 20 gives a dense festive feel. color_mode 2 assigns each star a random hue — colorful and energetic. twinkle_speed 50 is lively but not frantic. drift_speed 0 keeps the field stationary so it reads as a backdrop, not a scroll effect."
         }
       ]
     },
